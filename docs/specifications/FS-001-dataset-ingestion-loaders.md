@@ -29,11 +29,13 @@ For RSNA and VinDr-CXR, split grouping must be enforced by `patient_id` so that 
 from dataclasses import dataclass
 from typing import Any, Dict, List, Optional, Tuple
 
+
 @dataclass
 class GroundTruthRegion:
     label: str
     box_2d: Tuple[float, float, float, float]  # normalized [ymin, xmin, ymax, xmax] in [0, 1]
     mask_path: Optional[str] = None
+
 
 @dataclass
 class MedicalVQASample:
@@ -41,7 +43,7 @@ class MedicalVQASample:
     patient_id: Optional[str]
     image_path: str
     modality: str  # e.g., 'CXR', 'CT', 'MRI'
-    organ: str     # e.g., 'chest', 'abdomen', 'brain'
+    organ: str  # e.g., 'chest', 'abdomen', 'brain'
     question: str
     answer: str
     question_type: str  # 'closed' or 'open'

@@ -1,0 +1,15 @@
+[
+  {
+    "image_id": "patient_001",
+    "patient_id": "vindr_pat_001",
+    "question": "Is there pleural effusion?",
+    "answer": "yes",
+    "findings": [
+      {
+        "class": "Pleural effusion",
+        "box_xyxy": [40.0, 40.0, 160.0, 160.0]
+      }
+    ],
+    "metadata": {"source": "pre_split_json"}
+  }
+]

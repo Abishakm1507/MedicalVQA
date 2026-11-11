@@ -1,0 +1,29 @@
+[
+  {
+    "qid": 201,
+    "image_name": "patient_001.png",
+    "question": "Is there a mass?",
+    "answer": "yes",
+    "answer_type": "CLOSED",
+    "image_organ": "CHEST",
+    "phrase_type": "freeform"
+  },
+  {
+    "qid": 202,
+    "image_name": "patient_001.png",
+    "question": "What is the finding?",
+    "answer": "consolidation",
+    "answer_type": "OPEN",
+    "image_organ": "CHEST",
+    "phrase_type": "freeform"
+  },
+  {
+    "qid": 203,
+    "image_name": "patient_002.png",
+    "question": "Are the lungs clear?",
+    "answer": "yes",
+    "answer_type": "CLOSED",
+    "image_organ": "CHEST",
+    "phrase_type": "freeform"
+  }
+]

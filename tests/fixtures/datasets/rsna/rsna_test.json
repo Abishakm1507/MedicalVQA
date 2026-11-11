@@ -1,0 +1,9 @@
+[
+  {
+    "patient_id": "patient_003",
+    "question": "Is there lung opacity?",
+    "answer": "yes",
+    "boxes": [[120.0, 80.0, 60.0, 70.0]],
+    "metadata": {"source": "pre_split_json"}
+  }
+]

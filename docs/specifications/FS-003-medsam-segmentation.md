@@ -27,15 +27,12 @@ import numpy as np
 from PIL import Image
 from localization.detector import CandidateBox
 
+
 class MedSAMSegmenter:
     def __init__(self, checkpoint_path: Optional[str] = None, device: str = "cpu"):
         pass
 
-    def segment_boxes(
-        self,
-        image: Image.Image,
-        boxes: List[CandidateBox]
-    ) -> List[np.ndarray]:
+    def segment_boxes(self, image: Image.Image, boxes: List[CandidateBox]) -> List[np.ndarray]:
         """Generates boolean masks for each candidate bounding box."""
         pass
 ```

@@ -42,6 +42,8 @@ class RemoteModelWorker:
     def generate(self, model_name: str, image_b64: str, prompt: str, temperature: float) -> str:
         pass
 
-    def sample_n(self, model_name: str, image_b64: str, prompt: str, n: int, temperature: float) -> List[str]:
+    def sample_n(
+        self, model_name: str, image_b64: str, prompt: str, n: int, temperature: float
+    ) -> List[str]:
         pass
 ```

@@ -34,6 +34,7 @@ from dataclasses import dataclass
 from typing import List, Optional, Tuple
 from PIL import Image
 
+
 @dataclass
 class CandidateBox:
     region_id: str  # 'R1', 'R2', ...
@@ -42,12 +43,10 @@ class CandidateBox:
     score: float  # detector confidence rho in [0, 1]
     label: str
 
+
 class RegionDetector:
     def __init__(
-        self,
-        model_path: Optional[str] = None,
-        max_k: int = 5,
-        score_threshold: float = 0.25
+        self, model_path: Optional[str] = None, max_k: int = 5, score_threshold: float = 0.25
     ):
         self.max_k = max_k
         self.score_threshold = score_threshold

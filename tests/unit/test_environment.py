@@ -1,4 +1,5 @@
 """Initial environment and test harness verification test."""
+
 import sys
 
 
@@ -6,6 +7,7 @@ def test_python_version() -> None:
     """Asserts that the test runtime is Python 3.11."""
     assert sys.version_info.major == 3
     assert sys.version_info.minor == 11
+
 
 def test_package_imports() -> None:
     """Verifies that all core packages import cleanly."""

@@ -1,0 +1,4 @@
+patientId,x,y,width,height,Target
+patient_001,50.0,50.0,100.0,100.0,1
+patient_002,,,,,0
+patient_003,120.0,80.0,60.0,70.0,1

@@ -1,0 +1,4 @@
+image_id,rad_id,class_name,x_min,y_min,x_max,y_max
+patient_001,R1,Pleural effusion,40.0,40.0,160.0,160.0
+patient_001,R2,Pleural effusion,45.0,42.0,158.0,162.0
+patient_002,R1,No finding,,,,

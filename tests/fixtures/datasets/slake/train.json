@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "img_id": 1,
+    "img_name": "patient_001.png",
+    "question": "Is there lung consolidation?",
+    "answer": "yes",
+    "q_lang": "en",
+    "location": "chest",
+    "modality": "CXR",
+    "q_type": "Closed",
+    "base_type": "Visual",
+    "boxes": [[50, 50, 100, 100]],
+    "box_labels": ["consolidation"]
+  }
+]

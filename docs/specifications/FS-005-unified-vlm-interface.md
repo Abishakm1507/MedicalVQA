@@ -27,6 +27,7 @@ from abc import ABC, abstractmethod
 from typing import List
 from PIL import Image
 
+
 class VLMClient(ABC):
     @property
     @abstractmethod
@@ -40,7 +41,7 @@ class VLMClient(ABC):
         marked_image: Image.Image,
         question: str,
         temperature: float = 0.0,
-        max_tokens: int = 512
+        max_tokens: int = 512,
     ) -> str:
         """Generates a single greedy response string adhering to JSON schema."""
         pass
@@ -52,7 +53,7 @@ class VLMClient(ABC):
         question: str,
         n: int = 3,
         temperature: float = 0.7,
-        max_tokens: int = 512
+        max_tokens: int = 512,
     ) -> List[str]:
         """Generates N sampled response strings for self-consistency and entropy computation."""
         pass

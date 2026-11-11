@@ -24,6 +24,7 @@ from typing import List, Optional, Set
 from core.schemas import VLMClaim, VLMStructuredOutput
 from localization.detector import CandidateBox
 
+
 @dataclass
 class VerifiedClaim:
     claim: str
@@ -33,11 +34,10 @@ class VerifiedClaim:
     iou_with_ground_truth: Optional[float] = None
     is_supported: bool = True
 
+
 class ClaimVerifier:
     def verify_runtime_claims(
-        self,
-        structured_output: VLMStructuredOutput,
-        candidate_boxes: List[CandidateBox]
+        self, structured_output: VLMStructuredOutput, candidate_boxes: List[CandidateBox]
     ) -> List[VerifiedClaim]:
         """Filters out claims that fail to cite a valid region in R (or valid NONE token)."""
         pass
@@ -47,7 +47,7 @@ class ClaimVerifier:
         verified_claims: List[VerifiedClaim],
         candidate_boxes: List[CandidateBox],
         ground_truth_boxes: List[Tuple[float, float, float, float]],
-        iou_threshold: float = 0.5
+        iou_threshold: float = 0.5,
     ) -> List[VerifiedClaim]:
         """Computes IoU against ground truth and flags claims with IoU < 0.5 as unsupported."""
         pass

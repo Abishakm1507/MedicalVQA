@@ -26,14 +26,13 @@ from typing import List, Tuple
 from PIL import Image
 from localization.detector import CandidateBox
 
+
 class VisualMarkerEngine:
     def __init__(self, line_width: int = 3, font_size: int = 16):
         pass
 
     def annotate(
-        self,
-        image: Image.Image,
-        candidate_boxes: List[CandidateBox]
+        self, image: Image.Image, candidate_boxes: List[CandidateBox]
     ) -> Tuple[Image.Image, List[CandidateBox]]:
         """Renders Set-of-Mark visual overlays onto a fresh copy of the image."""
         pass

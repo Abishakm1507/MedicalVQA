@@ -1,0 +1,58 @@
+[
+  {
+    "id": 2,
+    "img_id": 1,
+    "img_name": "patient_001.png",
+    "question": "Where is the consolidation located?",
+    "answer": "mid-upper zone",
+    "q_lang": "en",
+    "location": "chest",
+    "modality": "CXR",
+    "q_type": "Open",
+    "base_type": "Visual",
+    "boxes": [[50, 50, 100, 100]],
+    "box_labels": ["consolidation"]
+  },
+  {
+    "id": 3,
+    "img_id": 2,
+    "img_name": "patient_002.png",
+    "question": "Is there any pneumothorax?",
+    "answer": "no",
+    "q_lang": "en",
+    "location": "chest",
+    "modality": "CXR",
+    "q_type": "Closed",
+    "base_type": "Visual",
+    "boxes": [],
+    "box_labels": []
+  },
+  {
+    "id": 4,
+    "img_id": 3,
+    "img_name": "brain_001.png",
+    "question": "Is the brain ventricle dilated?",
+    "answer": "no",
+    "q_lang": "en",
+    "location": "brain",
+    "modality": "MRI",
+    "q_type": "Closed",
+    "base_type": "Visual",
+    "boxes": [],
+    "box_labels": []
+  },
+  {
+    "id": 5,
+    "img_id": 1,
+    "img_name": "patient_001.png",
+    "question": "这幅图像显示病变吗？",
+    "answer": "是",
+    "q_lang": "zh",
+    "location": "chest",
+    "modality": "CXR",
+    "q_type": "Closed",
+    "base_type": "Visual",
+    "boxes": [],
+    "box_labels": []
+  }
+]

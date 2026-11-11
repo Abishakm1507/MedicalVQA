@@ -33,14 +33,21 @@
 from typing import List, Literal, Optional
 from pydantic import BaseModel, Field
 
+
 class VLMClaim(BaseModel):
     claim: str = Field(..., description="The clinical finding asserted by the model.")
-    region_id: str = Field(..., description="The region ID cited (e.g. 'R1', 'R2', or 'NONE' for absence).")
-    confidence: Literal["high", "medium", "low"] = Field("high", description="Self-reported confidence level.")
+    region_id: str = Field(
+        ..., description="The region ID cited (e.g. 'R1', 'R2', or 'NONE' for absence)."
+    )
+    confidence: Literal["high", "medium", "low"] = Field(
+        "high", description="Self-reported confidence level."
+    )
+
 
 class VLMStructuredOutput(BaseModel):
     answer: str = Field(..., description="Natural language answer to the clinical question.")
     findings: List[VLMClaim] = Field(default_factory=list, description="List of grounded claims.")
+
 
 class JSONValidator:
     @staticmethod
