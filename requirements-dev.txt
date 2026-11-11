@@ -1,0 +1,19 @@
+# Core lightweight framework & schemas (local dev & testing)
+fastapi>=0.110.0
+pydantic>=2.6.0
+uvicorn>=0.28.0
+python-multipart>=0.0.9
+
+# Scientific & image basics (lightweight CPU)
+numpy>=1.26.0,<2.0.0
+pillow>=10.2.0
+requests>=2.31.0
+
+# Quality Assurance, Linting & Type Checking
+pytest>=8.0.0
+pytest-asyncio>=0.23.0
+pytest-cov>=4.1.0
+ruff>=0.3.0
+mypy>=1.9.0
+bandit>=1.7.8
+pip-audit>=2.7.2
