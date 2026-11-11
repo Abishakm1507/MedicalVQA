@@ -2,14 +2,18 @@
 
 Reference: Section V-A, Table 1 of research paper.
 Filters English questions, parses masks and bounding boxes, and assigns evaluation tracks.
+Strictly sets patient_id=None as SLAKE does not publish clinical patient identifiers.
 """
 
 import json
+import logging
 from collections.abc import Generator
 from pathlib import Path
 
 from core.schemas import EvaluationTrack, GroundTruthRegion, MedicalVQASample
 from datasets.base import BaseDatasetLoader, normalize_bounding_box
+
+logger = logging.getLogger(__name__)
 
 
 class SlakeDatasetLoader(BaseDatasetLoader):
@@ -40,7 +44,18 @@ class SlakeDatasetLoader(BaseDatasetLoader):
         with open(split_file, encoding="utf-8") as f:
             raw_entries = json.load(f)
 
+        if not isinstance(raw_entries, list):
+            raise ValueError(
+                f"Malformed SLAKE split file {split_file}: expected list of entries, got {type(raw_entries)}."
+            )
+
         for entry in raw_entries:
+            if not isinstance(entry, dict):
+                logger.warning(
+                    "Skipping malformed non-dictionary entry in %s: %s", split_file, entry
+                )
+                continue
+
             # 1. Filter by language (Paper specifies English questions)
             q_lang = str(entry.get("q_lang", "")).lower()
             if self.language and q_lang != self.language:
@@ -50,8 +65,9 @@ class SlakeDatasetLoader(BaseDatasetLoader):
             organ = str(entry.get("location", "chest")).lower()
             modality = str(entry.get("modality", "CXR")).upper()
 
-            # 3. Resolve image file
+            # 3. Resolve image file and image identifier
             img_name = str(entry.get("img_name", ""))
+            img_id = str(entry.get("img_id", Path(img_name).stem))
             img_path = self._resolve_image_path(img_name)
             img_width, img_height = self._get_image_dimensions(img_path)
 
@@ -63,21 +79,27 @@ class SlakeDatasetLoader(BaseDatasetLoader):
             q_type = "closed" if raw_q_type in ("closed", "yes/no", "choice") else "open"
 
             # 6. Evaluation track compatibility
+            # Track B: Oracle Ground-Truth Bounding Boxes across ALL SLAKE modalities (Chest, Abdomen, Brain)
+            # Track C: Free-form answer accuracy baseline
             compatible_tracks = [
                 EvaluationTrack.TRACK_B_ORACLE_SLAKE,
                 EvaluationTrack.TRACK_C_ANSWER_ONLY,
             ]
-            if "chest" in organ or modality in ("CXR", "X-RAY", "CHEST X-RAY"):
+            # Track A: Predicted localization is ONLY compatible with Chest X-ray images
+            is_cxr = ("chest" in organ) and (modality in ("CXR", "X-RAY", "CHEST X-RAY"))
+            if is_cxr:
                 compatible_tracks.append(EvaluationTrack.TRACK_A_PREDICTED_CXR)
 
-            # 7. Patient identifier (SLAKE does not expose explicit patient IDs, use img_id as patient proxy)
-            patient_id = f"slake_case_{entry.get('img_id', 'unknown')}"
-            sample_id = f"slake_{split}_{entry.get('id', entry.get('img_id', '0'))}"
+            # 7. Patient identity: SLAKE does NOT publish clinical patient IDs.
+            # Explicitly set patient_id to None; do NOT treat img_id as patient_id!
+            patient_id = None
+            sample_id = f"slake_{split}_{entry.get('id', img_id)}"
 
             yield MedicalVQASample(
                 sample_id=sample_id,
                 dataset_name="slake",
                 split=split,
+                image_id=img_id,
                 patient_id=patient_id,
                 image_path=str(img_path),
                 modality=modality,
@@ -91,6 +113,7 @@ class SlakeDatasetLoader(BaseDatasetLoader):
                 metadata={
                     "original_id": entry.get("id"),
                     "img_id": entry.get("img_id"),
+                    "img_name": img_name,
                     "location": organ,
                     "base_type": entry.get("base_type", ""),
                     "triple": entry.get("triple", []),
@@ -120,16 +143,40 @@ class SlakeDatasetLoader(BaseDatasetLoader):
         return direct
 
     def _parse_regions(
-        self, entry: dict, img_width: int, img_height: int
+        self,
+        entry: dict,
+        img_width: int,
+        img_height: int,
     ) -> list[GroundTruthRegion]:
         """Extracts and normalizes ground truth bounding boxes."""
         regions: list[GroundTruthRegion] = []
         raw_boxes = entry.get("boxes", [])
         raw_labels = entry.get("box_labels", [])
 
+        if not isinstance(raw_boxes, list):
+            logger.warning("Malformed 'boxes' field in entry %s, expected list.", entry.get("id"))
+            return regions
+
         for idx, box in enumerate(raw_boxes):
-            label = raw_labels[idx] if idx < len(raw_labels) else "lesion"
-            norm_box = normalize_bounding_box(box, img_width, img_height, input_format="xywh")
+            label = (
+                raw_labels[idx]
+                if (isinstance(raw_labels, list) and idx < len(raw_labels))
+                else "lesion"
+            )
+            norm_box = normalize_bounding_box(
+                box,
+                img_width,
+                img_height,
+                input_format="xywh",
+                clip_out_of_bounds=False,
+            )
             if norm_box is not None:
-                regions.append(GroundTruthRegion(label=str(label), box_2d=norm_box))
+                regions.append(
+                    GroundTruthRegion(
+                        label=str(label),
+                        box_2d=norm_box,
+                    )
+                )
+            else:
+                logger.warning("Rejected invalid box %s in SLAKE entry %s", box, entry.get("id"))
         return regions

@@ -28,6 +28,10 @@ def test_slake_loader_loads_test_split() -> None:
     assert s1.question_type == "open"
     assert len(s1.ground_truth_regions) == 1
 
+    # CRITICAL: Verify patient identity is explicitly None (not img_id proxy)
+    assert s1.patient_id is None
+    assert s1.image_id is not None
+
     # Check normalized coordinate bounds
     region = s1.ground_truth_regions[0]
     assert region.label == "consolidation"
@@ -35,10 +39,10 @@ def test_slake_loader_loads_test_split() -> None:
     assert 0.0 <= ymin < ymax <= 1.0
     assert 0.0 <= xmin < xmax <= 1.0
 
-    # CXR sample should be compatible with both Track A and Track B
-    assert EvaluationTrack.TRACK_A_PREDICTED_CXR in s1.compatible_tracks
-    assert EvaluationTrack.TRACK_B_ORACLE_SLAKE in s1.compatible_tracks
-    assert EvaluationTrack.TRACK_C_ANSWER_ONLY in s1.compatible_tracks
+    # CXR sample should be compatible with Track A, Track B, and Track C
+    assert s1.is_compatible_with(EvaluationTrack.TRACK_A_PREDICTED_CXR)
+    assert s1.is_compatible_with(EvaluationTrack.TRACK_B_ORACLE_SLAKE)
+    assert s1.is_compatible_with(EvaluationTrack.TRACK_C_ANSWER_ONLY)
 
 
 def test_slake_loader_modality_track_separation() -> None:
@@ -48,10 +52,15 @@ def test_slake_loader_modality_track_separation() -> None:
     # Find the Brain MRI sample (id=4 in test.json)
     brain_sample = next(s for s in samples if s.organ == "brain")
     assert brain_sample.modality == "MRI"
+
     # Brain MRI must NOT be assigned to Track A (CXR predicted detector track)
-    assert EvaluationTrack.TRACK_A_PREDICTED_CXR not in brain_sample.compatible_tracks
-    # Must be present in Track B (Oracle GT boxes across all SLAKE)
-    assert EvaluationTrack.TRACK_B_ORACLE_SLAKE in brain_sample.compatible_tracks
+    assert not brain_sample.is_compatible_with(EvaluationTrack.TRACK_A_PREDICTED_CXR)
+    with pytest.raises(ValueError, match="incompatible with evaluation track"):
+        brain_sample.assert_track_compatibility(EvaluationTrack.TRACK_A_PREDICTED_CXR)
+
+    # Must be valid for Track B (Oracle GT boxes across all SLAKE) and Track C
+    assert brain_sample.is_compatible_with(EvaluationTrack.TRACK_B_ORACLE_SLAKE)
+    assert brain_sample.is_compatible_with(EvaluationTrack.TRACK_C_ANSWER_ONLY)
 
 
 def test_slake_loader_missing_split_file() -> None:
@@ -60,11 +69,21 @@ def test_slake_loader_missing_split_file() -> None:
         list(loader.stream_split("non_existent_split"))
 
 
-def test_base_loader_strict_image_exists_raises() -> None:
+def test_slake_loader_strict_image_exists_raises() -> None:
     loader = SlakeDatasetLoader(
         dataset_dir=SLAKE_DIR,
         images_dir=Path("completely_missing_images_folder"),
         strict_image_exists=True,
     )
     with pytest.raises(FileNotFoundError):
+        list(loader.stream_split("test"))
+
+
+def test_slake_loader_malformed_json(tmp_path: Path) -> None:
+    bad_json = tmp_path / "test.json"
+    with open(bad_json, "w", encoding="utf-8") as f:
+        f.write('{"not_a_list": true}')
+
+    loader = SlakeDatasetLoader(dataset_dir=tmp_path)
+    with pytest.raises(ValueError, match="expected list"):
         list(loader.stream_split("test"))

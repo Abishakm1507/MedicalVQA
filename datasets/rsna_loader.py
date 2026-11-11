@@ -2,16 +2,19 @@
 
 Reference: Section III-B, Section V-A, Table 1 of research paper.
 Parses chest radiographs with radiologist bounding boxes for lung opacity.
-Enforces patient-level split grouping.
+Accurately preserves official patientId as patient_id.
 """
 
 import csv
 import json
+import logging
 from collections.abc import Generator
 from pathlib import Path
 
 from core.schemas import EvaluationTrack, GroundTruthRegion, MedicalVQASample
 from datasets.base import BaseDatasetLoader, normalize_bounding_box
+
+logger = logging.getLogger(__name__)
 
 
 class RSNADatasetLoader(BaseDatasetLoader):
@@ -71,7 +74,10 @@ class RSNADatasetLoader(BaseDatasetLoader):
                 )
 
                 if pid not in patients:
-                    patients[pid] = {"boxes": [], "target": target}
+                    patients[pid] = {
+                        "boxes": [],
+                        "target": target,
+                    }
 
                 if target == 1 and row.get("x") and row.get("y"):
                     try:
@@ -80,8 +86,10 @@ class RSNADatasetLoader(BaseDatasetLoader):
                         w = float(row["width"])
                         h = float(row["height"])
                         patients[pid]["boxes"].append([x, y, w, h])
-                    except (ValueError, TypeError):
-                        pass
+                    except (ValueError, TypeError) as e:
+                        logger.warning(
+                            "Error parsing bounding box coordinates for patient %s: %s", pid, e
+                        )
 
         return patients
 
@@ -95,18 +103,33 @@ class RSNADatasetLoader(BaseDatasetLoader):
         gt_regions: list[GroundTruthRegion] = []
 
         for box in group["boxes"]:
-            norm_box = normalize_bounding_box(box, img_width, img_height, input_format="xywh")
+            norm_box = normalize_bounding_box(
+                box,
+                img_width,
+                img_height,
+                input_format="xywh",
+                clip_out_of_bounds=False,
+            )
             if norm_box is not None:
-                gt_regions.append(GroundTruthRegion(label="lung opacity", box_2d=norm_box))
+                gt_regions.append(
+                    GroundTruthRegion(
+                        label="lung opacity",
+                        box_2d=norm_box,
+                    )
+                )
+            else:
+                logger.warning("Rejected invalid box %s for RSNA patient %s", box, patient_id)
 
         has_opacity = len(gt_regions) > 0
         answer = "yes" if has_opacity else "no"
 
+        # In RSNA, patientId is an official clinical patient identifier
         return MedicalVQASample(
             sample_id=f"rsna_{patient_id}",
             dataset_name="rsna",
             split=split,
-            patient_id=patient_id,
+            image_id=patient_id,
+            patient_id=patient_id,  # Valid clinical patient identity
             image_path=str(img_path),
             modality="CXR",
             organ="chest",
@@ -131,7 +154,13 @@ class RSNADatasetLoader(BaseDatasetLoader):
 
         gt_regions = []
         for box in entry.get("boxes", []):
-            norm_box = normalize_bounding_box(box, img_width, img_height, input_format="xywh")
+            norm_box = normalize_bounding_box(
+                box,
+                img_width,
+                img_height,
+                input_format="xywh",
+                clip_out_of_bounds=False,
+            )
             if norm_box:
                 gt_regions.append(GroundTruthRegion(label="lung opacity", box_2d=norm_box))
 
@@ -139,6 +168,7 @@ class RSNADatasetLoader(BaseDatasetLoader):
             sample_id=f"rsna_{split}_{pid}",
             dataset_name="rsna",
             split=split,
+            image_id=pid,
             patient_id=pid,
             image_path=str(img_path),
             modality="CXR",

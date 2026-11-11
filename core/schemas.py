@@ -57,6 +57,7 @@ class MedicalVQASample:
     sample_id: str
     dataset_name: str  # 'slake', 'vqarad', 'rsna', 'vindr'
     split: str  # 'train', 'validate', 'test'
+    image_id: str  # Image-level identifier (e.g. 'source.jpg', 'patient_001.png')
     image_path: str
     modality: str  # e.g., 'CXR', 'CT', 'MRI'
     organ: str  # e.g., 'chest', 'abdomen', 'brain', 'head'
@@ -67,9 +68,22 @@ class MedicalVQASample:
     has_ground_truth_regions: bool = (
         True  # False for datasets without region annotations (e.g. VQA-RAD)
     )
-    patient_id: str | None = None
+    patient_id: str | None = None  # None if dataset does not provide clinical patient identity
     compatible_tracks: list[EvaluationTrack] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
+
+    def is_compatible_with(self, track: EvaluationTrack) -> bool:
+        """Checks if this sample is scientifically compatible with an evaluation track."""
+        return track in self.compatible_tracks
+
+    def assert_track_compatibility(self, track: EvaluationTrack) -> None:
+        """Raises ValueError if sample is incompatible with the requested track."""
+        if not self.is_compatible_with(track):
+            raise ValueError(
+                f"Sample {self.sample_id} ({self.dataset_name}, modality={self.modality}, organ={self.organ}) "
+                f"is incompatible with evaluation track '{track.value}'. "
+                f"Compatible tracks: {[t.value for t in self.compatible_tracks]}"
+            )
 
 
 # ============================================================================
