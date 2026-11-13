@@ -35,12 +35,44 @@ dev = [
     "pip-audit>=2.7.2"
 ]
 ml = [
+    # NOTE: install CPU-only PyTorch first to avoid downloading CUDA binaries unnecessarily:
+    #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+    # For CUDA (RTX 2050 / cu124):
+    #   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu124
     "torch>=2.2.0",
     "torchvision>=0.17.0",
     "transformers>=4.40.0",
     "accelerate>=0.29.0",
     "bitsandbytes>=0.43.0",
-    "ultralytics>=8.1.0",
+    # ------------------------------------------------------------------
+    # segment-anything (MedSAM-vendored implementation)
+    # ------------------------------------------------------------------
+    # NOT on PyPI. Install from the official MedSAM repository:
+    #
+    #   Official MedSAM repo: https://github.com/bowang-lab/MedSAM
+    #   Vendored package:     <medsam-repo>/segment_anything/
+    #   License:              Apache-2.0 (MedSAM LICENSE)
+    #   Compatible with:      this project's MIT license (Apache-2.0 is permissive)
+    #
+    # Install the vendored segment_anything package directly from the MedSAM repo:
+    #   pip install <path-to-cloned-MedSAM-repo>/segment_anything
+    #   # e.g., for the local clone used in development:
+    #   pip install C:\Users\yuvar\AppData\Local\Temp\medsam_repo\segment_anything
+    #
+    # Alternatively, add the MedSAM repo's segment_anything directory to PYTHONPATH.
+    #
+    # Do NOT substitute facebookresearch/segment-anything: the MedSAM-vendored
+    # implementation is required for MedSAM checkpoint compatibility.
+    #
+    # The MedSAM setup.py pulls in monai, jupyterlab, and other training/GUI
+    # dependencies — those are NOT required for inference and are intentionally
+    # excluded here. Only the segment_anything package is needed.
+    #
+    # Installed versions (this environment):
+    #   torch         2.6.0+cu124  (CUDA available: RTX 2050)
+    #   torchvision   0.21.0+cu124
+    #   segment_anything  MedSAM-vendored (identical to repo copy)
+    # ------------------------------------------------------------------
     "scipy>=1.12.0",
     "scikit-learn>=1.4.0",
     "albumentations>=1.4.0",
@@ -77,3 +109,4 @@ testpaths = ["tests"]
 pythonpath = ["."]
 asyncio_mode = "auto"
 asyncio_default_fixture_loop_scope = "function"
+
