@@ -7,6 +7,8 @@ optional dependencies are imported eagerly; symbols that need the heavy stack ar
 accessed via attribute access.
 """
 
+from typing import Any
+
 # Light‑weight imports – always safe
 from localization.config import MAX_ALLOWED_REGIONS, DetectorConfig
 
@@ -33,7 +35,7 @@ __all__ = [
 ]
 
 # Lazy import helper for heavy modules
-def __getattr__(name):
+def __getattr__(name: str) -> Any:
     if name in ("BaseRegionDetector", "MockRegionDetector"):
         from .detector import BaseRegionDetector, MockRegionDetector
         globals().update({"BaseRegionDetector": BaseRegionDetector, "MockRegionDetector": MockRegionDetector})

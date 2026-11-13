@@ -9,7 +9,7 @@ from abc import ABC, abstractmethod
 from collections.abc import Generator, Iterable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Literal
+from typing import Literal, cast
 
 from PIL import Image
 
@@ -235,7 +235,7 @@ class BaseDatasetLoader(ABC):
         if image_path.exists():
             try:
                 with Image.open(image_path) as img:
-                    return img.size  # (width, height)
+                    return cast(tuple[int, int], img.size)
             except Exception as e:
                 logger.warning("Could not read image dimensions from %s: %s", image_path, e)
         elif self.strict_image_exists:

@@ -72,7 +72,7 @@ class SlakeDatasetLoader(BaseDatasetLoader):
             img_width, img_height = self._get_image_dimensions(img_path)
 
             # 4. Parse bounding box annotations (SLAKE format: [x, y, w, h])
-            gt_regions = self._parse_regions(entry, img_width, img_height)
+            gt_regions = self._parse_regions(entry, img_width, img_height, img_name)
 
             # 5. Question type classification
             raw_q_type = str(entry.get("q_type", "open")).strip().lower()
@@ -93,7 +93,7 @@ class SlakeDatasetLoader(BaseDatasetLoader):
             # 7. Patient identity: SLAKE does NOT publish clinical patient IDs.
             # Explicitly set patient_id to None; do NOT treat img_id as patient_id!
             patient_id = None
-            sample_id = f"slake_{split}_{entry.get('id', img_id)}"
+            sample_id = f"slake_{split}_{entry.get('qid', entry.get('id', img_id))}"
 
             yield MedicalVQASample(
                 sample_id=sample_id,
@@ -147,36 +147,85 @@ class SlakeDatasetLoader(BaseDatasetLoader):
         entry: dict,
         img_width: int,
         img_height: int,
+        img_name: str,
     ) -> list[GroundTruthRegion]:
-        """Extracts and normalizes ground truth bounding boxes."""
+        """Extracts and normalizes ground truth bounding boxes.
+
+        Supports two SLAKE annotation formats:
+        1. Inline ``boxes``/``box_labels`` fields in the split entry (fixture format).
+        2. Per-image ``detection.json`` sidecar file (official SLAKE format), where
+           each entry maps a disease name to ``[x, y, w, h]`` pixels.
+        """
         regions: list[GroundTruthRegion] = []
+
+        # Format 1: inline boxes/box_labels (fixture format)
         raw_boxes = entry.get("boxes", [])
         raw_labels = entry.get("box_labels", [])
 
-        if not isinstance(raw_boxes, list):
-            logger.warning("Malformed 'boxes' field in entry %s, expected list.", entry.get("id"))
+        if isinstance(raw_boxes, list) and len(raw_boxes) > 0:
+            for idx, box in enumerate(raw_boxes):
+                label = (
+                    raw_labels[idx]
+                    if (isinstance(raw_labels, list) and idx < len(raw_labels))
+                    else "lesion"
+                )
+                norm_box = normalize_bounding_box(
+                    box,
+                    img_width,
+                    img_height,
+                    input_format="xywh",
+                    clip_out_of_bounds=False,
+                )
+                if norm_box is not None:
+                    regions.append(
+                        GroundTruthRegion(
+                            label=str(label),
+                            box_2d=norm_box,
+                        )
+                    )
+                else:
+                    logger.warning(
+                        "Rejected invalid box %s in SLAKE entry %s", box, entry.get("id")
+                    )
             return regions
 
-        for idx, box in enumerate(raw_boxes):
-            label = (
-                raw_labels[idx]
-                if (isinstance(raw_labels, list) and idx < len(raw_labels))
-                else "lesion"
-            )
-            norm_box = normalize_bounding_box(
-                box,
-                img_width,
-                img_height,
-                input_format="xywh",
-                clip_out_of_bounds=False,
-            )
-            if norm_box is not None:
-                regions.append(
-                    GroundTruthRegion(
-                        label=str(label),
-                        box_2d=norm_box,
-                    )
+        # Format 2: per-image detection.json sidecar (official SLAKE format)
+        det_path = self.images_dir / Path(img_name).parent / "detection.json"
+        if det_path.exists():
+            try:
+                with open(det_path, encoding="utf-8") as f:
+                    det_data = json.load(f)
+            except (json.JSONDecodeError, OSError) as exc:
+                logger.warning(
+                    "Malformed detection.json at %s: %s", det_path, exc
                 )
-            else:
-                logger.warning("Rejected invalid box %s in SLAKE entry %s", box, entry.get("id"))
+                return regions
+
+            if isinstance(det_data, list):
+                for det_entry in det_data:
+                    if not isinstance(det_entry, dict):
+                        continue
+                    for label, bbox in det_entry.items():
+                        if not isinstance(bbox, (list, tuple)) or len(bbox) != 4:
+                            logger.warning(
+                                "Invalid bbox for %s in %s: %s", label, det_path, bbox
+                            )
+                            continue
+                        x, y, w, h = bbox
+                        # SLAKE detection.json: [x, y, w, h] → project convention (ymin, xmin, ymax, xmax)
+                        ymin, xmin, ymax, xmax = y, x, y + h, x + w
+                        norm_box = normalize_bounding_box(
+                            [ymin, xmin, ymax, xmax],
+                            img_width,
+                            img_height,
+                            input_format="xyxy",
+                            clip_out_of_bounds=False,
+                        )
+                        if norm_box is not None:
+                            regions.append(
+                                GroundTruthRegion(
+                                    label=str(label),
+                                    box_2d=norm_box,
+                                )
+                            )
         return regions

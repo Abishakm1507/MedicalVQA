@@ -464,7 +464,7 @@ class MedSAMRegionSegmenter(BaseRegionSegmenter):
         """Compute MD5 checksum of the checkpoint file."""
         import hashlib
 
-        md5 = hashlib.md5()
+        md5 = hashlib.md5(usedforsecurity=False)
         with open(self.checkpoint_path, "rb") as f:
             for chunk in iter(lambda: f.read(8192), b""):
                 md5.update(chunk)

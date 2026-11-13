@@ -83,7 +83,7 @@ class FasterRCNNRegionDetector(BaseRegionDetector):
             )
 
             logger.info("Loading medical weights from checkpoint: %s", ckpt_path)
-            state_dict: dict[str, Any] = torch.load(ckpt_path, map_location=self.device)
+            state_dict: dict[str, Any] = torch.load(ckpt_path, map_location=self.device)  # nosec B614
             if isinstance(state_dict, dict) and "model" in state_dict:
                 state_dict = state_dict["model"]
             model.load_state_dict(state_dict)
