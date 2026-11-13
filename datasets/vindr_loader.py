@@ -2,16 +2,20 @@
 
 Reference: Section III-B, Section V-A, Table 1 of research paper.
 Parses multi-radiologist thoracic bounding boxes (xyxy format) from annotations CSV.
-Respects PhysioNet credentialed access and open subsplit distribution terms.
+Respects PhysioNet credentialed access terms. Explicitly sets patient_id=None as open
+annotations identify DICOM images by MD5 hash rather than clinical patient identity.
 """
 
 import csv
 import json
+import logging
 from collections.abc import Generator
 from pathlib import Path
 
 from core.schemas import EvaluationTrack, GroundTruthRegion, MedicalVQASample
 from datasets.base import BaseDatasetLoader, normalize_bounding_box
+
+logger = logging.getLogger(__name__)
 
 # Critical thoracic pathologies identified in paper and VinDr-CXR
 VINDR_PATHOLOGY_CLASSES: set[str] = {
@@ -99,7 +103,10 @@ class VinDrCXRDatasetLoader(BaseDatasetLoader):
                 rad_id = row.get("rad_id", "R1")
 
                 if img_id not in images:
-                    images[img_id] = {"findings": [], "rad_ids": set()}
+                    images[img_id] = {
+                        "findings": [],
+                        "rad_ids": set(),
+                    }
 
                 images[img_id]["rad_ids"].add(rad_id)
 
@@ -116,8 +123,10 @@ class VinDrCXRDatasetLoader(BaseDatasetLoader):
                                 "rad_id": rad_id,
                             }
                         )
-                    except (ValueError, TypeError):
-                        pass
+                    except (ValueError, TypeError) as e:
+                        logger.warning(
+                            "Error parsing coordinates in VinDr row for %s: %s", img_id, e
+                        )
 
         return images
 
@@ -138,20 +147,38 @@ class VinDrCXRDatasetLoader(BaseDatasetLoader):
             if self.target_pathology is None or self.target_pathology in c_name:
                 matching_findings.append(finding)
                 norm_box = normalize_bounding_box(
-                    finding["box_xyxy"], img_width, img_height, input_format="xyxy"
+                    finding["box_xyxy"],
+                    img_width,
+                    img_height,
+                    input_format="xyxy",
+                    clip_out_of_bounds=False,
                 )
                 if norm_box is not None:
-                    gt_regions.append(GroundTruthRegion(label=finding["class"], box_2d=norm_box))
+                    gt_regions.append(
+                        GroundTruthRegion(
+                            label=finding["class"],
+                            box_2d=norm_box,
+                        )
+                    )
+                else:
+                    logger.warning(
+                        "Rejected invalid box %s for VinDr image %s", finding["box_xyxy"], image_id
+                    )
 
         has_target = len(matching_findings) > 0
         answer = "yes" if has_target else "no"
         question = f"Is there {target_finding} in this chest radiograph?"
 
+        # VinDr image_id is an MD5 hash of the DICOM; clinical patient IDs are not in public annotations.
+        # Explicitly set patient_id = None; do NOT invent substring proxies!
+        patient_id = None
+
         return MedicalVQASample(
             sample_id=f"vindr_{image_id}",
             dataset_name="vindr",
             split=split,
-            patient_id=f"vindr_patient_{image_id[:12]}",  # image prefix proxy for patient
+            image_id=image_id,
+            patient_id=patient_id,  # Explicitly None
             image_path=str(img_path),
             modality="CXR",
             organ="chest",
@@ -177,7 +204,11 @@ class VinDrCXRDatasetLoader(BaseDatasetLoader):
         gt_regions = []
         for f in entry.get("findings", []):
             norm_box = normalize_bounding_box(
-                f["box_xyxy"], img_width, img_height, input_format="xyxy"
+                f["box_xyxy"],
+                img_width,
+                img_height,
+                input_format="xyxy",
+                clip_out_of_bounds=False,
             )
             if norm_box:
                 gt_regions.append(
@@ -188,7 +219,8 @@ class VinDrCXRDatasetLoader(BaseDatasetLoader):
             sample_id=f"vindr_{split}_{img_id}",
             dataset_name="vindr",
             split=split,
-            patient_id=entry.get("patient_id", f"vindr_{img_id[:12]}"),
+            image_id=img_id,
+            patient_id=None,
             image_path=str(img_path),
             modality="CXR",
             organ="chest",

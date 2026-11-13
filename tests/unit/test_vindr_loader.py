@@ -25,6 +25,10 @@ def test_vindr_loader_parses_annotations() -> None:
     assert len(p1.ground_truth_regions) == 2
     assert p1.ground_truth_regions[0].label == "Pleural effusion"
 
+    # CRITICAL: Verify patient_id is explicitly None (MD5 hash is not patient ID)
+    assert p1.patient_id is None
+    assert p1.image_id == "patient_001"
+
     # Verify normalized box bounds
     ymin, xmin, ymax, xmax = p1.ground_truth_regions[0].box_2d
     assert 0.0 <= ymin < ymax <= 1.0
@@ -35,7 +39,8 @@ def test_vindr_loader_parses_annotations() -> None:
     assert p2.answer == "no"
     assert len(p2.ground_truth_regions) == 0
 
-    assert EvaluationTrack.TRACK_A_PREDICTED_CXR in p1.compatible_tracks
+    assert p1.is_compatible_with(EvaluationTrack.TRACK_A_PREDICTED_CXR)
+    assert not p1.is_compatible_with(EvaluationTrack.TRACK_B_ORACLE_SLAKE)
 
 
 def test_vindr_loader_missing_csv() -> None:
@@ -50,7 +55,8 @@ def test_vindr_loader_loads_pre_split_json() -> None:
     samples = loader.load_split("test")
     assert len(samples) == 1
     sample = samples[0]
-    assert sample.patient_id == "vindr_pat_001"
+    assert sample.patient_id is None
+    assert sample.image_id == "patient_001"
     assert sample.answer == "yes"
     assert len(sample.ground_truth_regions) == 1
     assert sample.metadata.get("source") == "pre_split_json"
