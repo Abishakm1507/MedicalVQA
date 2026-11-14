@@ -1,0 +1,25 @@
+QID: 12384
+SAMPLE_ID: slake_test_12384
+IMAGE_ID: 344
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab344\source.jpg
+IMAGE_SIZE: (1024, 1024)
+MODALITY: X-RAY
+ANSWER_TYPE: OPEN
+QUESTION: What imaging modality was used?
+GROUND_TRUTH: X-Ray
+RAW_RESPONSE: {
+  "answer": "X-ray",
+  "findings": [
+    {
+      "claim": "X-ray",
+      "region_id": "chest",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+PARSED_ANSWER: X-ray
+CORRECT: True
+INFERENCE_TIME_S: 12.3349
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 12.2978, "total_duration_s": 10.1908, "load_duration_s": 0.0476, "prompt_eval_count": 1510, "eval_count": 53, "eval_duration_s": 5.0958, "done": true}

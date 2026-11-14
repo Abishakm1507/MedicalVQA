@@ -1,0 +1,17 @@
+{
+  "qid": 12073,
+  "img_id": 185,
+  "img_name": "xmlab185/source.jpg",
+  "modality": "X-Ray",
+  "answer_type": "CLOSED",
+  "question": "Are there abnormalities in this image?",
+  "ground_truth_answer": "Yes",
+  "raw_response": "```json\n{\"answer\": \"Yes\"}\n```",
+  "parsed_answer": "Yes",
+  "normalized_prediction": "yes",
+  "normalized_ground_truth": "yes",
+  "correct": true,
+  "inference_time_s": 5.0325,
+  "status": "success",
+  "error": null
+}

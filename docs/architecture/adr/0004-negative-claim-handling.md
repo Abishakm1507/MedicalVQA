@@ -1,7 +1,20 @@
 # ADR 0004: Negative and Absence Claims Policy Formulation
 
 ## Status
-Proposed / Pending User Decision (Unresolved Research Question from Paper Section VI-B)
+Accepted (Option 3 — Two-Phase Gated Answering)
+
+## Decision Recorded (2026-11-14)
+The user has explicitly approved **Option 3** for negative/absence claims:
+
+1. Negative/absence claims are preserved as valid answer claims in structured outputs.
+2. Their correctness is evaluated through answer-level ground-truth comparison in the evaluation layer, not through positive-region grounding.
+3. Negative/absence claims are excluded from positive-region grounding metrics and positive-region verification denominators.
+4. No artificial localization confidence ($\rho$) is assigned to negative/absence claims.
+5. An empty detector output ($R = \emptyset$) is never interpreted as proof of clinical absence.
+6. An empty region collection is never converted into a verified negative finding.
+7. Negative claims are preserved in structured outputs even when no candidate regions are available.
+
+Rationale: An empty detector output does not establish that a medical finding is absent. The system must not interpret missing detections as proof of clinical absence.
 
 ## Context
 Section VI-B (*Limitations*) of the research paper explicitly highlights:
@@ -48,4 +61,4 @@ Section VI-B (*Limitations*) of the research paper explicitly highlights:
 ---
 
 ## Current Working Policy
-Until user approval is granted, this decision remains **OPEN**. Any benchmark results for negative claims will be reported separately from positive localized claims.
+**Accepted — Option 3.** Negative/absence claims are evaluated through answer-level correctness, excluded from positive-region grounding metrics and denominators, and assigned no artificial localization confidence. Empty detector output is never interpreted as proof of absence. Benchmark results for negative claims are reported separately from positive localized claims.

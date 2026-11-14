@@ -1,0 +1,27 @@
+QID: 12344
+SAMPLE_ID: slake_test_12344
+IMAGE_ID: 320
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab320\source.jpg
+IMAGE_SIZE: (1024, 1024)
+MODALITY: X-RAY
+ANSWER_TYPE: OPEN
+QUESTION: Which organs appear in pairs?
+GROUND_TRUTH: Lung
+RAW_RESPONSE: ```json
+{
+  "answer": "lungs",
+  "findings": [
+    {
+      "claim": "lungs",
+      "region_id": "lungs",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: lungs
+CORRECT: False
+INFERENCE_TIME_S: 12.6581
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 12.5658, "total_duration_s": 10.4817, "load_duration_s": 0.0407, "prompt_eval_count": 1509, "eval_count": 58, "eval_duration_s": 5.4967, "done": true}

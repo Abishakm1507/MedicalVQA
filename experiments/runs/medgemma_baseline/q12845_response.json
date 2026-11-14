@@ -1,0 +1,17 @@
+{
+  "qid": 12845,
+  "img_id": 561,
+  "img_name": "xmlab561/source.jpg",
+  "modality": "CT",
+  "answer_type": "CLOSED",
+  "question": "Are there any organs used for breathing in this image?",
+  "ground_truth_answer": "No",
+  "raw_response": "```json\n{\"answer\": \"No\"}\n```",
+  "parsed_answer": "No",
+  "normalized_prediction": "no",
+  "normalized_ground_truth": "no",
+  "correct": true,
+  "inference_time_s": 5.3429,
+  "status": "success",
+  "error": null
+}

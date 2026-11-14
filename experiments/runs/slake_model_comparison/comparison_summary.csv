@@ -1,0 +1,12 @@
+Metric,Qwen2.5-VL-3B,MedGemma-4B
+Total samples,10,10
+Overall accuracy,0.6,0.7
+OPEN accuracy,0.4,0.4
+CLOSED accuracy,0.8,1.0
+Correct predictions,6,7
+Incorrect predictions,4,3
+Failed predictions,0,0
+Missing predictions,0,0
+Average inference time (s),15.9144,5.3056
+Median inference time (s),12.5907,5.3033
+Total inference time (s),159.1436,53.0565

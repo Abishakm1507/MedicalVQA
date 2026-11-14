@@ -1,0 +1,78 @@
+{
+  "experiment": "FS-004 Qwen2.5-VL-3B vs MedGemma-4B SLAKE baseline comparison",
+  "qwen_run_dir": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\slake_baseline_ollama",
+  "medgemma_run_dir": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\medgemma_baseline",
+  "consistency_verification": {
+    "manifest_samples": 10,
+    "qwen_samples_on_disk": 10,
+    "medgemma_samples_on_disk": 10,
+    "sample_ids_match_manifest": true,
+    "questions_match_manifest": true,
+    "ground_truth_matches_manifest": true,
+    "open_closed_consistent": true,
+    "discrepancies": [],
+    "medgemma_empty_responses": [],
+    "medgemma_missing_files": [],
+    "valid_paired_experiment": true
+  },
+  "qwen": {
+    "total_samples": 10,
+    "correct": 6,
+    "incorrect": 4,
+    "failed": 0,
+    "missing": 0,
+    "accuracy": 0.6,
+    "open_accuracy": 0.4,
+    "open_correct": 2,
+    "open_total": 5,
+    "closed_accuracy": 0.8,
+    "closed_correct": 4,
+    "closed_total": 5,
+    "inference_time": {
+      "count": 10,
+      "mean_s": 15.9144,
+      "median_s": 12.5907,
+      "total_s": 159.1436
+    }
+  },
+  "medgemma": {
+    "total_samples": 10,
+    "correct": 7,
+    "incorrect": 3,
+    "failed": 0,
+    "missing": 0,
+    "accuracy": 0.7,
+    "open_accuracy": 0.4,
+    "open_correct": 2,
+    "open_total": 5,
+    "closed_accuracy": 1.0,
+    "closed_correct": 5,
+    "closed_total": 5,
+    "inference_time": {
+      "count": 10,
+      "mean_s": 5.3056,
+      "median_s": 5.3033,
+      "total_s": 53.0565
+    }
+  },
+  "paired": {
+    "both_correct": [
+      11981,
+      12073,
+      12111,
+      12384,
+      12914,
+      12919
+    ],
+    "both_incorrect": [
+      12129,
+      12312,
+      12344
+    ],
+    "qwen_only_correct": [],
+    "medgemma_only_correct": [
+      12845
+    ],
+    "both_failed_or_missing": []
+  }
+}

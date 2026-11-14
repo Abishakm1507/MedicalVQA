@@ -85,8 +85,6 @@ models/checkpoints/*
 !models/checkpoints/.gitkeep
 models/weights/*
 !models/weights/.gitkeep
-experiments/runs/*
-!experiments/runs/.gitkeep
 
 # MLflow
 mlruns/

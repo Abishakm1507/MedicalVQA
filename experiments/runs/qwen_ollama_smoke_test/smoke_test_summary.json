@@ -1,0 +1,102 @@
+{
+  "ollama_version": "0.40.16",
+  "model_tag": "qwen2.5vl:3b",
+  "model_digest": null,
+  "model_size_bytes": null,
+  "quantization": "Q4_K_M",
+  "parameter_size": "3.8B",
+  "capabilities": [
+    "completion",
+    "vision"
+  ],
+  "num_samples": 3,
+  "results": [
+    {
+      "qid": 11934,
+      "sample_id": "slake_test_11934",
+      "image_id": "102",
+      "image_path": "D:\\Abi\\New folder\\MedicalVQA\\data\\SLAKE\\imgs\\xmlab102\\source.jpg",
+      "image_size": [
+        512,
+        512
+      ],
+      "modality": "CT",
+      "answer_type": "OPEN",
+      "question": "What modality is used to take this image?",
+      "ground_truth_answer": "CT",
+      "raw_response": "{\n  \"answer\": \"CT\",\n  \"findings\": [\n    {\n      \"claim\": \"CT\",\n      \"region_id\": \"none\",\n      \"status\": \"present\",\n      \"confidence\": \"high\"\n    }\n  ]\n}",
+      "parsed_answer": "{\n  \"answer\": \"CT\",\n  \"findings\": [\n    {\n      \"claim\": \"CT\",\n      \"region_id\": \"none\",\n      \"status\": \"present\",\n      \"confidence\": \"high\"\n    }\n  ]\n}",
+      "inference_time_s": 43.584,
+      "error": null,
+      "metadata": {
+        "model": "qwen2.5vl:3b",
+        "host": "http://localhost:11434",
+        "wall_time_s": 43.0616,
+        "total_duration_s": 40.9388,
+        "load_duration_s": 28.3906,
+        "prompt_eval_count": 1168,
+        "eval_count": 51,
+        "eval_duration_s": 8.054,
+        "done": true
+      }
+    },
+    {
+      "qid": 11938,
+      "sample_id": "slake_test_11938",
+      "image_id": "102",
+      "image_path": "D:\\Abi\\New folder\\MedicalVQA\\data\\SLAKE\\imgs\\xmlab102\\source.jpg",
+      "image_size": [
+        512,
+        512
+      ],
+      "modality": "CT",
+      "answer_type": "CLOSED",
+      "question": "Does the picture contain liver?",
+      "ground_truth_answer": "No",
+      "raw_response": "```json\n{\n  \"answer\": \"No\",\n  \"findings\": [\n    {\n      \"claim\": \"Liver\",\n      \"region_id\": \"liver\",\n      \"status\": \"absent\",\n      \"confidence\": \"high\"\n    }\n  ]\n}\n```",
+      "parsed_answer": "```json\n{\n  \"answer\": \"No\",\n  \"findings\": [\n    {\n      \"claim\": \"Liver\",\n      \"region_id\": \"liver\",\n      \"status\": \"absent\",\n      \"confidence\": \"high\"\n    }\n  ]\n}\n```",
+      "inference_time_s": 12.7665,
+      "error": null,
+      "metadata": {
+        "model": "qwen2.5vl:3b",
+        "host": "http://localhost:11434",
+        "wall_time_s": 12.7623,
+        "total_duration_s": 10.582,
+        "load_duration_s": 0.0334,
+        "prompt_eval_count": 1164,
+        "eval_count": 57,
+        "eval_duration_s": 9.5225,
+        "done": true
+      }
+    },
+    {
+      "qid": 11965,
+      "sample_id": "slake_test_11965",
+      "image_id": "124",
+      "image_path": "D:\\Abi\\New folder\\MedicalVQA\\data\\SLAKE\\imgs\\xmlab124\\source.jpg",
+      "image_size": [
+        1024,
+        1024
+      ],
+      "modality": "X-RAY",
+      "answer_type": "OPEN",
+      "question": "What modality is used to take this image?",
+      "ground_truth_answer": "X-Ray",
+      "raw_response": "{\n  \"answer\": \"X-ray\",\n  \"findings\": [\n    {\n      \"claim\": \"X-ray\",\n      \"region_id\": \"chest\",\n      \"status\": \"present\",\n      \"confidence\": \"high\"\n    }\n  ]\n}",
+      "parsed_answer": "{\n  \"answer\": \"X-ray\",\n  \"findings\": [\n    {\n      \"claim\": \"X-ray\",\n      \"region_id\": \"chest\",\n      \"status\": \"present\",\n      \"confidence\": \"high\"\n    }\n  ]\n}",
+      "inference_time_s": 19.727,
+      "error": null,
+      "metadata": {
+        "model": "qwen2.5vl:3b",
+        "host": "http://localhost:11434",
+        "wall_time_s": 19.7162,
+        "total_duration_s": 17.648,
+        "load_duration_s": 0.02,
+        "prompt_eval_count": 1513,
+        "eval_count": 53,
+        "eval_duration_s": 11.8835,
+        "done": true
+      }
+    }
+  ]
+}

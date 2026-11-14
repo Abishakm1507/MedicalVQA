@@ -1,0 +1,17 @@
+{
+  "qid": 12344,
+  "img_id": 320,
+  "img_name": "xmlab320/source.jpg",
+  "modality": "X-Ray",
+  "answer_type": "OPEN",
+  "question": "Which organs appear in pairs?",
+  "ground_truth_answer": "Lung",
+  "raw_response": "{\"answer\": \"Lungs\"}",
+  "parsed_answer": "Lungs",
+  "normalized_prediction": "lungs",
+  "normalized_ground_truth": "lung",
+  "correct": false,
+  "inference_time_s": 5.1684,
+  "status": "success",
+  "error": null
+}

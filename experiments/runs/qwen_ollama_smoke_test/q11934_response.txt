@@ -1,0 +1,26 @@
+QUESTION: What modality is used to take this image?
+GROUND_TRUTH: CT
+RAW_RESPONSE: {
+  "answer": "CT",
+  "findings": [
+    {
+      "claim": "CT",
+      "region_id": "none",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+PARSED: {
+  "answer": "CT",
+  "findings": [
+    {
+      "claim": "CT",
+      "region_id": "none",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+INFERENCE_TIME_S: 43.5840
+ERROR: None

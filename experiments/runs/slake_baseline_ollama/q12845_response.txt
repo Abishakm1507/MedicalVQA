@@ -1,0 +1,27 @@
+QID: 12845
+SAMPLE_ID: slake_test_12845
+IMAGE_ID: 561
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab561\source.jpg
+IMAGE_SIZE: (512, 512)
+MODALITY: CT
+ANSWER_TYPE: CLOSED
+QUESTION: Are there any organs used for breathing in this image?
+GROUND_TRUTH: No
+RAW_RESPONSE: ```json
+{
+  "answer": "yes",
+  "findings": [
+    {
+      "claim": "lungs",
+      "region_id": "lungs",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: yes
+CORRECT: False
+INFERENCE_TIME_S: 10.7909
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 10.7793, "total_duration_s": 8.6949, "load_duration_s": 0.0381, "prompt_eval_count": 1169, "eval_count": 57, "eval_duration_s": 5.4594, "done": true}

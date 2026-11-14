@@ -1,0 +1,27 @@
+QID: 11981
+SAMPLE_ID: slake_test_11981
+IMAGE_ID: 130
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab130\source.jpg
+IMAGE_SIZE: (1024, 1024)
+MODALITY: X-RAY
+ANSWER_TYPE: OPEN
+QUESTION: Which part of the body does this image belong to?
+GROUND_TRUTH: Chest
+RAW_RESPONSE: ```json
+{
+  "answer": "chest",
+  "findings": [
+    {
+      "claim": "chest",
+      "region_id": "chest",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: chest
+CORRECT: True
+INFERENCE_TIME_S: 42.1188
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 42.0741, "total_duration_s": 38.507, "load_duration_s": 26.6013, "prompt_eval_count": 1514, "eval_count": 55, "eval_duration_s": 5.7427, "done": true}

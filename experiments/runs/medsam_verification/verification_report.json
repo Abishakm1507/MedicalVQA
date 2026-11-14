@@ -1,0 +1,81 @@
+{
+  "checkpoint": {
+    "path": "D:\\Abi\\New folder\\MedicalVQA\\data\\models\\medsam_vit_b.pth",
+    "exists": true,
+    "size_bytes": 375049145,
+    "size_mb": 357.6747,
+    "expected_size_bytes": 375049145,
+    "size_matches": true,
+    "sha256": "34b34b78c1d18cb8c6bf84cf9c00e135d6d6c965699f3c0e31ef1bc9dcb5be74",
+    "md5": "3bb6db55bd0c9ca30b61248bca72f8d6",
+    "expected_md5": "3bb6db55bd0c9ca30b61248bca72f8d6",
+    "md5_matches": true,
+    "state_dict_type": "dict",
+    "num_state_keys": 314
+  },
+  "architecture": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "shape_mismatches": [],
+    "compatible": true
+  },
+  "loading": {
+    "device": "cpu",
+    "image_size": 1024,
+    "init_time_s": 3.5475,
+    "is_mock": false
+  },
+  "inference": {
+    "image_path": "D:\\Abi\\New folder\\MedicalVQA\\data\\SLAKE\\imgs\\xmlab102\\source.jpg",
+    "image_size": [
+      512,
+      512
+    ],
+    "input_box_2d": [
+      301,
+      289,
+      323,
+      306
+    ],
+    "box_label": [
+      289.0,
+      301.0,
+      17.0,
+      22.0
+    ],
+    "region_id": "R1",
+    "num_results": 1,
+    "inference_time_s": 27.2642,
+    "mask_shape": [
+      512,
+      512
+    ],
+    "mask_dtype": "bool",
+    "mask_expected_shape": [
+      512,
+      512
+    ],
+    "mask_shape_matches": true,
+    "mask_true_pixels": 139,
+    "mask_total_pixels": 262144,
+    "mask_foreground_fraction": 0.00053
+  },
+  "rle": {
+    "rle_string": "512,512:154916 2 508 6 505 7 504 8 504 10 501 12 500 11 7 1 493 10 7 3 492 8 9 3 493 5 1028 1 508 7 505 8 503 9 503 9 503 8 505 7 506 4 98005",
+    "round_trip_exact": true
+  },
+  "artifacts": {
+    "original": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\medsam_verification\\01_original_image.png",
+    "with_bbox": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\medsam_verification\\02_image_with_bbox.png",
+    "mask": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\medsam_verification\\03_segmentation_mask.png",
+    "overlay": "D:\\Abi\\New folder\\MedicalVQA\\experiments\\runs\\medsam_verification\\04_image_with_overlay.png"
+  },
+  "performance": {
+    "init_time_s": 3.5475,
+    "inference_time_s": 27.2642,
+    "device": "cpu",
+    "cuda_available": false,
+    "ram_rss_mb": 193.87,
+    "torch_threads": 8
+  }
+}

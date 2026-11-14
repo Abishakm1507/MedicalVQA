@@ -1,0 +1,17 @@
+{
+  "qid": 12129,
+  "img_id": 234,
+  "img_name": "xmlab234/source.jpg",
+  "modality": "CT",
+  "answer_type": "OPEN",
+  "question": "How many kidneys in this image?",
+  "ground_truth_answer": "0",
+  "raw_response": "{\"answer\": \"1\"}",
+  "parsed_answer": "1",
+  "normalized_prediction": "1",
+  "normalized_ground_truth": "0",
+  "correct": false,
+  "inference_time_s": 4.8384,
+  "status": "success",
+  "error": null
+}

@@ -1,0 +1,17 @@
+{
+  "qid": 12384,
+  "img_id": 344,
+  "img_name": "xmlab344/source.jpg",
+  "modality": "X-Ray",
+  "answer_type": "OPEN",
+  "question": "What imaging modality was used?",
+  "ground_truth_answer": "X-Ray",
+  "raw_response": "```json\n{\"answer\": \"X-ray\"}\n```",
+  "parsed_answer": "X-ray",
+  "normalized_prediction": "x-ray",
+  "normalized_ground_truth": "x-ray",
+  "correct": true,
+  "inference_time_s": 5.4345,
+  "status": "success",
+  "error": null
+}

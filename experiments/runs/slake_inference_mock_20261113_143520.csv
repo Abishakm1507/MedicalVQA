@@ -1,0 +1,3 @@
+sample_id,dataset_name,image_id,question,ground_truth_answer,predicted_answer,model,device,inference_time_s,status,error
+slake_test_2,slake,1,Where is the consolidation located?,mid-upper zone,mock_prediction,mock-vlm,cpu,0.0007,success,
+slake_test_3,slake,2,Is there any pneumothorax?,no,mock_prediction,mock-vlm,cpu,0.0,success,

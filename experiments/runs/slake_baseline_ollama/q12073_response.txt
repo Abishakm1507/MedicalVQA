@@ -1,0 +1,33 @@
+QID: 12073
+SAMPLE_ID: slake_test_12073
+IMAGE_ID: 185
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab185\source.jpg
+IMAGE_SIZE: (1024, 1024)
+MODALITY: X-RAY
+ANSWER_TYPE: CLOSED
+QUESTION: Are there abnormalities in this image?
+GROUND_TRUTH: Yes
+RAW_RESPONSE: ```json
+{
+  "answer": "Yes",
+  "findings": [
+    {
+      "claim": "Pneumothorax",
+      "region_id": "left_lung",
+      "status": "present",
+      "confidence": "high"
+    },
+    {
+      "claim": "Hemothorax",
+      "region_id": "right_lung",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: Yes
+CORRECT: True
+INFERENCE_TIME_S: 17.1987
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 17.179, "total_duration_s": 15.103, "load_duration_s": 0.0827, "prompt_eval_count": 1510, "eval_count": 100, "eval_duration_s": 10.3183, "done": true}

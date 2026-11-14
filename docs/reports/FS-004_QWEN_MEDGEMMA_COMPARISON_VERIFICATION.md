@@ -122,10 +122,10 @@ Failed predictions are kept separate from incorrect predictions. Accuracy denomi
 | Both correct | 11981, 12073, 12111, 12384, 12914, 12919 |
 | Both incorrect | 12129, 12312, 12344 |
 | Only Qwen correct | (none) |
-| Only MedGemma correct | (none) |
+| Only MedGemma correct | 12845 |
 | Both failed or missing | (none) |
 
-MedGemma matches Qwen on every sample (same correct/incorrect set) but is ~3× faster (5.3 s vs 15.9 s avg). MedGemma's edge on this pilot comes entirely from CLOSED questions (100% vs 80%); OPEN performance is identical (40%).
+MedGemma matches Qwen on 9 of 10 samples (same correct/incorrect set) but diverges on QID 12845 (CLOSED), where Qwen predicted "yes" (incorrect, GT="No") and MedGemma predicted "No" (correct). MedGemma is ~3× faster (5.3 s vs 15.9 s avg). MedGemma's edge on this pilot comes entirely from CLOSED questions (100% vs 80%); OPEN performance is identical (40%).
 
 ### Per-question comparison
 
@@ -188,6 +188,8 @@ Note: `mypy` is not installed in this environment; ruff is the configured linter
 2. MedGemma artifacts live under `experiments/runs/medgemma_baseline/`, not `slake_baseline_medgemma/` as the task text assumed. Callers should use the actual path.
 3. Bootstrap confidence intervals (per `docs/reports/SLAKE_EVALUATION_PROTOCOL.md`, Section 5) were not computed — optional given the pilot is explicitly non-conclusive.
 4. Consider relaxing exact match (stemming/synonyms) for OPEN questions if adopted; document as a protocol deviation.
+
+**Checkpoint identification (resolved):** The experiment used `google/medgemma-4b-it`. Confirmed by `baseline_summary.json` (`"model_id": "google/medgemma-4b-it"`), the notebook (`MODEL_ID = "google/medgemma-4b-it"` with an explicit comment `# NOTE: must be the model you were granted access to (NOT medgemma-1.5-4b-it)`), and all `medgemma_client.py` files (default `model_id = "google/medgemma-4b-it"`). No evidence of `google/medgemma-1.5-4b-it` was found in any experiment artifact.
 
 ---
 

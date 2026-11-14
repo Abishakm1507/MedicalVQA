@@ -1,0 +1,17 @@
+{
+  "qid": 12914,
+  "img_id": 605,
+  "img_name": "xmlab605/source.jpg",
+  "modality": "CT",
+  "answer_type": "CLOSED",
+  "question": "Does the picture contain rectum?",
+  "ground_truth_answer": "Yes",
+  "raw_response": "```json\n{\"answer\": \"Yes\"}\n```",
+  "parsed_answer": "Yes",
+  "normalized_prediction": "yes",
+  "normalized_ground_truth": "yes",
+  "correct": true,
+  "inference_time_s": 5.4212,
+  "status": "success",
+  "error": null
+}

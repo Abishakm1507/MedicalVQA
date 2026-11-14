@@ -1,0 +1,30 @@
+QUESTION: Does the picture contain liver?
+GROUND_TRUTH: No
+RAW_RESPONSE: ```json
+{
+  "answer": "No",
+  "findings": [
+    {
+      "claim": "Liver",
+      "region_id": "liver",
+      "status": "absent",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED: ```json
+{
+  "answer": "No",
+  "findings": [
+    {
+      "claim": "Liver",
+      "region_id": "liver",
+      "status": "absent",
+      "confidence": "high"
+    }
+  ]
+}
+```
+INFERENCE_TIME_S: 12.7665
+ERROR: None

@@ -493,9 +493,9 @@ def _paired(qwen_rows: list[dict[str, Any]], medgemma_rows: list[dict[str, Any]]
         elif q_failed and m_failed:
             both_failed_or_missing.append(qid)
         elif q_ok and not m_ok:
-            medgemma_only_correct.append(qid)
-        elif m_ok and not q_ok:
             qwen_only_correct.append(qid)
+        elif m_ok and not q_ok:
+            medgemma_only_correct.append(qid)
     return {
         "both_correct": both_correct,
         "both_incorrect": both_incorrect,

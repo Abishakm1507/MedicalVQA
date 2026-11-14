@@ -1,0 +1,17 @@
+{
+  "qid": 12111,
+  "img_id": 224,
+  "img_name": "xmlab224/source.jpg",
+  "modality": "CT",
+  "answer_type": "CLOSED",
+  "question": "Does the picture contain spleen?",
+  "ground_truth_answer": "Yes",
+  "raw_response": "```json\n{\"answer\": \"Yes\"}\n```",
+  "parsed_answer": "Yes",
+  "normalized_prediction": "yes",
+  "normalized_ground_truth": "yes",
+  "correct": true,
+  "inference_time_s": 5.258,
+  "status": "success",
+  "error": null
+}

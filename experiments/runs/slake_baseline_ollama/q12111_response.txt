@@ -1,0 +1,27 @@
+QID: 12111
+SAMPLE_ID: slake_test_12111
+IMAGE_ID: 224
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab224\source.jpg
+IMAGE_SIZE: (512, 512)
+MODALITY: CT
+ANSWER_TYPE: CLOSED
+QUESTION: Does the picture contain spleen?
+GROUND_TRUTH: Yes
+RAW_RESPONSE: ```json
+{
+  "answer": "Yes",
+  "findings": [
+    {
+      "claim": "Spleen",
+      "region_id": "spleen",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: Yes
+CORRECT: True
+INFERENCE_TIME_S: 10.6107
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 10.6001, "total_duration_s": 8.5341, "load_duration_s": 0.0771, "prompt_eval_count": 1165, "eval_count": 59, "eval_duration_s": 5.4901, "done": true}

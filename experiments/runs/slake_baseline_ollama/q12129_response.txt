@@ -1,0 +1,33 @@
+QID: 12129
+SAMPLE_ID: slake_test_12129
+IMAGE_ID: 234
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab234\source.jpg
+IMAGE_SIZE: (512, 512)
+MODALITY: CT
+ANSWER_TYPE: OPEN
+QUESTION: How many kidneys in this image?
+GROUND_TRUTH: 0
+RAW_RESPONSE: ```json
+{
+  "answer": "2",
+  "findings": [
+    {
+      "claim": "Kidneys",
+      "region_id": "right_kidney",
+      "status": "present",
+      "confidence": "high"
+    },
+    {
+      "claim": "Kidneys",
+      "region_id": "left_kidney",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: 2
+CORRECT: False
+INFERENCE_TIME_S: 14.2062
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 14.1977, "total_duration_s": 12.1437, "load_duration_s": 0.0294, "prompt_eval_count": 1165, "eval_count": 96, "eval_duration_s": 9.1553, "done": true}

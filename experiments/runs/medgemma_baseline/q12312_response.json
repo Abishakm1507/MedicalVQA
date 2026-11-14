@@ -1,0 +1,17 @@
+{
+  "qid": 12312,
+  "img_id": 312,
+  "img_name": "xmlab312/source.jpg",
+  "modality": "X-Ray",
+  "answer_type": "OPEN",
+  "question": "Where is the abnormality in this image?",
+  "ground_truth_answer": "Lower Left Lung",
+  "raw_response": "```json\n{\"answer\": \"Left lung\"}\n```",
+  "parsed_answer": "Left lung",
+  "normalized_prediction": "left lung",
+  "normalized_ground_truth": "lower left lung",
+  "correct": false,
+  "inference_time_s": 5.2636,
+  "status": "success",
+  "error": null
+}

@@ -1,0 +1,27 @@
+QID: 12312
+SAMPLE_ID: slake_test_12312
+IMAGE_ID: 312
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab312\source.jpg
+IMAGE_SIZE: (1024, 1024)
+MODALITY: X-RAY
+ANSWER_TYPE: OPEN
+QUESTION: Where is the abnormality in this image?
+GROUND_TRUTH: Lower Left Lung
+RAW_RESPONSE: ```json
+{
+  "answer": "Right Lung",
+  "findings": [
+    {
+      "claim": "Right Lung",
+      "region_id": "right_lung",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: Right Lung
+CORRECT: False
+INFERENCE_TIME_S: 12.5233
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 12.5, "total_duration_s": 10.3794, "load_duration_s": 0.0454, "prompt_eval_count": 1512, "eval_count": 59, "eval_duration_s": 5.5264, "done": true}

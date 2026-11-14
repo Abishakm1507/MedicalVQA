@@ -1,0 +1,27 @@
+QID: 12919
+SAMPLE_ID: slake_test_12919
+IMAGE_ID: 605
+IMAGE_PATH: D:\Abi\New folder\MedicalVQA\data\SLAKE\imgs\xmlab605\source.jpg
+IMAGE_SIZE: (512, 512)
+MODALITY: CT
+ANSWER_TYPE: CLOSED
+QUESTION: Does the picture contain the organ which has the effect of excreting feces?
+GROUND_TRUTH: Yes
+RAW_RESPONSE: ```json
+{
+  "answer": "yes",
+  "findings": [
+    {
+      "claim": "colon",
+      "region_id": "1",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+```
+PARSED_ANSWER: yes
+CORRECT: True
+INFERENCE_TIME_S: 16.1589
+ERROR: None
+METADATA: {"model": "qwen2.5vl:3b", "host": "http://localhost:11434", "wall_time_s": 16.1502, "total_duration_s": 14.0925, "load_duration_s": 0.0832, "prompt_eval_count": 1175, "eval_count": 55, "eval_duration_s": 12.9337, "done": true}

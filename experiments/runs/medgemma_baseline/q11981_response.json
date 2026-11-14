@@ -1,0 +1,17 @@
+{
+  "qid": 11981,
+  "img_id": 130,
+  "img_name": "xmlab130/source.jpg",
+  "modality": "X-Ray",
+  "answer_type": "OPEN",
+  "question": "Which part of the body does this image belong to?",
+  "ground_truth_answer": "Chest",
+  "raw_response": "```json\n{\"answer\": \"Chest\"}\n```",
+  "parsed_answer": "Chest",
+  "normalized_prediction": "chest",
+  "normalized_ground_truth": "chest",
+  "correct": true,
+  "inference_time_s": 5.9233,
+  "status": "success",
+  "error": null
+}

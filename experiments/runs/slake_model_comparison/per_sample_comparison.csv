@@ -1,0 +1,11 @@
+qid,sample_id,question_category,ground_truth,ground_truth_normalized,qwen_prediction,qwen_prediction_normalized,qwen_correct,qwen_status,qwen_inference_time_s,qwen_error,medgemma_prediction,medgemma_prediction_normalized,medgemma_correct,medgemma_status,medgemma_inference_time_s,medgemma_error,both_correct,both_incorrect,qwen_only_correct,medgemma_only_correct
+11981,slake_test_11981,OPEN,Chest,chest,chest,chest,True,ok,42.1188,,Chest,chest,True,ok,5.9233,,True,False,False,False
+12073,slake_test_12073,CLOSED,Yes,yes,Yes,yes,True,ok,17.1987,,Yes,yes,True,ok,5.0325,,True,False,False,False
+12111,slake_test_12111,CLOSED,Yes,yes,Yes,yes,True,ok,10.6107,,Yes,yes,True,ok,5.258,,True,False,False,False
+12129,slake_test_12129,OPEN,0,0,2,2,False,ok,14.2062,,1,1,False,ok,4.8384,,False,True,False,False
+12312,slake_test_12312,OPEN,Lower Left Lung,lower left lung,Right Lung,right lung,False,ok,12.5233,,Left lung,left lung,False,ok,5.2636,,False,True,False,False
+12344,slake_test_12344,OPEN,Lung,lung,lungs,lungs,False,ok,12.6581,,Lungs,lungs,False,ok,5.1684,,False,True,False,False
+12384,slake_test_12384,OPEN,X-Ray,x-ray,X-ray,x-ray,True,ok,12.3349,,X-ray,x-ray,True,ok,5.4345,,True,False,False,False
+12845,slake_test_12845,CLOSED,No,no,yes,yes,False,ok,10.7909,,No,no,True,ok,5.3429,,False,False,False,True
+12914,slake_test_12914,CLOSED,Yes,yes,yes,yes,True,ok,10.5431,,Yes,yes,True,ok,5.4212,,True,False,False,False
+12919,slake_test_12919,CLOSED,Yes,yes,yes,yes,True,ok,16.1589,,Yes,yes,True,ok,5.3737,,True,False,False,False

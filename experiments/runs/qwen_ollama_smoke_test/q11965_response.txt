@@ -1,0 +1,26 @@
+QUESTION: What modality is used to take this image?
+GROUND_TRUTH: X-Ray
+RAW_RESPONSE: {
+  "answer": "X-ray",
+  "findings": [
+    {
+      "claim": "X-ray",
+      "region_id": "chest",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+PARSED: {
+  "answer": "X-ray",
+  "findings": [
+    {
+      "claim": "X-ray",
+      "region_id": "chest",
+      "status": "present",
+      "confidence": "high"
+    }
+  ]
+}
+INFERENCE_TIME_S: 19.7270
+ERROR: None
