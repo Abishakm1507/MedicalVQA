@@ -544,7 +544,7 @@ where $B_m$ = samples whose confidence $c$ falls in bin $m$, $\text{acc}(B_m)$ =
 
 **Accuracy-vs-coverage curve:** for $\tau \in \{0, 0.01, \dots, 1.0\}$, compute (coverage, selective accuracy). Report as list of points.
 
-**AUROC:** ROC-AUC of confidence $c$ predicting binary correctness (accepted samples only).
+**AUROC:** ROC-AUC of confidence $c$ predicting binary correctness over the full eligible population — all samples with valid confidence predictions (i.e., not forced to abstain by Phase 2 policy: `sampling_valid == True` and `evidence_state != "uncertain"`). The population is independent of the abstention threshold $\tau$; samples that abstain only because $c < \tau$ still have meaningful confidence and are included. Uses the Mann-Whitney U statistic. Returns None if there are no eligible samples or only one correctness class.
 
 **Missing / empty / malformed / unverifiable handling in every metric:**
 | Situation | Accuracy | USR_raw | USR_filtered | PointingAcc | ECE / Selective |
