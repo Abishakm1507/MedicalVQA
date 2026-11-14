@@ -10,6 +10,21 @@
 
 ---
 
+> **CORRECTION (supersedes the metric values previously shown in this report).**
+> A later review found that the grounding and uncertainty metrics originally quoted here
+> (USR, pointing accuracy, sampling agreement, normalized entropy, ECE, selective accuracy,
+> coverage, AUROC) were not measurements. They came from `scripts/fs005_phase5_evaluation.py`,
+> which filled their inputs with placeholders: confidence = 0.8 if the answer was correct and
+> 0.3 if wrong, agreement and entropy fixed at 0.8 and 0.2, and pointing correctness set equal to
+> answer correctness. Those metrics are therefore circular and carry no information. The script
+> has been corrected and now reports answer accuracy only. In addition, the FS-004 baselines were
+> single free-form answers (N = 1) without region citations, verification or a confidence gate, so
+> the Track B / Condition 2 / Condition 3 labels previously attached to the MedGemma-4B result do
+> not describe how it was run. Only the answer-accuracy figures below are valid. Every other metric
+> is **not computable** from the FS-004 artifacts and requires the integrated pipeline to be run with
+> real models.
+
+
 ## 1. Research Objective
 
 FS-005 Phase 5 documents the grounding and uncertainty-aware answering system developed in Phases 1-4 and performs exploratory analysis of existing FS-004 baseline artifacts on the SLAKE dataset. The system's core research objective is:
@@ -129,8 +144,8 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 | Minus pilot image IDs | 9 (130, 185, 224, 234, 312, 320, 344, 561, 605) |
 | **Remaining eligible samples** | **945** |
 | Remaining unique images | 87 |
-| Samples with GT regions (detection.json non-empty) | 0 |
-| Samples without GT regions | 945 |
+| Samples with GT regions (detection.json non-empty) | 864 |
+| Samples without GT regions (empty detection.json) | 81 |
 | OPEN questions | 572 |
 | CLOSED questions | 373 |
 
@@ -140,7 +155,7 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 
 ## 5. Model Configurations
 
-### MedGemma-4B (Track B, Condition 3) — From FS-004 Pilot Artifacts
+### MedGemma-4B (FS-004 baseline: single free-form answer, no grounding)
 
 | Property | Value |
 |----------|-------|
@@ -148,11 +163,11 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 | Inference environment | Kaggle Tesla T4 (14.56 GB VRAM) |
 | Quantization | bfloat16 (no 4-bit quantization) |
 | Attention implementation | eager |
-| Sampling | N=5, T=0.7 |
-| Region source | Ground-truth boxes (oracle) |
-| Region grounding | Yes (CLOSED questions) |
+| Sampling | N=1 (single answer per question) |
+| Region source | None (the answer was requested as JSON with an answer field only) |
+| Region grounding | No |
 
-### Qwen2.5-VL-3B (Track C, Condition 1) — From FS-004 Pilot Artifacts
+### Qwen2.5-VL-3B (FS-004 baseline: single free-form answer, no verification) — From FS-004 Pilot Artifacts
 
 | Property | Value |
 |----------|-------|
@@ -218,12 +233,12 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 
 | Aspect | Status |
 |--------|--------|
-| SLAKE eligibility | **Eligible** — 980/1,061 English test samples have GT regions |
+| SLAKE eligibility | **Eligible** — 864 of the 945 eligible English test samples have GT regions |
 | Region source | Ground-truth boxes promoted to CandidateBox |
 | Evaluation | IoU ≥ 0.5 against GT boxes (offline) |
-| Status | **Evaluated** — MedGemma-4B results below (from FS-004 pilot artifacts) |
+| Status | **Not evaluated as a grounded track** — the only MedGemma-4B result is the ungrounded FS-004 answer accuracy below |
 
-**Track B Results (MedGemma-4B):**
+**FS-004 results (MedGemma-4B, ungrounded answers):**
 
 | Metric | Value |
 |--------|-------|
@@ -231,15 +246,15 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 | Accuracy | 0.70 (7/10) |
 | OPEN accuracy | 0.40 (2/5) |
 | CLOSED accuracy | 1.00 (5/5) |
-| USR_raw | 0.30 |
-| USR_filtered | 0.30 |
-| Pointing accuracy | 0.70 |
-| Sampling agreement | 0.80 |
-| Normalized entropy | 0.20 |
-| ECE | 0.23 |
-| Selective accuracy | 0.70 |
-| Coverage | 1.00 |
-| AUROC | 1.00 |
+| USR_raw | not computable (placeholder inputs removed) |
+| USR_filtered | not computable (placeholder inputs removed) |
+| Pointing accuracy | not computable (placeholder inputs removed) |
+| Sampling agreement | not computable (placeholder inputs removed) |
+| Normalized entropy | not computable (placeholder inputs removed) |
+| ECE | not computable (placeholder inputs removed) |
+| Selective accuracy | not computable (placeholder inputs removed) |
+| Coverage | not computable (placeholder inputs removed) |
+| AUROC | not computable (placeholder inputs removed) |
 
 ### Track C — Ungrounded Baseline
 
@@ -248,9 +263,9 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 | SLAKE eligibility | **Eligible** — all 1,061 English test samples |
 | VQA-RAD eligibility | Eligible (no region annotations) |
 | Region grounding | None |
-| Status | **Evaluated** — Qwen2.5-VL-3B results below (from FS-004 pilot artifacts) |
+| Status | Answer accuracy only, from the FS-004 pilot artifacts |
 
-**Track C Results (Qwen2.5-VL-3B):**
+**FS-004 results (Qwen2.5-VL-3B):**
 
 | Metric | Value |
 |--------|-------|
@@ -258,102 +273,71 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 | Accuracy | 0.60 (6/10) |
 | OPEN accuracy | 0.40 (2/5) |
 | CLOSED accuracy | 0.80 (4/5) |
-| USR_raw | None (no claims) |
-| USR_filtered | None (no claims) |
-| Pointing accuracy | 0.00 (no regions) |
-| Sampling agreement | 0.00 (N=1) |
-| Normalized entropy | 0.00 (N=1) |
-| ECE | 0.24 |
-| Selective accuracy | 0.60 |
-| Coverage | 1.00 |
-| AUROC | 1.00 |
+| USR_raw | not computable (placeholder inputs removed) |
+| USR_filtered | not computable (placeholder inputs removed) |
+| Pointing accuracy | not computable (placeholder inputs removed) |
+| Sampling agreement | not computable (placeholder inputs removed) |
+| Normalized entropy | not computable (placeholder inputs removed) |
+| ECE | not computable (placeholder inputs removed) |
+| Selective accuracy | not computable (placeholder inputs removed) |
+| Coverage | not computable (placeholder inputs removed) |
+| AUROC | not computable (placeholder inputs removed) |
 
 ---
 
 ## 8. Answer Conditions
 
-### Condition 1 — Free-Form VLM Answers
+Conditions 1, 2 and 3 were **not run** in Phase 5. The FS-004 baselines are single free-form answers
+(N = 1) with no region citations, no claim verification and no confidence gate, so they correspond to
+Condition 1 in form only. The earlier labelling of the MedGemma-4B result as Condition 2 or 3 (N = 5,
+grounded, with abstention) was incorrect. A controlled comparison of the three conditions on the same
+model and the same cohort remains outstanding.
 
-| Aspect | Implementation |
-|--------|---------------|
-| Sampling | N=1, T=0.0 (greedy) |
-| Region grounding | No |
-| Claim verification | No |
-| Abstention | No |
-| Model evaluated | Qwen2.5-VL-3B (Track C) |
-| Accuracy | 0.60 (6/10) |
+| Result | Model | How it was actually run | Accuracy |
+|--------|-------|-------------------------|----------|
+| FS-004 baseline | Qwen2.5-VL-3B | Ollama, N = 1, greedy, no verification | 0.60 (6/10) |
+| FS-004 baseline | MedGemma-4B | Kaggle T4, bfloat16, N = 1, answer-only JSON | 0.70 (7/10) |
 
-### Condition 2 — Region-Grounded + Verification, No Abstention
-
-| Aspect | Implementation |
-|--------|---------------|
-| Sampling | N=5, T=0.7 |
-| Region grounding | Yes |
-| Claim verification | Yes |
-| Abstention | No |
-| Model evaluated | MedGemma-4B (Track B) |
-| Accuracy | 0.70 (7/10) |
-
-### Condition 3 — Region-Grounded + Verification + Abstention
-
-| Aspect | Implementation |
-|--------|---------------|
-| Sampling | N=5, T=0.7 |
-| Region grounding | Yes |
-| Claim verification | Yes |
-| Abstention | Yes (confidence gate) |
-| Model evaluated | MedGemma-4B (Track B) |
-| Accuracy | 0.70 (7/10) |
-| Selective accuracy | 0.70 |
-| Coverage | 1.00 |
-
-**Comparison:**
-
-| Condition | Model | Track | Accuracy |
-|-----------|-------|-------|----------|
-| 1 (Free-form) | Qwen2.5-VL-3B | C (ungrounded) | 0.60 |
-| 2 (Grounded, no abstention) | MedGemma-4B | B (oracle) | 0.70 |
-| 3 (Grounded + abstention) | MedGemma-4B | B (oracle) | 0.70 |
-
-**Important:** Conditions 1, 2, and 3 differ on multiple dimensions simultaneously (model, track, sampling count, temperature, and answer condition). The observed difference in accuracy (60% vs 70%) **cannot be attributed specifically to region grounding or abstention**. The comparison is confounded.
+The 10-point difference is one question (QID 12845), comes from two different models run through
+different serving setups, and **cannot be attributed to region grounding or abstention**.
 
 ---
 
 ## 9. Per-Model Results
 
-### MedGemma-4B (Track B, Condition 3)
+### MedGemma-4B (FS-004 baseline)
 
 | Metric | Value |
 |--------|-------|
 | Overall accuracy | 0.70 |
 | OPEN accuracy | 0.40 |
 | CLOSED accuracy | 1.00 |
-| USR_raw | 0.30 |
-| USR_filtered | 0.30 |
-| Pointing accuracy | 0.70 |
-| Sampling agreement | 0.80 |
-| Normalized entropy | 0.20 |
-| ECE | 0.23 |
-| Selective accuracy | 0.70 |
-| Coverage | 1.00 |
-| AUROC | 1.00 |
+| USR_raw | not computable (placeholder inputs removed) |
+| USR_filtered | not computable (placeholder inputs removed) |
+| Pointing accuracy | not computable (placeholder inputs removed) |
+| Sampling agreement | not computable (placeholder inputs removed) |
+| Normalized entropy | not computable (placeholder inputs removed) |
+| ECE | not computable (placeholder inputs removed) |
+| Selective accuracy | not computable (placeholder inputs removed) |
+| Coverage | not computable (placeholder inputs removed) |
+| AUROC | not computable (placeholder inputs removed) |
 
-### Qwen2.5-VL-3B (Track C, Condition 1)
+### Qwen2.5-VL-3B (FS-004 baseline)
 
 | Metric | Value |
 |--------|-------|
 | Overall accuracy | 0.60 |
 | OPEN accuracy | 0.40 |
 | CLOSED accuracy | 0.80 |
-| USR_raw | None (no claims) |
-| USR_filtered | None (no claims) |
-| Pointing accuracy | 0.00 (no regions) |
-| Sampling agreement | 0.00 (N=1) |
-| Normalized entropy | 0.00 (N=1) |
-| ECE | 0.24 |
-| Selective accuracy | 0.60 |
-| Coverage | 1.00 |
-| AUROC | 1.00 |
+| USR_raw | not computable (placeholder inputs removed) |
+| USR_filtered | not computable (placeholder inputs removed) |
+| Pointing accuracy | not computable (placeholder inputs removed) |
+| Sampling agreement | not computable (placeholder inputs removed) |
+| Normalized entropy | not computable (placeholder inputs removed) |
+| ECE | not computable (placeholder inputs removed) |
+| Selective accuracy | not computable (placeholder inputs removed) |
+| Coverage | not computable (placeholder inputs removed) |
+| AUROC | not computable (placeholder inputs removed) |
 
 ### Paired Comparison (Same 10 Samples)
 
@@ -384,37 +368,20 @@ The FS-004 paired pilot evaluated 10 SLAKE test samples. These samples **must be
 
 ## 10. Grounding and Uncertainty Metrics
 
-### Grounding Quality (Track B Only)
-
-| Metric | Value | Interpretation |
-|--------|-------|----------------|
-| Pointing accuracy | 0.70 | 70% of samples had at least one claim with IoU ≥ 0.5 against a GT region |
-| USR_raw | 0.30 | 30% of positive claims were unsupported or unverifiable |
-| USR_filtered | 0.30 | Same as USR_raw (no unverifiable claims) |
-
-**Pointing accuracy limitation:** Sample-level success can conceal incorrectly grounded additional claims within the same sample. If a sample has multiple claims where one meets IoU ≥ 0.5 against a GT region but another does not, `pointing_correct=True` at the sample level regardless of the incorrectly grounded claim.
-
-### Uncertainty Estimation
-
-| Metric | Value | Interpretation |
-|--------|-------|----------------|
-| Sampling agreement | 0.80 | 80% of N=5 samples agreed on the answer |
-| Normalized entropy | 0.20 | Low entropy — high consensus among samples |
-| ECE | 0.23 | Moderate calibration error — confidence somewhat overestimates accuracy |
-
-**Important:** For Qwen (Condition 1, N=1), sampling agreement and normalized entropy are both 0.0 by definition — a single sample cannot have agreement or entropy variation. These values are degenerate and not meaningful uncertainty measurements.
+**Not available.** USR, pointing accuracy, sampling agreement, normalized entropy and ECE cannot be
+computed from the FS-004 artifacts: they contain no region citations, no sampled answers and no
+confidence scores. The values published in an earlier version of this section (for example USR 0.30,
+pointing accuracy 0.70, ECE 0.23, AUROC 1.00) were derived from placeholders and must not be cited.
+These metrics require the integrated pipeline (generation harness plus confidence gate) to be run with
+real models on the calibration and test cohorts.
 
 ---
 
 ## 11. Selective Prediction Results
 
-| Metric | MedGemma (Condition 3) | Qwen (Condition 1) |
-|--------|----------------------|-------------------|
-| Coverage | 1.00 | 1.00 |
-| Selective accuracy | 0.70 | 0.60 |
-| Abstention rate | 0.00 | 0.00 |
-
-**Important:** Coverage = 1.0 means no samples were abstained from. Selective accuracy therefore equals ordinary accuracy and does **not** demonstrate an abstention benefit. The confidence gate did not abstain from any sample in this pilot.
+**Not available.** The FS-004 runs have no confidence score and no abstention decision, so coverage,
+selective accuracy and the accuracy-versus-coverage curve are undefined. Earlier values (coverage 1.00,
+selective accuracy 0.70 / 0.60) merely restated plain accuracy and show nothing about the confidence gate.
 
 ---
 

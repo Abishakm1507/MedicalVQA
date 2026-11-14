@@ -9,6 +9,18 @@
 
 ---
 
+> **FURTHER CORRECTION (supersedes the metric rows in Section 5 and the interpretations in Section 6).**
+> A later review found that USR, pointing accuracy, sampling agreement, normalized entropy, ECE,
+> selective accuracy, coverage and AUROC in this report were not measurements. They were produced by
+> `scripts/fs005_phase5_evaluation.py` from placeholder inputs (confidence = 0.8 if the answer was
+> correct, else 0.3; agreement 0.8; entropy 0.2; pointing correctness set equal to answer correctness),
+> so they are circular. The FS-004 baselines were also single free-form answers (N = 1) with no region
+> citations, verification or confidence gate, so the Track B / Condition 3 label on MedGemma-4B did not
+> describe how it was run. The script now reports answer accuracy only. This report's earlier correction
+> (Issue 5 and Section 6) was right that no benefit of grounding or abstention was shown, but it
+> understated the problem: those metrics cannot be computed from the FS-004 artifacts at all.
+
+
 ## 1. Files Inspected
 
 | File | Role |
@@ -120,20 +132,12 @@ Track B (Oracle Ground-Truth Grounding) uses dataset ground-truth boxes as oracl
 
 ## 5. Corrected Per-Model Comparison
 
-| Metric | Qwen2.5-VL-3B (Track C, Condition 1) | MedGemma-4B (Track B, Condition 3) |
-|--------|--------------------------------------|------------------------------------|
+| Metric | Qwen2.5-VL-3B (FS-004 baseline) | MedGemma-4B (FS-004 baseline) |
+|--------|---------------------------------|-------------------------------|
 | Overall accuracy | 0.60 (6/10) | 0.70 (7/10) |
 | OPEN accuracy | 0.40 (2/5) | 0.40 (2/5) |
 | CLOSED accuracy | 0.80 (4/5) | 1.00 (5/5) |
-| USR_raw | None (no claims) | 0.30 |
-| USR_filtered | None (no claims) | 0.30 |
-| Pointing accuracy | 0.00 (no regions) | 0.70 |
-| Sampling agreement | 0.00 (N=1) | 0.80 |
-| Normalized entropy | 0.00 (N=1) | 0.20 |
-| ECE | 0.24 | 0.23 |
-| Selective accuracy | 0.60 | 0.70 |
-| Coverage | 1.00 | 1.00 |
-| AUROC | 1.00 | 1.00 |
+| USR, pointing accuracy, agreement, entropy, ECE, selective accuracy, coverage, AUROC | not computable | not computable |
 
 **Important caveat:** This comparison changes multiple variables simultaneously (model, region track, answer condition, sampling count). The observed difference **cannot be attributed specifically to region grounding or abstention**. The comparison is exploratory only.
 
@@ -162,29 +166,11 @@ Track B (Oracle Ground-Truth Grounding) uses dataset ground-truth boxes as oracl
 
 ## 6. Metric Interpretation Corrections
 
-### Pointing Accuracy
-
-Pointing accuracy is computed at the **sample level**, not per-claim level. A sample is counted as correctly pointed if **at least one** claim in that sample has max IoU ≥ 0.5 against any ground-truth region. This means:
-- A sample can have multiple claims, some grounded and some not
-- If at least one claim is grounded correctly, the sample counts as correctly pointed
-- Sample-level pointing accuracy does NOT capture per-claim grounding errors
-- A sample with one correct claim and one incorrect claim counts as "correctly pointed"
-
-### AUROC
-
-AUROC is computed over the full eligible population (sampling_valid=True AND evidence_state ≠ "uncertain"), independent of the abstention threshold τ. With only 10 samples, AUROC=1.0 is exploratory and highly uncertain — it reflects perfect separation on a tiny sample, not a validated confidence-quality property.
-
-### Coverage and Selective Accuracy
-
-Coverage = 1.0 means no samples were abstained from. Selective accuracy then equals ordinary accuracy and does **not** demonstrate an abstention benefit. Do not claim the confidence gate improved reliability based on this result.
-
-### N=1 Sampling (Qwen Condition 1)
-
-Condition 1 uses N=1, T=0.0 greedy sampling. Agreement and entropy for N=1 are degenerate (agreement=1.0, entropy=0.0 by definition) and do not represent meaningful uncertainty measurement.
-
-### Conditions 2 and 3
-
-Both reported 70% accuracy with Condition 3 coverage of 1.0. This pilot does **not** demonstrate a measurable benefit from abstention.
+The interpretations that were here (pointing accuracy at sample level, AUROC on ten samples, coverage 1.0,
+N = 1 degeneracy, Conditions 2 and 3) described values that were never valid measurements, so they have been
+removed. What stands: pointing accuracy as defined in `evaluation/metrics.py` is sample-level (one claim at
+IoU >= 0.5 is enough), and agreement and entropy are degenerate for N = 1. None of these metrics has been
+measured on any model yet. They require the integrated pipeline run with real models.
 
 ---
 
@@ -239,7 +225,7 @@ Ruff lint: All checks passed on all changed Python scripts.
 | Calibration implementation | Complete (but uses synthetic data) |
 | Synthetic calibration demonstration | Complete |
 | Evaluation tooling | Complete |
-| FS-004 pilot analysis | Complete as exploratory analysis |
+| FS-004 pilot analysis | Answer accuracy only; grounding and uncertainty metrics not computable from these artifacts |
 | Genuine SLAKE calibration | Outstanding |
 | New integrated pipeline inference | Outstanding |
 | Fresh image-disjoint test evaluation | Outstanding |

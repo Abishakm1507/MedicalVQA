@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-slaake_dir = Path("D:/Abi/New folder/MedicalVQA/data/SLAKE")
+slaake_dir = Path(__file__).resolve().parents[1] / "data" / "SLAKE"
 imgs_dir = slaake_dir / "imgs"
 
 # Load English test split
