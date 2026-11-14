@@ -1,0 +1,531 @@
+{
+  "experiment": "FS-005 Phase 5 Stage 3: Controlled Evaluation",
+  "model": "Qwen2.5-VL-3B",
+  "track": "track_c_answer_only",
+  "condition": 1,
+  "dataset": "SLAKE",
+  "split": "test",
+  "n_samples": 10,
+  "metrics": {
+    "accuracy": 0.6,
+    "open_accuracy": 0.4,
+    "closed_accuracy": 0.8,
+    "usr_raw": null,
+    "usr_filtered": null,
+    "pointing_accuracy": 0.0,
+    "sampling_agreement": 0.0,
+    "normalized_entropy": 0.0,
+    "ece": 0.23999999999999988,
+    "selective_accuracy": 0.6,
+    "coverage": 1.0,
+    "auroc": 1.0
+  },
+  "accuracy_vs_coverage": [
+    {
+      "tau": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.01,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.02,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.03,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.04,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.05,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.06,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.07,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.08,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.09,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.1,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.11,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.12,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.13,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.14,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.15,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.16,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.17,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.18,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.19,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.2,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.21,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.22,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.23,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.24,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.25,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.26,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.27,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.28,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.29,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.3,
+      "coverage": 1.0,
+      "selective_accuracy": 0.6
+    },
+    {
+      "tau": 0.31,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.32,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.33,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.34,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.35,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.36,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.37,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.38,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.39,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.4,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.41,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.42,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.43,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.44,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.45,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.46,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.47,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.48,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.49,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.5,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.51,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.52,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.53,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.54,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.55,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.56,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.57,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.58,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.59,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.6,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.61,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.62,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.63,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.64,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.65,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.66,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.67,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.68,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.69,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.7,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.71,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.72,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.73,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.74,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.75,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.76,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.77,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.78,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.79,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.8,
+      "coverage": 0.6,
+      "selective_accuracy": 1.0
+    },
+    {
+      "tau": 0.81,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.82,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.83,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.84,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.85,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.86,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.87,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.88,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.89,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.9,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.91,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.92,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.93,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.94,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.95,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.96,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.97,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.98,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 0.99,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    },
+    {
+      "tau": 1.0,
+      "coverage": 0.0,
+      "selective_accuracy": 0.0
+    }
+  ],
+  "exclusions": []
+}

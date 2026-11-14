@@ -1,0 +1,11 @@
+qid,image_id,modality,question_type,ground_truth_answer,reason
+11981,130,X-Ray,OPEN,Chest,pilot_sample
+12073,185,X-Ray,CLOSED,Yes,pilot_sample
+12111,224,CT,CLOSED,Yes,pilot_sample
+12129,234,CT,OPEN,0,pilot_sample
+12312,312,X-Ray,OPEN,Lower Left Lung,pilot_sample
+12344,320,X-Ray,OPEN,Lung,pilot_sample
+12384,344,X-Ray,OPEN,X-Ray,pilot_sample
+12845,561,CT,CLOSED,No,pilot_sample
+12914,605,CT,CLOSED,Yes,pilot_sample
+12919,605,CT,CLOSED,Yes,pilot_sample

@@ -226,9 +226,9 @@ None — all FS-001 through FS-004 code and experimental artifacts untouched. Ph
 .venv\Scripts\python.exe -m pytest tests/unit/test_pipeline_integration.py -v
 => 16 passed
 
-# All test suites together (227 tests)
+# All test suites together (197 tests)
 .venv\Scripts\python.exe -m pytest tests/unit/test_pipeline_integration.py tests/unit/test_uncertainty_phase2.py tests/unit/test_claim_verification_phase1.py tests/unit/test_baseline_comparison.py tests/unit/test_evaluation_metrics_phase3.py tests/unit/test_schemas.py -q
-=> 227 passed
+=> 197 passed
 
 # Lint on changed Python files
 .venv\Scripts\ruff.exe check verification/pipeline.py api/pipeline_service.py tests/unit/test_pipeline_integration.py
@@ -260,6 +260,8 @@ mypy is not installed in this environment; ruff is the project's configured lint
 | MedSAM segmenter unused in pipeline | `segmenter` parameter accepted but not used in verification pipeline — available for visual overlay generation in future phases |
 | Pointing accuracy limitation | Sample-level success can conceal incorrectly grounded additional claims within the same sample |
 | Negative-claim clinical truth deferred | Absence claims marked `verification_path="absence_answer"`; correctness against dataset GT evaluated in Phase 3 evaluation layer |
+| `filtered_answer` == `raw_answer` in current implementation | Filtering happens at the claim level (USR computation), not at the answer-text level. The answer text itself is unchanged by filtering; only the claim-level verification status (supported/unsupported/unverifiable) is recorded. Condition 2 and Condition 3 share the same answer text; only the abstention decision differs. |
+| `_compute_pointing_correct()` stub | Always returns `False` in the pipeline; true pointing accuracy is computed in Phase 3 evaluation layer using `evaluate_grounding_iou_with_boxes()` on associated claims' boxes against GT boxes. This is a known stub limitation, documented in code comments. |
 
 ---
 

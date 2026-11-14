@@ -1,0 +1,29 @@
+{
+  "experiment": "FS-005 Phase 5 Stage 2: Confidence Calibration",
+  "timestamp": "2026-11-14T13:52:22.704438",
+  "validation_samples": 200,
+  "calibration_config": {
+    "w1": 0.0,
+    "w2": 0.0,
+    "w3": 1.0,
+    "tau": 0.5,
+    "n_samples": 5,
+    "temperature": 0.7,
+    "grid_step": 0.05,
+    "min_coverage": 0.1
+  },
+  "metrics": {
+    "selective_risk": 0.0,
+    "coverage": 0.48,
+    "auroc": 0.7210159231477826,
+    "ece": 0.39744208485020316
+  },
+  "coverage_curve": [
+    {
+      "tau": 0.5,
+      "coverage": 0.48,
+      "selective_accuracy": 1.0
+    }
+  ],
+  "note": "Calibration performed on synthetic validation data. Replace with actual SLAKE validation split outputs for production."
+}
