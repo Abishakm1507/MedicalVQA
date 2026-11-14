@@ -1,0 +1,171 @@
+{
+  "dataset": "SLAKE English validation split",
+  "pilot_size": 15,
+  "seed": 20261114,
+  "pilot_qids": [
+    9841,
+    9957,
+    9972,
+    10055,
+    10061,
+    10136,
+    10231,
+    10262,
+    10415,
+    10603,
+    10622,
+    10664,
+    10819,
+    10876,
+    10884
+  ],
+  "pilot_image_ids": [
+    0,
+    34,
+    84,
+    92,
+    207,
+    213,
+    245,
+    257,
+    291,
+    348,
+    391,
+    476,
+    482,
+    510,
+    609
+  ],
+  "pilot_with_gt_regions": 7,
+  "pilot_without_gt_regions": 8,
+  "fs004_pilot_qids_excluded": [
+    11981,
+    12073,
+    12111,
+    12129,
+    12312,
+    12344,
+    12384,
+    12845,
+    12914,
+    12919
+  ],
+  "fs004_pilot_image_ids_excluded": [
+    130,
+    185,
+    224,
+    234,
+    312,
+    320,
+    344,
+    561,
+    605
+  ],
+  "samples": [
+    {
+      "qid": 9841,
+      "img_id": 0,
+      "question": "Does the picture contain kidney?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 9957,
+      "img_id": 207,
+      "question": "Does the picture contain heart?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 9972,
+      "img_id": 213,
+      "question": "What modality is used to take this image?",
+      "answer_type": "OPEN",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10055,
+      "img_id": 245,
+      "question": "What is the scanning plane of this image?",
+      "answer_type": "OPEN",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10061,
+      "img_id": 257,
+      "question": "Does the picture contain spleen?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10136,
+      "img_id": 291,
+      "question": "What is the organ located in the lower right corner?",
+      "answer_type": "OPEN",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10231,
+      "img_id": 34,
+      "question": "What modality is used to take this image?",
+      "answer_type": "OPEN",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10262,
+      "img_id": 348,
+      "question": "Can pneumonia be observed on the lower right lung in this picture?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 10415,
+      "img_id": 391,
+      "question": "What is the effect of the center organ in this picture?",
+      "answer_type": "OPEN",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 10603,
+      "img_id": 476,
+      "question": "Which part of the body does this image belong to?",
+      "answer_type": "OPEN",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 10622,
+      "img_id": 482,
+      "question": "Which hemisphere is abnormal,left or right?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 10664,
+      "img_id": 510,
+      "question": "Is this a transverse plane?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10819,
+      "img_id": 609,
+      "question": "Where does the picture show?",
+      "answer_type": "OPEN",
+      "has_gt_regions": true
+    },
+    {
+      "qid": 10876,
+      "img_id": 84,
+      "question": "Does the picture contain heart?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": false
+    },
+    {
+      "qid": 10884,
+      "img_id": 92,
+      "question": "Does the picture contain lung?",
+      "answer_type": "CLOSED",
+      "has_gt_regions": false
+    }
+  ]
+}

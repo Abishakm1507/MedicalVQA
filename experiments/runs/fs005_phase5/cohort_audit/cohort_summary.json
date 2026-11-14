@@ -26,8 +26,8 @@
   "remaining_after_qid_exclusion": 1051,
   "remaining_after_image_exclusion": 945,
   "remaining_unique_images": 87,
-  "samples_with_gt_regions": 0,
-  "samples_without_gt_regions": 945,
+  "samples_with_gt_regions": 864,
+  "samples_without_gt_regions": 81,
   "answer_type_distribution": {
     "OPEN": 572,
     "CLOSED": 373
