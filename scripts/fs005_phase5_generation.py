@@ -408,8 +408,10 @@ class GenerationRunner:
         self, record: GenerationRecord
     ) -> tuple[float, float, str, list[str], bool]:
         """Compute agreement, entropy, majority answer, raw answers, validity."""
+        # Cluster the PARSED answer text, never the raw JSON: two samples with
+        # the same answer but different findings must count as agreeing.
         raw_answers = [
-            s.raw_response if s.raw_response is not None else ""
+            s.parsed_answer if s.parsed_answer is not None else ""
             for s in record.samples
         ]
         result = self.clusterer.compute_agreement_entropy(raw_answers)
