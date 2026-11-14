@@ -1,0 +1,129 @@
+{
+  "seed": 42,
+  "split": "test",
+  "language": "en",
+  "total_english_entries": 1061,
+  "excluded_qids": [
+    11934,
+    11938,
+    11965
+  ],
+  "num_candidates": 1058,
+  "num_selected": 10,
+  "num_open": 5,
+  "num_closed": 5,
+  "unique_images": [
+    130,
+    185,
+    224,
+    234,
+    312,
+    320,
+    344,
+    561,
+    605
+  ],
+  "selection_method": "random.sample(seed=42), 5 OPEN + 5 CLOSED",
+  "samples": [
+    {
+      "qid": 11981,
+      "img_id": 130,
+      "img_name": "xmlab130/source.jpg",
+      "modality": "X-Ray",
+      "location": "Lung",
+      "answer_type": "OPEN",
+      "question": "Which part of the body does this image belong to?",
+      "answer": "Chest"
+    },
+    {
+      "qid": 12073,
+      "img_id": 185,
+      "img_name": "xmlab185/source.jpg",
+      "modality": "X-Ray",
+      "location": "Lung",
+      "answer_type": "CLOSED",
+      "question": "Are there abnormalities in this image?",
+      "answer": "Yes"
+    },
+    {
+      "qid": 12111,
+      "img_id": 224,
+      "img_name": "xmlab224/source.jpg",
+      "modality": "CT",
+      "location": "Abdomen",
+      "answer_type": "CLOSED",
+      "question": "Does the picture contain spleen?",
+      "answer": "Yes"
+    },
+    {
+      "qid": 12129,
+      "img_id": 234,
+      "img_name": "xmlab234/source.jpg",
+      "modality": "CT",
+      "location": "Abdomen",
+      "answer_type": "OPEN",
+      "question": "How many kidneys in this image?",
+      "answer": "0"
+    },
+    {
+      "qid": 12312,
+      "img_id": 312,
+      "img_name": "xmlab312/source.jpg",
+      "modality": "X-Ray",
+      "location": "Lung",
+      "answer_type": "OPEN",
+      "question": "Where is the abnormality in this image?",
+      "answer": "Lower Left Lung"
+    },
+    {
+      "qid": 12344,
+      "img_id": 320,
+      "img_name": "xmlab320/source.jpg",
+      "modality": "X-Ray",
+      "location": "Lung",
+      "answer_type": "OPEN",
+      "question": "Which organs appear in pairs?",
+      "answer": "Lung"
+    },
+    {
+      "qid": 12384,
+      "img_id": 344,
+      "img_name": "xmlab344/source.jpg",
+      "modality": "X-Ray",
+      "location": "Lung",
+      "answer_type": "OPEN",
+      "question": "What imaging modality was used?",
+      "answer": "X-Ray"
+    },
+    {
+      "qid": 12845,
+      "img_id": 561,
+      "img_name": "xmlab561/source.jpg",
+      "modality": "CT",
+      "location": "Abdomen",
+      "answer_type": "CLOSED",
+      "question": "Are there any organs used for breathing in this image?",
+      "answer": "No"
+    },
+    {
+      "qid": 12914,
+      "img_id": 605,
+      "img_name": "xmlab605/source.jpg",
+      "modality": "CT",
+      "location": "Pelvic Cavity",
+      "answer_type": "CLOSED",
+      "question": "Does the picture contain rectum?",
+      "answer": "Yes"
+    },
+    {
+      "qid": 12919,
+      "img_id": 605,
+      "img_name": "xmlab605/source.jpg",
+      "modality": "CT",
+      "location": "Pelvic Cavity",
+      "answer_type": "CLOSED",
+      "question": "Does the picture contain the organ which has the effect of excreting feces?",
+      "answer": "Yes"
+    }
+  ]
+}

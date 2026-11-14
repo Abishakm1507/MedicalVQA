@@ -1,0 +1,775 @@
+Total unique img_ids: 642
+img_ids appearing in multiple splits: 298
+
+Train IDs: 586, Val IDs: 174, Test IDs: 180
+Train n Val: 130
+Train n Test: 142
+Val n Test: 26
+Train n Val n Test: 0
+
+=== First 40 overlapping img_ids with details ===
+
+img_id=0 in ['train', 'validate'] (20 entries):
+  [train] qid=4919 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4920 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4921 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4922 q_lang=zh question='??????????' answer='?' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4923 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4924 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4925 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4926 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4927 q_lang=zh question='??????????' answer='?' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [train] qid=4928 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9835 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9836 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9837 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9838 q_lang=en question='Are there abnormalities in this image?' answer='No' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9839 q_lang=en question='What is the largest organ in the picture?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9840 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9841 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9842 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9843 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+  [validate] qid=9844 q_lang=en question='Where is the liver?' answer='Right' modality=MRI location=Abdomen img_name=xmlab0/source.jpg
+
+img_id=1 in ['test', 'train'] (14 entries):
+  [train] qid=0 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=1 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=2 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=3 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=4 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=5 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [train] qid=6 q_lang=en question='Where is the liver?' answer='Right' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=12995 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=12996 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=12997 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=12998 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=12999 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=13000 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+  [test] qid=13001 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab1/source.jpg
+
+img_id=2 in ['train', 'validate'] (18 entries):
+  [train] qid=672 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=673 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=674 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=675 q_lang=en question='Are there abnormalities in this image?' answer='No' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=676 q_lang=en question='What is the largest organ in the picture?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=677 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=678 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=679 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [train] qid=680 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10990 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10991 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10992 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10993 q_lang=zh question='??????????' answer='???' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10994 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10995 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10996 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10997 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+  [validate] qid=10998 q_lang=zh question='??????????' answer='?' modality=MRI location=Abdomen img_name=xmlab2/source.jpg
+
+img_id=4 in ['test', 'validate'] (12 entries):
+  [validate] qid=10434 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [validate] qid=10435 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [validate] qid=10436 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [validate] qid=10437 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [validate] qid=10438 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [validate] qid=10439 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13650 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13651 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13652 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13653 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13654 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+  [test] qid=13655 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab4/source.jpg
+
+img_id=5 in ['train', 'validate'] (14 entries):
+  [train] qid=3645 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3646 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3647 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3648 q_lang=en question='What is the largest organ in the picture?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3649 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3650 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [train] qid=3651 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11678 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11679 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11680 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11681 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11682 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11683 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+  [validate] qid=11684 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab5/source.jpg
+
+img_id=6 in ['test', 'train'] (12 entries):
+  [train] qid=4378 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [train] qid=4379 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [train] qid=4380 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [train] qid=4381 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [train] qid=4382 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [train] qid=4383 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13940 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13941 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13942 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13943 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13944 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+  [test] qid=13945 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab6/source.jpg
+
+img_id=10 in ['train', 'validate'] (15 entries):
+  [train] qid=4929 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4930 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4931 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4932 q_lang=zh question='??????????' answer='2' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4933 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4934 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [train] qid=4935 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9845 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9846 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9847 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9848 q_lang=en question='How many kidneys in this image?' answer='2' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9849 q_lang=en question='Are/Is the kidney normal in this image?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9850 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9851 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+  [validate] qid=9852 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab10/source.jpg
+
+img_id=11 in ['test', 'train'] (16 entries):
+  [train] qid=64 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=65 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=66 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=67 q_lang=en question='Does spleen look abnormal?' answer='No' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=68 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=69 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=70 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [train] qid=71 q_lang=en question='Where is the spleen?' answer='Lower right' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13012 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13013 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13014 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13015 q_lang=zh question='?????????' answer='?' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13016 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13017 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13018 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+  [test] qid=13019 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab11/source.jpg
+
+img_id=13 in ['test', 'train'] (16 entries):
+  [train] qid=5156 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5157 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5158 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5159 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5160 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5161 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5162 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [train] qid=5163 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11972 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11973 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11974 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11975 q_lang=en question='Is there any abnormality in the spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11976 q_lang=en question='Does the liver look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11977 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11978 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+  [test] qid=11979 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab13/source.jpg
+
+img_id=17 in ['train', 'validate'] (12 entries):
+  [train] qid=436 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [train] qid=437 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [train] qid=438 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [train] qid=439 q_lang=en question='Does the picture contain liver?' answer='No' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [train] qid=440 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [train] qid=441 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10962 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10963 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10964 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10965 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10966 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+  [validate] qid=10967 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab17/source.jpg
+
+img_id=18 in ['test', 'train'] (22 entries):
+  [train] qid=5459 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5460 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5461 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5462 q_lang=zh question='??????????' answer='1' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5463 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5464 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5465 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5466 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5467 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5468 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [train] qid=5469 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12055 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12056 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12057 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12058 q_lang=en question='How many kidneys are there in this image?' answer='1' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12059 q_lang=en question='What is the largest organ in the picture?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12060 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12061 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12062 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12063 q_lang=en question='Does the liver look normal ?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12064 q_lang=en question='Does the kidney look abnormal?' answer='No' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+  [test] qid=12065 q_lang=en question='Do the spleen look abnormal?' answer='No' modality=MRI location=Abdomen img_name=xmlab18/source.jpg
+
+img_id=20 in ['test', 'train'] (14 entries):
+  [train] qid=681 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=682 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=683 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=684 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=685 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=686 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [train] qid=687 q_lang=en question='Which is bigger, liver or spleen?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13124 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13125 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13126 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13127 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13128 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13129 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+  [test] qid=13130 q_lang=zh question='???????????' answer='??' modality=MRI location=Abdomen img_name=xmlab20/source.jpg
+
+img_id=21 in ['train', 'validate'] (16 entries):
+  [train] qid=5662 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5663 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5664 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5665 q_lang=zh question='???????????????' answer='????' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5666 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5667 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5668 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [train] qid=5669 q_lang=zh question='????????' answer='2' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9964 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9965 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9966 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9967 q_lang=en question='How many kidneys are there in this image?' answer='2' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9968 q_lang=en question='Which is bigger, left kidney or spleen ?' answer='Left Kidney' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9969 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9970 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+  [validate] qid=9971 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab21/source.jpg
+
+img_id=22 in ['test', 'validate'] (20 entries):
+  [validate] qid=9985 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9986 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9987 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9988 q_lang=en question='What is the largest organ in the picture?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9989 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9990 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9991 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9992 q_lang=en question='Which is bigger, liver or spleen?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9993 q_lang=en question='Does the liver look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [validate] qid=9994 q_lang=en question='Does the spleen look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13188 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13189 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13190 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13191 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13192 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13193 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13194 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13195 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13196 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+  [test] qid=13197 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab22/source.jpg
+
+img_id=24 in ['test', 'train'] (14 entries):
+  [train] qid=6048 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6049 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6050 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6051 q_lang=zh question='??????????' answer='0' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6052 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6053 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [train] qid=6054 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12154 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12155 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12156 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12157 q_lang=en question='How many kidneys are there in this image?' answer='0' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12158 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12159 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+  [test] qid=12160 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab24/source.jpg
+
+img_id=25 in ['test', 'validate'] (17 entries):
+  [validate] qid=11088 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11089 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11090 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11091 q_lang=zh question='?????????' answer='???' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11092 q_lang=zh question='?????????' answer='???' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11093 q_lang=zh question='?????????' answer='???' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11094 q_lang=zh question='?????????' answer='0' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [validate] qid=11095 q_lang=zh question='???????????' answer='?' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12161 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12162 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12163 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12164 q_lang=en question='Does the picture contain liver?' answer='No' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12165 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12166 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12167 q_lang=en question='Where is the liver?' answer='Not seen' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12168 q_lang=en question='How many kidneys in this image?' answer='0' modality=MRI location=Lung img_name=xmlab25/source.jpg
+  [test] qid=12169 q_lang=en question='What is the organ on the left side of this image?' answer='Lung' modality=MRI location=Lung img_name=xmlab25/source.jpg
+
+img_id=29 in ['train', 'validate'] (20 entries):
+  [train] qid=1734 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1735 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1736 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1737 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1738 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1739 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1740 q_lang=en question='Where is the liver?' answer='Left' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1741 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1742 q_lang=en question='Does the spleen look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [train] qid=1743 q_lang=en question='What is the organ on the right side of this image?' answer='Spleen' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11160 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11161 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11162 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11163 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11164 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11165 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11166 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11167 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11168 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+  [validate] qid=11169 q_lang=zh question='???????????' answer='??' modality=MRI location=Abdomen img_name=xmlab29/source.jpg
+
+img_id=30 in ['test', 'train'] (16 entries):
+  [train] qid=1859 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1860 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1861 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1862 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1863 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1864 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1865 q_lang=en question='Where is the liver?' answer='Upper left' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [train] qid=1866 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13364 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13365 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13366 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13367 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13368 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13369 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13370 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+  [test] qid=13371 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab30/source.jpg
+
+img_id=34 in ['train', 'validate'] (14 entries):
+  [train] qid=7185 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7186 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7187 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7188 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7189 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7190 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [train] qid=7191 q_lang=zh question='?????????' answer='0' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10231 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10232 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10233 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10234 q_lang=en question='Does the picture contain liver?' answer='No' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10235 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10236 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+  [validate] qid=10237 q_lang=en question='How many kidneys in this image?' answer='0' modality=MRI location=Abdomen img_name=xmlab34/source.jpg
+
+img_id=35 in ['train', 'validate'] (24 entries):
+  [train] qid=2394 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2395 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2396 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2397 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2398 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2399 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2400 q_lang=en question='Where is the liver?' answer='Left' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2401 q_lang=en question='How many kidneys in this image?' answer='0' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2402 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2403 q_lang=en question='Does the spleen look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2404 q_lang=en question='What is the organ located in the lower right corner?' answer='Spleen' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [train] qid=2405 q_lang=en question='What is the organ on the left side of this image?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11272 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11273 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11274 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11275 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11276 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11277 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11278 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11279 q_lang=zh question='?????????' answer='0' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11280 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11281 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11282 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+  [validate] qid=11283 q_lang=zh question='???????????' answer='??' modality=MRI location=Abdomen img_name=xmlab35/source.jpg
+
+img_id=36 in ['train', 'validate'] (23 entries):
+  [train] qid=2481 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2482 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2483 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2484 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2485 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2486 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2487 q_lang=en question='Where is the liver?' answer='Upper Left' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2488 q_lang=en question='How many kidneys in this image?' answer='2' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2489 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2490 q_lang=en question='Does the kidneys look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2491 q_lang=en question='Which is bigger in this image, kidney or liver?' answer='Liver' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [train] qid=2492 q_lang=en question='What is the organ located in the lower right corner?' answer='Left Kidney' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11329 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11330 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11331 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11332 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11333 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11334 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11335 q_lang=zh question='?????????' answer='2' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11336 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11337 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11338 q_lang=zh question='????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+  [validate] qid=11339 q_lang=zh question='??????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab36/source.jpg
+
+img_id=37 in ['test', 'train'] (17 entries):
+  [train] qid=2583 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2584 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2585 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2586 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2587 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2588 q_lang=en question='Does the picture contain spleen?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2589 q_lang=en question='Where is the liver?' answer='Left' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2590 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [train] qid=2591 q_lang=en question='Does the spleen look abnormal?' answer='No' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13552 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13553 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13554 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13555 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13556 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13557 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13558 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+  [test] qid=13559 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab37/source.jpg
+
+img_id=39 in ['train', 'validate'] (14 entries):
+  [train] qid=2784 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2785 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2786 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2787 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2788 q_lang=en question='Does the picture contain kidney?' answer='No' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2789 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [train] qid=2790 q_lang=en question='Is the liver not healthy?' answer='No' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11430 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11431 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11432 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11433 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11434 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11435 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+  [validate] qid=11436 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab39/source.jpg
+
+img_id=40 in ['test', 'train'] (20 entries):
+  [train] qid=2914 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2915 q_lang=en question='Which part of the body does this image belong to?' answer='Abdomen' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2916 q_lang=en question='What is the mr weighting in this image?' answer='T1' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2917 q_lang=en question='Does the picture contain liver?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2918 q_lang=en question='Does the picture contain kidney?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2919 q_lang=en question='Does the picture contain spleen?' answer='No' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2920 q_lang=en question='Where is the liver?' answer='Left' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2921 q_lang=en question='How many kidneys in this image?' answer='2' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2922 q_lang=en question='Is the liver healthy?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [train] qid=2923 q_lang=en question='Does the kidneys look normal?' answer='Yes' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13656 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13657 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13658 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13659 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13660 q_lang=zh question='?????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13661 q_lang=zh question='?????????' answer='???' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13662 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13663 q_lang=zh question='?????????' answer='2' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13664 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+  [test] qid=13665 q_lang=zh question='????????' answer='??' modality=MRI location=Abdomen img_name=xmlab40/source.jpg
+
+img_id=42 in ['train', 'validate'] (18 entries):
+  [train] qid=7941 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7942 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7943 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7944 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7945 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7946 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7947 q_lang=zh question='??????????' answer='???, ??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7948 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [train] qid=7949 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10480 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10481 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10482 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10483 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10484 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10485 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10486 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema, Brain Tumor' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10487 q_lang=en question='Does the brain look abnormal?' answer='Yes' modality=MRI location=Brain img_name=xmlab42/source.jpg
+  [validate] qid=10488 q_lang=en question='Where is/are the abnormality located?' answer='Left' modality=MRI location=Brain img_name=xmlab42/source.jpg
+
+img_id=43 in ['train', 'validate'] (18 entries):
+  [train] qid=3171 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3172 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3173 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3174 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3175 q_lang=en question='What is the largest organ in the picture?' answer='Barin' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3176 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3177 q_lang=en question='What diseases are included in the picture?' answer='Brian Edema' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3178 q_lang=en question='Does the brain look abnormal?' answer='Yes' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [train] qid=3179 q_lang=en question='Where is/are the abnormality located?' answer='Left' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11552 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11553 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11554 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11555 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11556 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11557 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11558 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11559 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+  [validate] qid=11560 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab43/source.jpg
+
+img_id=44 in ['test', 'train'] (18 entries):
+  [train] qid=3276 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3277 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3278 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3279 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3280 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3281 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3282 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3283 q_lang=en question='Is the brain healthy?' answer='No' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [train] qid=3284 q_lang=en question='Where is/are the abnormality located?' answer='Left' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13737 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13738 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13739 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13740 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13741 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13742 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13743 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13744 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab44/source.jpg
+  [test] qid=13745 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab44/source.jpg
+
+img_id=45 in ['train', 'validate'] (16 entries):
+  [train] qid=3347 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3348 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3349 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3350 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3351 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3352 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3353 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [train] qid=3354 q_lang=en question='Is the brain healthy?' answer='Yes' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11613 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11614 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11615 q_lang=zh question='??MRI???????????' answer='T1' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11616 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11617 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11618 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11619 q_lang=zh question='??????????' answer='?' modality=MRI location=Brain img_name=xmlab45/source.jpg
+  [validate] qid=11620 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab45/source.jpg
+
+img_id=46 in ['train', 'validate'] (18 entries):
+  [train] qid=8229 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8230 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8231 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8232 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8233 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8234 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8235 q_lang=zh question='??????????' answer='???,??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8236 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [train] qid=8237 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10563 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10564 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10565 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10566 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10567 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10568 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10569 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema, Brain Tumor' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10570 q_lang=en question='Is the brain healthy?' answer='No' modality=MRI location=Brain img_name=xmlab46/source.jpg
+  [validate] qid=10571 q_lang=en question='Where is/are the abnormality located?' answer='Left' modality=MRI location=Brain img_name=xmlab46/source.jpg
+
+img_id=49 in ['test', 'train'] (18 entries):
+  [train] qid=8452 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8453 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8454 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8455 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8456 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8457 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8458 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8459 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [train] qid=8460 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12693 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12694 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12695 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12696 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12697 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12698 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12699 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12700 q_lang=en question='Does the brain look abnormal?' answer='Yes' modality=MRI location=Brain img_name=xmlab49/source.jpg
+  [test] qid=12701 q_lang=en question='Where is/are the abnormality located?' answer='Lower Right' modality=MRI location=Brain img_name=xmlab49/source.jpg
+
+img_id=51 in ['train', 'validate'] (18 entries):
+  [train] qid=3716 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3717 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3718 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3719 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3720 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3721 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3722 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema, Brain Tumor' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3723 q_lang=en question='Does the brain look abnormal?' answer='No' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [train] qid=3724 q_lang=en question='Where is/are the abnormality located?' answer='Lower Left' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11712 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11713 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11714 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11715 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11716 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11717 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11718 q_lang=zh question='??????????' answer='???, ???' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11719 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+  [validate] qid=11720 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab51/source.jpg
+
+img_id=53 in ['test', 'train'] (16 entries):
+  [train] qid=8710 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8711 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8712 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8713 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8714 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8715 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8716 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [train] qid=8717 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12764 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12765 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12766 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12767 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12768 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12769 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12770 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Brain img_name=xmlab53/source.jpg
+  [test] qid=12771 q_lang=en question='Does the brain look abnormal?' answer='No' modality=MRI location=Brain img_name=xmlab53/source.jpg
+
+img_id=54 in ['train', 'validate'] (18 entries):
+  [train] qid=3917 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3918 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3919 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3920 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3921 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3922 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3923 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3924 q_lang=en question='Does the brain look abnormal?' answer='Yes' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [train] qid=3925 q_lang=en question='Where is/are the abnormality located?' answer='Right' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11749 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11750 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11751 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11752 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11753 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11754 q_lang=zh question='?????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11755 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11756 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+  [validate] qid=11757 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab54/source.jpg
+
+img_id=58 in ['test', 'train'] (18 entries):
+  [train] qid=9148 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9149 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9150 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9151 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9152 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9153 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9154 q_lang=zh question='??????????' answer='??,???' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9155 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [train] qid=9156 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12868 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12869 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12870 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12871 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12872 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12873 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12874 q_lang=en question='What diseases are included in the picture?' answer='Brain Tumor, Brain Edema' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12875 q_lang=en question='Is the brain healthy?' answer='No' modality=MRI location=Brain img_name=xmlab58/source.jpg
+  [test] qid=12876 q_lang=en question='Where is/are the abnormality located?' answer='Lower Left' modality=MRI location=Brain img_name=xmlab58/source.jpg
+
+img_id=61 in ['train', 'validate'] (18 entries):
+  [train] qid=9404 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9405 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9406 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9407 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9408 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9409 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9410 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9411 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [train] qid=9412 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10828 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10829 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10830 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10831 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10832 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10833 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10834 q_lang=en question='What diseases are included in the picture?' answer='Brain Edema' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10835 q_lang=en question='Is the brain healthy?' answer='No' modality=MRI location=Brain img_name=xmlab61/source.jpg
+  [validate] qid=10836 q_lang=en question='Where is/are the abnormality located?' answer='Upper' modality=MRI location=Brain img_name=xmlab61/source.jpg
+
+img_id=71 in ['test', 'train'] (16 entries):
+  [train] qid=9638 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9639 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9640 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9641 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9642 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9643 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9644 q_lang=zh question='??????????' answer='?' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [train] qid=9645 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12945 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12946 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12947 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12948 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12949 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12950 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12951 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Brain img_name=xmlab71/source.jpg
+  [test] qid=12952 q_lang=en question='Is the brain healthy?' answer='Yes' modality=MRI location=Brain img_name=xmlab71/source.jpg
+
+img_id=72 in ['test', 'train'] (18 entries):
+  [train] qid=4708 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4709 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4710 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4711 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4712 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4713 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4714 q_lang=en question='What diseases are included in the picture?' answer='Brain Tumor, Brain Edema' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4715 q_lang=en question='Does the brain look abnormal?' answer='Yes' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [train] qid=4716 q_lang=en question='Where is/are the abnormality located?' answer='Lower Right' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13982 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13983 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13984 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13985 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13986 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13987 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13988 q_lang=zh question='??????????' answer='???,???' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13989 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab72/source.jpg
+  [test] qid=13990 q_lang=zh question='??????????' answer='???' modality=MRI location=Brain img_name=xmlab72/source.jpg
+
+img_id=73 in ['test', 'train'] (18 entries):
+  [train] qid=4717 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4718 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4719 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4720 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4721 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4722 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4723 q_lang=en question='What diseases are included in the picture?' answer='Brain Tumor, Brain Edema' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4724 q_lang=en question='Is the brain healthy?' answer='No' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [train] qid=4725 q_lang=en question='Where is/are the abnormality located?' answer='Right' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13991 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13992 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13993 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13994 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13995 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13996 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13997 q_lang=zh question='??????????' answer='???,???' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13998 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+  [test] qid=13999 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab73/source.jpg
+
+img_id=77 in ['test', 'train'] (16 entries):
+  [train] qid=9672 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9673 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9674 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9675 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9676 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9677 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9678 q_lang=zh question='??????????' answer='?' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [train] qid=9679 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12953 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12954 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12955 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12956 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12957 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12958 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12959 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Brain img_name=xmlab77/source.jpg
+  [test] qid=12960 q_lang=en question='Is the brain healthy?' answer='Yes' modality=MRI location=Brain img_name=xmlab77/source.jpg
+
+img_id=78 in ['test', 'train'] (16 entries):
+  [train] qid=4752 q_lang=en question='What modality is used to take this image?' answer='MRI' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4753 q_lang=en question='Which part of the body does this image belong to?' answer='Brain' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4754 q_lang=en question='What is the mr weighting in this image?' answer='T2' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4755 q_lang=en question='What is the main organ in the image?' answer='Brain' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4756 q_lang=en question='What is the largest organ in the picture?' answer='Brain' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4757 q_lang=en question='Does the picture contain brian?' answer='Yes' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4758 q_lang=en question='What diseases are included in the picture?' answer='None' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [train] qid=4759 q_lang=en question='Is the brain healthy?' answer='Yes' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14000 q_lang=zh question='?????????????' answer='MRI' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14001 q_lang=zh question='?????????????????' answer='??' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14002 q_lang=zh question='??MRI???????????' answer='T2' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14003 q_lang=zh question='??????????' answer='??' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14004 q_lang=zh question='???????????' answer='??' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14005 q_lang=zh question='????????' answer='??' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14006 q_lang=zh question='??????????' answer='?' modality=MRI location=Brain img_name=xmlab78/source.jpg
+  [test] qid=14007 q_lang=zh question='????????' answer='?' modality=MRI location=Brain img_name=xmlab78/source.jpg
+
+=== Overlap analysis ===
+Total overlap entries: 6485
+img_ids with different questions across splits: 298
+img_ids with different answers across splits: 298
+img_ids where a question is repeated across splits: 0
+img_ids appearing in multiple languages across splits: 298

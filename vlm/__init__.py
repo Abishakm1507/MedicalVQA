@@ -13,6 +13,7 @@ __all__ = [
     "QwenVLMClient",
     "MockVLMClient",
     "OllamaVLMClient",
+    "MedGemmaVLMClient",
 ]
 
 
@@ -44,5 +45,12 @@ def __getattr__(name: str) -> Any:
 
         globals()["OllamaVLMClient"] = OllamaVLMClient
         return OllamaVLMClient
+
+    # MedGemmaVLMClient — requires torch + transformers (lazy)
+    if name == "MedGemmaVLMClient":
+        from vlm.medgemma_client import MedGemmaVLMClient
+
+        globals()["MedGemmaVLMClient"] = MedGemmaVLMClient
+        return MedGemmaVLMClient
 
     raise AttributeError(f"module 'vlm' has no attribute '{name}'")
