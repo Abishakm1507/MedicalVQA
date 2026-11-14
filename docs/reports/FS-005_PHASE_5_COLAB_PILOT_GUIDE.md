@@ -201,8 +201,10 @@ sample) under:
 
 `generation_id` = SHA-256 over
 `(model_name, model_revision, track, question_id, image_id, n_samples,
-temperature, random_seed)`. The condition is **excluded** from the hash, so
-Conditions 2 and 3 resolve to the same file.
+temperature, random_seed)` and the Track B oracle-overlay input version. The
+condition is **excluded** from the hash, so Conditions 2 and 3 resolve to the
+same file. Track B records also persist `grounding_mode` as
+`oracle_gt_xywh_overlay_v1`; Track C records use `original_unmarked_image`.
 
 Each record contains:
 - model name + checkpoint/revision identifier

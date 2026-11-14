@@ -135,7 +135,11 @@ def test_persistent_output_path_configuration(tmp_path) -> None:
 
 def test_resume_from_persistent_artifact_directory(tmp_path) -> None:
     """Re-running GenerationRunner against an existing persistent artifact
-    directory skips completed samples (no duplicate generation)."""
+    directory skips completed samples (no duplicate generation).
+
+    Per-run counters reset on each run_batch call: the second run reports
+    n_completed=0 and n_skipped=2 (not cumulative counts from the first run).
+    """
     output_dir = tmp_path / "persistent_runner"
     runner = GenerationRunner(
         vlm_client=MockVLMClient(model_name="mock-vlm"),
@@ -156,20 +160,187 @@ def test_resume_from_persistent_artifact_directory(tmp_path) -> None:
     first = runner.run_batch(samples, images)
     assert first["n_completed"] == 2
     assert first["n_skipped"] == 0
+    assert first["n_failed"] == 0
 
-    # Second run against the same persistent directory: all skipped.
+    # Second run against the same persistent directory: all skipped,
+    # no duplicate generation, counters reset per call.
     second = runner.run_batch(samples, images)
-    assert second["n_completed"] == 2
+    assert second["n_completed"] == 0
     assert second["n_skipped"] == 2
     assert second["n_failed"] == 0
     assert second["n_retried"] == 0
 
-    # Artifacts still present and valid on the persistent root.
+    # Third run with a brand-new runner (simulates Colab runtime restart):
+    # same output_dir, same skip behavior.
+    runner2 = GenerationRunner(
+        vlm_client=MockVLMClient(model_name="mock-vlm"),
+        model_name="mock-vlm",
+        model_revision=None,
+        track="C",
+        output_dir=output_dir,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=3,
+    )
+    third = runner2.run_batch(samples, images)
+    assert third["n_completed"] == 0
+    assert third["n_skipped"] == 2
+    assert third["n_failed"] == 0
+
+    # No duplicate artifacts: exactly 2 files on disk.
+    store = GenerationArtifactStore(root=output_dir / "generations")
+    artifact_ids = store.list_records("mock-vlm", "C")
+    assert len(artifact_ids) == 2
+
+    # All artifacts remain valid and unchanged.
     for s in samples:
         gen_id = compute_generation_id(
             "mock-vlm", None, "C", s["question_id"], s["image_id"], 5, 0.7, 3
         )
-        assert runner.store.is_completed_valid("mock-vlm", "C", gen_id)
+        assert store.is_completed_valid("mock-vlm", "C", gen_id)
+
+
+def test_resume_retries_failed_without_overwriting_valid(tmp_path) -> None:
+    """A FAILED artifact is retried on the next run; a COMPLETED artifact is
+    never overwritten. Valid results are preserved across retries."""
+    output_dir = tmp_path / "retry_runner"
+    runner = GenerationRunner(
+        vlm_client=MockVLMClient(model_name="mock-vlm"),
+        model_name="mock-vlm",
+        model_revision=None,
+        track="C",
+        output_dir=output_dir,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=5,
+    )
+    samples = [
+        {"question_id": "q_retry_1", "image_id": "img_retry_1", "question": "Q1?", "region_ids": []},
+        {"question_id": "q_retry_2", "image_id": "img_retry_2", "question": "Q2?", "region_ids": []},
+    ]
+    images = {s["image_id"]: None for s in samples}
+
+    # Pre-seed a FAILED record for the first sample.
+    qid = samples[0]["question_id"]
+    iid = samples[0]["image_id"]
+    gen_id = compute_generation_id(
+        "mock-vlm", None, "C", qid, iid, 5, 0.7, 5
+    )
+    failed_record = GenerationRecord(
+        generation_id=gen_id,
+        model_name="mock-vlm",
+        model_revision=None,
+        track="C",
+        question_id=qid,
+        image_id=iid,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=5,
+        samples=[
+            GenerationSample(sample_index=i, raw_response=None, status="failed", error="transient")
+            for i in range(5)
+        ],
+        status=GenerationStatus.FAILED,
+        validation_status=ValidationStatus.INVALID,
+        total_duration_s=None,
+        error="transient failure",
+    )
+    runner.store.save(failed_record, validate=False)
+
+    summary = runner.run_batch(samples, images)
+    # The failed record is retried and replaced with a completed one.
+    assert summary["n_retried"] >= 1
+    assert summary["n_completed"] == 2
+    assert summary["n_skipped"] == 0
+    record = runner.store.load("mock-vlm", "C", gen_id)
+    assert record is not None
+    assert record.status == GenerationStatus.COMPLETED
+    assert record.error is None
+
+
+def test_resume_detects_corrupt_artifact(tmp_path) -> None:
+    """A corrupt (unparseable) artifact is detected and does not cause silent
+    data loss; re-running regenerates it."""
+    output_dir = tmp_path / "corrupt_runner"
+    runner = GenerationRunner(
+        vlm_client=MockVLMClient(model_name="mock-vlm"),
+        model_name="mock-vlm",
+        model_revision=None,
+        track="C",
+        output_dir=output_dir,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=6,
+    )
+    samples = [
+        {"question_id": "q_corrupt_1", "image_id": "img_corrupt_1", "question": "Q1?", "region_ids": []},
+    ]
+    images = {s["image_id"]: None for s in samples}
+
+    first = runner.run_batch(samples, images)
+    assert first["n_completed"] == 1
+
+    # Corrupt the artifact file.
+    qid = samples[0]["question_id"]
+    iid = samples[0]["image_id"]
+    gen_id = compute_generation_id(
+        "mock-vlm", None, "C", qid, iid, 5, 0.7, 6
+    )
+    path = runner.store._record_path("mock-vlm", "C", gen_id)
+    path.write_text("{corrupt", encoding="utf-8")
+
+    # Corrupt artifact is detected as not valid-completed.
+    assert runner.store.is_completed_valid("mock-vlm", "C", gen_id) is False
+
+    # Re-running regenerates the corrupt record.
+    second = runner.run_batch(samples, images)
+    assert second["n_completed"] == 1
+    record = runner.store.load("mock-vlm", "C", gen_id)
+    assert record is not None
+    assert record.status == GenerationStatus.COMPLETED
+    assert runner.store.is_completed_valid("mock-vlm", "C", gen_id) is True
+
+
+def test_duplicate_prevention_no_new_artifacts_on_rerun(tmp_path) -> None:
+    """Re-running against the same directory creates no new artifact files
+    and leaves existing artifacts byte-identical."""
+    output_dir = tmp_path / "nodupe_runner"
+    runner = GenerationRunner(
+        vlm_client=MockVLMClient(model_name="mock-vlm"),
+        model_name="mock-vlm",
+        model_revision=None,
+        track="C",
+        output_dir=output_dir,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=7,
+    )
+    samples = [
+        {"question_id": "q_nodupe_1", "image_id": "img_nodupe_1", "question": "Q1?", "region_ids": []},
+    ]
+    images = {s["image_id"]: None for s in samples}
+
+    first = runner.run_batch(samples, images)
+    assert first["n_completed"] == 1
+
+    qid = samples[0]["question_id"]
+    iid = samples[0]["image_id"]
+    gen_id = compute_generation_id(
+        "mock-vlm", None, "C", qid, iid, 5, 0.7, 7
+    )
+    store = GenerationArtifactStore(root=output_dir / "generations")
+    path = store._record_path("mock-vlm", "C", gen_id)
+    original_bytes = path.read_bytes()
+
+    # Second run: skip, no new file, artifact unchanged.
+    second = runner.run_batch(samples, images)
+    assert second["n_completed"] == 0
+    assert second["n_skipped"] == 1
+    assert path.read_bytes() == original_bytes
+
+    # No additional artifact files created.
+    artifact_ids = store.list_records("mock-vlm", "C")
+    assert len(artifact_ids) == 1
 
 
 def _validation_samples() -> list[dict]:

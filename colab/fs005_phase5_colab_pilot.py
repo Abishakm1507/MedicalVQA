@@ -39,6 +39,7 @@ RUN_REAL_INFERENCE = False
 
 # Number of pilot samples (must be within 10-20).
 PILOT_SIZE = 15
+TRACK_B_PILOT_SIZE = 7
 
 # ---------------------------------------------------------------------------
 # 1. Colab environment detection
@@ -148,12 +149,44 @@ def install_dependencies() -> None:
 
     Heavy ML deps (torch, transformers, accelerate, bitsandbytes,
     safetensors, huggingface_hub) are pre-installed on Colab or installed on
-    demand; this cell only ensures dev/lint tooling is present.
+    demand; this cell only ensures dev/lint tooling is present. Protect the
+    active Colab PyTorch/CUDA runtime from dependency-manifest changes.
     """
     import subprocess
 
+    requirements_path = Path(__file__).resolve().parents[1] / "requirements-dev.txt"
+    protected_prefixes = ("torch", "triton", "nvidia-", "cuda-")
+    for requirement in requirements_path.read_text(encoding="utf-8").splitlines():
+        line = requirement.strip()
+        if not line or line.startswith("#"):
+            continue
+        if line.startswith("-"):
+            raise RuntimeError(
+                f"Unreviewed requirements directive in {requirements_path}: {line}"
+            )
+        package_name = line
+        for separator in "<=>!~[":
+            package_name = package_name.split(separator, 1)[0]
+        package_name = package_name.strip().lower().replace("_", "-")
+        if any(
+            package_name == prefix or package_name.startswith(prefix)
+            for prefix in protected_prefixes
+        ):
+            raise RuntimeError(
+                f"Refusing to install {package_name}: Colab's PyTorch/CUDA stack "
+                "must remain untouched."
+            )
+
     subprocess.run(
-        [sys.executable, "-m", "pip", "install", "-q", "-r", "requirements-dev.txt"],
+        [
+            sys.executable,
+            "-m",
+            "pip",
+            "install",
+            "-q",
+            "-r",
+            str(requirements_path),
+        ],
         check=True,
     )
     print("Dependencies verified.")
@@ -233,38 +266,21 @@ def load_pilot_manifest(repo_root: Path) -> dict:
     return manifest
 
 
-def load_gt_region_ids(image_id: int, repo_root: Path) -> list[str]:
-    """Load ground-truth region identifiers for a Track B sample.
-
-    Reads ``data/SLAKE/imgs/xmlab{image_id}/detection.json``, which is a list
-    of ``{<region_label>: [xmin, ymin, xmax, ymax]}`` dicts. Returns the region
-    labels as the region identifiers used for Set-of-Mark grounding. Returns an
-    empty list when no GT regions exist (Track C or missing detection file).
-    """
-    det_path = (
-        repo_root / "data" / "SLAKE" / "imgs" / f"xmlab{image_id}" / "detection.json"
-    )
-    try:
-        detections = json.loads(det_path.read_text(encoding="utf-8"))
-    except (OSError, json.JSONDecodeError):
-        return []
-    if not isinstance(detections, list):
-        return []
-    region_ids: list[str] = []
-    for detection in detections:
-        region_ids.extend(detection.keys())
-    return region_ids
-
-
 def build_input_samples(
     manifest: dict, repo_root: Path, track: str
 ) -> tuple[list[dict], dict[str, object]]:
     """Build GenerationRunner input samples + PIL images keyed by image_id.
 
     Images are read from data/SLAKE/imgs/xmlab{img_id}/source.jpg.
-    For Track B, ground-truth region IDs are loaded from detection.json.
+    Track B receives only samples with validated, visibly overlaid GT boxes.
+    Track C receives the original image with no GT metadata or region IDs.
     """
     from PIL import Image  # type: ignore
+
+    from scripts.fs005_phase5_ground_truth import build_ground_truth_overlay
+
+    if track not in {"B", "C"}:
+        raise ValueError(f"Unknown pilot track: {track!r}; expected 'B' or 'C'")
 
     samples: list[dict] = []
     images: dict[str, object] = {}
@@ -273,21 +289,41 @@ def build_input_samples(
     for entry in manifest["samples"]:
         qid = entry["qid"]
         iid = entry["img_id"]
-        img_path = slaake_dir / "imgs" / f"xmlab{iid}" / "source.jpg"
-        image = Image.open(img_path).convert("RGB")
-        images[str(iid)] = image
+        image_dir = slaake_dir / "imgs" / f"xmlab{iid}"
+        img_path = image_dir / "source.jpg"
+        with Image.open(img_path) as source:
+            image = source.convert("RGB")
 
         region_ids: list[str] = []
+        region_metadata: list[dict] = []
+        input_image = image
         if track == "B":
-            region_ids = load_gt_region_ids(iid, repo_root)
+            input_image, region_ids, region_metadata = build_ground_truth_overlay(
+                image, image_dir / "detection.json"
+            )
+            if not region_ids:
+                continue
 
-        samples.append(
-            {
-                "question_id": qid,
-                "image_id": iid,
-                "question": entry["question"],
-                "region_ids": region_ids,
-            }
+        images[str(iid)] = input_image
+
+        sample = {
+            "question_id": qid,
+            "image_id": iid,
+            "question": entry["question"],
+            "region_ids": region_ids,
+        }
+        if track == "B":
+            sample["region_metadata"] = region_metadata
+        samples.append(sample)
+
+    if track == "B" and len(samples) != TRACK_B_PILOT_SIZE:
+        raise RuntimeError(
+            f"Track B requires exactly {TRACK_B_PILOT_SIZE} pilot samples with "
+            f"usable ground-truth regions; found {len(samples)}."
+        )
+    if track == "C" and len(samples) != PILOT_SIZE:
+        raise RuntimeError(
+            f"Track C requires exactly {PILOT_SIZE} pilot samples; found {len(samples)}."
         )
 
     print(f"Prepared {len(samples)} input samples with {len(images)} images (track {track}).")

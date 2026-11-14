@@ -35,17 +35,24 @@ The SLAKE dataset organizes images by ID under `data/SLAKE/imgs/xmlab{img_id}/`.
 
 ### 2.2 Detection JSON Schema
 
-Each `detection.json` file contains a JSON array of objects. Each object maps an anatomical region name to its bounding box coordinates `[ymin, xmin, ymax, xmax]`.
+Each `detection.json` file contains a JSON array of objects. Each object maps an anatomical region name to its bounding box coordinates `[x, y, width, height]` in source-image pixels. For drawing, convert each annotation to `[x, y, x + width, y + height]` (XYXY).
 
 **Example — xmlab130/detection.json:**
 ```json
 [{"Pneumonia": [703.0, 616.0, 218.0, 249.0]}]
 ```
+The corresponding `source.jpg` is 1024×1024. Interpreting this as XYWH yields
+`[703, 616, 921, 865]`, a valid in-bounds box; it cannot be an XYXY box because
+its third coordinate (`218`) is less than its first (`703`).
 
 **Example — xmlab1/detection.json:**
 ```json
 [{"Liver": [54.0, 106.0, 30.0, 31.0]}]
 ```
+
+The earlier description of this schema as `[ymin, xmin, ymax, xmax]` was
+incorrect. The actual dataset values use XYWH, and must be converted before
+being passed to drawing code that expects XYXY.
 
 **Example — xmlab25/detection.json (empty):**
 ```json

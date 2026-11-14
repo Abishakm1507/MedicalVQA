@@ -54,7 +54,8 @@ def test_second_run_skips_all_duplicate_prevention(tmp_path) -> None:
     assert first["n_completed"] == 3
 
     second = runner.run_batch(samples, images)
-    assert second["n_completed"] == 3
+    # Counters reset per call: all samples skipped, no new completions.
+    assert second["n_completed"] == 0
     assert second["n_skipped"] == 3  # all valid completed records skipped
     assert second["n_failed"] == 0
     assert second["n_retried"] == 0
@@ -120,7 +121,12 @@ def test_corrupt_artifact_detected_and_regenerated(tmp_path) -> None:
         runner.store.load("mock-vlm", "C", gen_id)
 
     # Re-running regenerates the corrupt record (no permanent data loss).
-    runner.run_batch(samples, images)
+    repaired = runner.run_batch(samples, images)
+    assert repaired["n_completed"] == 1
+    assert repaired["n_skipped"] == 2
+    assert repaired["n_retried"] == 1
+    assert repaired["n_corrupt"] == 1
+    assert repaired["progress"]["corrupt_question_ids"] == [qid]
     record = runner.store.load("mock-vlm", "C", gen_id)
     assert record is not None
     assert record.status == GenerationStatus.COMPLETED
@@ -140,5 +146,6 @@ def test_interruption_resume_progress_persisted(tmp_path) -> None:
 
     # Resume: same run should load progress and skip all.
     second = runner.run_batch(samples, images)
-    assert second["progress"]["n_completed"] == 3
+    # Counters reset per call: progress file reflects this run's stats.
+    assert second["progress"]["n_completed"] == 0
     assert second["progress"]["n_skipped"] == 3

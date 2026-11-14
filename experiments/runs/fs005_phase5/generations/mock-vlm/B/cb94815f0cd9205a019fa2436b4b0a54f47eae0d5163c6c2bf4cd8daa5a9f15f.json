@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0",
+  "generation_id": "cb94815f0cd9205a019fa2436b4b0a54f47eae0d5163c6c2bf4cd8daa5a9f15f",
+  "model_name": "mock-vlm",
+  "model_revision": null,
+  "track": "B",
+  "question_id": 9972,
+  "image_id": 213,
+  "n_samples": 5,
+  "temperature": 0.7,
+  "random_seed": 42,
+  "samples": [
+    {
+      "sample_index": 0,
+      "raw_response": "{\"answer\": \"Mock answer \\u2014 not a real model prediction.\", \"findings\": []}",
+      "parsed_answer": "Mock answer \u2014 not a real model prediction.",
+      "claims": [],
+      "inference_duration_s": 5.469999996421393e-05,
+      "timestamp_utc": "2026-11-14T13:39:15.627627+00:00",
+      "error": null,
+      "status": "ok"
+    },
+    {
+      "sample_index": 1,
+      "raw_response": "{\"answer\": \"Mock answer \\u2014 not a real model prediction.\", \"findings\": []}",
+      "parsed_answer": "Mock answer \u2014 not a real model prediction.",
+      "claims": [],
+      "inference_duration_s": 1.3899998521083035e-05,
+      "timestamp_utc": "2026-11-14T13:39:15.627627+00:00",
+      "error": null,
+      "status": "ok"
+    },
+    {
+      "sample_index": 2,
+      "raw_response": "{\"answer\": \"Mock answer \\u2014 not a real model prediction.\", \"findings\": []}",
+      "parsed_answer": "Mock answer \u2014 not a real model prediction.",
+      "claims": [],
+      "inference_duration_s": 6.199999916134402e-06,
+      "timestamp_utc": "2026-11-14T13:39:15.627627+00:00",
+      "error": null,
+      "status": "ok"
+    },
+    {
+      "sample_index": 3,
+      "raw_response": "{\"answer\": \"Mock answer \\u2014 not a real model prediction.\", \"findings\": []}",
+      "parsed_answer": "Mock answer \u2014 not a real model prediction.",
+      "claims": [],
+      "inference_duration_s": 5.199999577598646e-06,
+      "timestamp_utc": "2026-11-14T13:39:15.627627+00:00",
+      "error": null,
+      "status": "ok"
+    },
+    {
+      "sample_index": 4,
+      "raw_response": "{\"answer\": \"Mock answer \\u2014 not a real model prediction.\", \"findings\": []}",
+      "parsed_answer": "Mock answer \u2014 not a real model prediction.",
+      "claims": [],
+      "inference_duration_s": 5.300000339047983e-06,
+      "timestamp_utc": "2026-11-14T13:39:15.627627+00:00",
+      "error": null,
+      "status": "ok"
+    }
+  ],
+  "status": "completed",
+  "validation_status": "valid",
+  "total_duration_s": 0.00017110000044340268,
+  "created_at_utc": "2026-11-14T13:39:15.627627+00:00",
+  "updated_at_utc": "2026-11-14T13:39:15.627627+00:00",
+  "error": null
+}

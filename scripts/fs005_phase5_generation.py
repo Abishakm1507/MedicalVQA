@@ -26,9 +26,11 @@ Traceability:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import sys
 import time
+import warnings
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
 from pathlib import Path
@@ -100,6 +102,8 @@ class GenerationProgress:
     track: str
     condition_pair: str  # e.g. "2+3"
     n_samples_expected: int
+    cohort_fingerprint: str
+    n_expected: int
     n_completed: int = 0
     n_skipped: int = 0
     n_failed: int = 0
@@ -122,6 +126,8 @@ class GenerationProgress:
             "track": self.track,
             "condition_pair": self.condition_pair,
             "n_samples_expected": self.n_samples_expected,
+            "cohort_fingerprint": self.cohort_fingerprint,
+            "n_expected": self.n_expected,
             "n_completed": self.n_completed,
             "n_skipped": self.n_skipped,
             "n_failed": self.n_failed,
@@ -198,6 +204,8 @@ class GenerationRunner:
         start = time.perf_counter()
         error: str | None = None
         raw_responses: list[str | None] = []
+        valid_region_ids = set(region_ids)
+        valid_region_ids.add("NONE")
         try:
             raw_responses = self.vlm_client.sample_n(
                 marked_image=image,
@@ -229,7 +237,9 @@ class GenerationRunner:
                     claims = [
                         {
                             "claim": c.claim,
-                            "region_id": c.region_id,
+                            "region_id": (
+                                c.region_id if c.region_id in valid_region_ids else "NONE"
+                            ),
                             "status": c.status,
                             "confidence": c.confidence,
                         }
@@ -307,9 +317,8 @@ class GenerationRunner:
         Action taken (returned as the second element):
         - "skipped"  : valid completed record already existed (no generation).
         - "generated": record was generated and persisted now.
-        - "retried"  : existing failed/corrupt record was retried and replaced.
-        - "corrupt"  : existing artifact was corrupt and could not be retried
-          (or generation failed); left in place / recorded as failed.
+        - "retried"  : an existing failed record was retried and replaced.
+        - "corrupt_retried": a corrupt artifact was replaced by the new record.
         """
         region_ids = region_ids or []
         generation_id = compute_generation_id(
@@ -344,9 +353,8 @@ class GenerationRunner:
             corrupt = True
 
         if corrupt:
-            # Detect and record corrupt/incompatible artifact; do not silently
-            # overwrite. Attempt regeneration into the same deterministic id.
-            action = "generated"
+            # Record the corrupt artifact in progress before regenerating its ID.
+            action = "corrupt_retried"
         elif existing_status == GenerationStatus.FAILED:
             action = "retried"
         else:
@@ -519,19 +527,50 @@ class GenerationRunner:
             / f"progress_{self.model_name}_track_{self.track}.json"
         )
 
-    def _load_progress(self, n_expected: int) -> GenerationProgress:
+    def _cohort_fingerprint(self, samples: list[dict[str, Any]]) -> str:
+        identity = {
+            "model_name": self.model_name,
+            "track": self.track,
+            "question_ids": sorted(str(sample["question_id"]) for sample in samples),
+        }
+        canonical = json.dumps(identity, sort_keys=True, separators=(",", ":"))
+        return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
+
+    def _load_progress(
+        self, n_expected: int, cohort_fingerprint: str
+    ) -> GenerationProgress:
         path = self._progress_path()
         if path.exists():
             try:
                 data = json.loads(path.read_text(encoding="utf-8"))
-                return GenerationProgress(**data)
-            except (json.JSONDecodeError, TypeError, ValueError):
-                pass
+                if (
+                    isinstance(data, dict)
+                    and data.get("cohort_fingerprint") == cohort_fingerprint
+                    and data.get("model_name") == self.model_name
+                    and data.get("track") == self.track
+                    and data.get("n_expected", data.get("n_samples_expected")) == n_expected
+                ):
+                    return GenerationProgress(**data)
+                warnings.warn(
+                    f"Ignoring progress file {path}: cohort fingerprint or run identity "
+                    "does not match; generation artifacts are preserved.",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
+            except (OSError, json.JSONDecodeError, TypeError, ValueError) as exc:
+                warnings.warn(
+                    f"Ignoring invalid progress file {path}: {exc}; "
+                    "generation artifacts are preserved.",
+                    RuntimeWarning,
+                    stacklevel=2,
+                )
         return GenerationProgress(
             model_name=self.model_name,
             track=self.track,
             condition_pair="2+3",
             n_samples_expected=n_expected,
+            cohort_fingerprint=cohort_fingerprint,
+            n_expected=n_expected,
         )
 
     def _save_progress(self, progress: GenerationProgress) -> None:
@@ -556,7 +595,21 @@ class GenerationRunner:
         Increments are persisted after every sample so a Colab disconnect can
         be resumed by re-running with the same inputs.
         """
-        progress = self._load_progress(len(samples))
+        cohort_fingerprint = self._cohort_fingerprint(samples)
+        progress = self._load_progress(len(samples), cohort_fingerprint)
+        progress.n_samples_expected = len(samples)
+        progress.n_expected = len(samples)
+        progress.cohort_fingerprint = cohort_fingerprint
+        progress.n_completed = 0
+        progress.n_skipped = 0
+        progress.n_failed = 0
+        progress.n_retried = 0
+        progress.n_corrupt = 0
+        progress.completed_question_ids = []
+        progress.failed_question_ids = []
+        progress.corrupt_question_ids = []
+        progress.failures = []
+        progress.started_at_utc = datetime.now(UTC).isoformat()
         condition_results: list[dict[str, Any]] = []
 
         for entry in samples:
@@ -585,7 +638,6 @@ class GenerationRunner:
                 record = self.store.load(
                     self.model_name, self.track, generation_id
                 )  # type: ignore[arg-type]
-                progress.n_skipped += 1
                 action = "skipped"
             else:
                 record, action = self.generate_or_load(
@@ -596,35 +648,38 @@ class GenerationRunner:
                     region_ids=region_ids,
                     force_regenerate=force_regenerate,
                 )
+                if action in {"retried", "corrupt_retried"}:
+                    progress.n_retried += 1
+                if action == "corrupt_retried":
+                    progress.n_corrupt += 1
+                    progress.corrupt_question_ids.append(qid)
+
+            if record.status == GenerationStatus.FAILED:
+                progress.n_failed += 1
+                progress.failed_question_ids.append(qid)
+                progress.failures.append(
+                    {
+                        "question_id": qid,
+                        "image_id": iid,
+                        "generation_id": generation_id,
+                        "error": record.error,
+                        "at_utc": datetime.now(UTC).isoformat(),
+                    }
+                )
+            elif record.status == GenerationStatus.COMPLETED:
                 if action == "skipped":
                     progress.n_skipped += 1
-                elif action == "retried":
-                    progress.n_retried += 1
-                if record.status == GenerationStatus.FAILED:
-                    progress.n_failed += 1
-                    progress.failed_question_ids.append(qid)
-                    progress.failures.append(
-                        {
-                            "question_id": qid,
-                            "image_id": iid,
-                            "generation_id": generation_id,
-                            "error": record.error,
-                            "at_utc": datetime.now(UTC).isoformat(),
-                        }
-                    )
-                elif record.status == GenerationStatus.COMPLETED:
-                    # Only count newly generated/retried completions; skipped
-                    # records were already counted in a prior run.
-                    if action != "skipped":
-                        progress.n_completed += 1
-                    progress.completed_question_ids.append(qid)
+                else:
+                    progress.n_completed += 1
+                progress.completed_question_ids.append(qid)
 
             # Detect corrupt artifacts.
             try:
                 _ = self.store.load(self.model_name, self.track, generation_id)
             except ValueError:
-                progress.n_corrupt += 1
-                progress.corrupt_question_ids.append(qid)
+                if qid not in progress.corrupt_question_ids:
+                    progress.n_corrupt += 1
+                    progress.corrupt_question_ids.append(qid)
 
             # Evaluate both conditions from the same persisted artifact (only
             # if generation succeeded). Condition 3 reuses Condition 2's inputs.

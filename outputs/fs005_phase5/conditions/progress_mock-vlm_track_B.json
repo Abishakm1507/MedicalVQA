@@ -1,0 +1,33 @@
+{
+  "model_name": "mock-vlm",
+  "track": "B",
+  "condition_pair": "2+3",
+  "n_samples_expected": 15,
+  "n_completed": 15,
+  "n_skipped": 0,
+  "n_failed": 0,
+  "n_retried": 0,
+  "n_corrupt": 0,
+  "completed_question_ids": [
+    9841,
+    9957,
+    9972,
+    10055,
+    10061,
+    10136,
+    10231,
+    10262,
+    10415,
+    10603,
+    10622,
+    10664,
+    10819,
+    10876,
+    10884
+  ],
+  "failed_question_ids": [],
+  "corrupt_question_ids": [],
+  "failures": [],
+  "started_at_utc": "2026-11-14T12:27:23.159643+00:00",
+  "updated_at_utc": "2026-11-14T12:27:23.698812+00:00"
+}

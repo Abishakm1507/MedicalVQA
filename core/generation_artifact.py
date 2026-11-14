@@ -3,9 +3,9 @@
 Persists VLM generated responses independently of evaluation conditions so
 that Conditions 2 and 3 can share the same N=5 generated responses. Each
 generation record carries a deterministic, condition-independent identifier
-(derived from model, track, question, image, and sampling parameters only --
-the answer condition is intentionally excluded) so completed records can be
-recognized reliably across restarts and Colab session disconnects.
+(derived from model, track, question, image, sampling parameters, and the Track
+B input mode; the answer condition is intentionally excluded) so completed
+records can be recognized reliably across restarts and Colab disconnects.
 
 Records are validated before they are allowed into evaluation. The store
 persists completed samples incrementally, skips valid completed records on
@@ -39,6 +39,17 @@ class ValidationStatus(StrEnum):
     VALID = "valid"
     INVALID = "invalid"
     NOT_VALIDATED = "not_validated"
+
+
+GroundingMode = Literal["oracle_gt_xywh_overlay_v1", "original_unmarked_image"]
+
+
+def _grounding_mode_for_track(track: str) -> GroundingMode:
+    if track == "B":
+        return "oracle_gt_xywh_overlay_v1"
+    if track == "C":
+        return "original_unmarked_image"
+    raise ValueError(f"Unsupported generation track: {track!r}")
 
 
 class GenerationSample(BaseModel):
@@ -85,6 +96,10 @@ class GenerationRecord(BaseModel):
         default=None, description="Checkpoint / revision identifier (e.g. HF revision)."
     )
     track: Literal["B", "C"] = Field(description="Evaluation track identifier (B or C).")
+    grounding_mode: GroundingMode | None = Field(
+        default=None,
+        description="Input grounding presentation used for this generation.",
+    )
     question_id: str | int = Field(description="Question ID from the cohort.")
     image_id: str | int = Field(description="Image ID the question belongs to.")
     n_samples: int = Field(ge=1, description="Number of sampled responses (N).")
@@ -119,6 +134,14 @@ class GenerationRecord(BaseModel):
 
     @model_validator(mode="after")
     def _validate_sample_count_matches_n(self) -> GenerationRecord:
+        expected_grounding_mode = _grounding_mode_for_track(self.track)
+        if self.grounding_mode is None:
+            self.grounding_mode = expected_grounding_mode
+        elif self.grounding_mode != expected_grounding_mode:
+            raise ValueError(
+                f"grounding_mode {self.grounding_mode!r} does not match track "
+                f"{self.track!r} (expected {expected_grounding_mode!r})"
+            )
         if len(self.samples) != self.n_samples:
             raise ValueError(
                 f"samples length ({len(self.samples)}) must equal n_samples ({self.n_samples})"
@@ -148,8 +171,9 @@ def compute_generation_id(
     """Compute a deterministic, condition-independent generation identifier.
 
     The identifier is a SHA-256 digest over the canonical JSON of the
-    identifying fields. The answer condition is intentionally excluded so
-    that Conditions 2 and 3 reuse the same generation artifact.
+    identifying fields and, for Track B, the oracle-overlay input version.
+    The answer condition is intentionally excluded so Conditions 2 and 3
+    reuse the same generation artifact.
     """
     payload: dict[str, Any] = {
         "model_name": model_name,
@@ -161,6 +185,10 @@ def compute_generation_id(
         "temperature": temperature,
         "random_seed": random_seed,
     }
+    if track == "B":
+        payload["grounding_mode"] = _grounding_mode_for_track(track)
+    elif track != "C":
+        raise ValueError(f"Unsupported generation track: {track!r}")
     canonical = json.dumps(payload, sort_keys=True, separators=(",", ":"))
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
