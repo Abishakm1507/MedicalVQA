@@ -133,7 +133,7 @@ def prepare_repository() -> Path:
 
         repo_url = os.environ.get(
             "MEDICALVQA_REPO_URL",
-            "https://github.com/Kilo-Org/MedicalVQA.git",
+            "https://github.com/Abishakm1507/MedicalVQA.git",
         )
         subprocess.run(
             ["git", "clone", repo_url, str(repo_root)], check=True

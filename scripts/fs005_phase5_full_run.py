@@ -35,6 +35,7 @@ import json
 import re
 import sys
 from collections import OrderedDict
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 
@@ -501,9 +502,93 @@ def cmd_evaluate(args) -> int:
                "temperature": TEMPERATURE, "seed": SEED}
         metrics = EvaluationRunner(out, f"FS-005 {args.model} track {args.track} cond {cond}",
                                    cfg).run(recs, exclusions=notes)
+        (out / "records.json").write_text(
+            json.dumps([asdict(r) for r in recs]), encoding="utf-8"
+        )
         print(f"condition {cond}: n={metrics.n_samples} acc={metrics.accuracy} "
               f"usr_raw={metrics.usr_raw} pointing={metrics.pointing_accuracy} "
               f"ece={metrics.ece} auroc={metrics.auroc} coverage={metrics.coverage}")
+    return 0
+
+
+def _load_records(args, model: str, track: str, cond: int) -> list[SampleRecord]:
+    p = _out(args) / "evaluation" / model / track / f"condition{cond}" / "records.json"
+    if not p.exists():
+        return []
+    return [SampleRecord(**d) for d in json.loads(p.read_text("utf-8"))]
+
+
+def cmd_analyze(args) -> int:
+    """Image-clustered bootstrap CIs, paired differences and McNemar (secondary)."""
+    from evaluation import metrics as M
+    from evaluation.bootstrap import (
+        bootstrap_metric,
+        bootstrap_paired_difference,
+        mcnemar_paired,
+    )
+
+    img_of = {str(e["qid"]): e["img_id"] for e in split_mod._english_samples("test")}
+    image_fn = lambda r: img_of[r.sample_id]  # noqa: E731
+    metric_fns = {
+        "accuracy": M.compute_accuracy,
+        "usr_raw": M.compute_usr_raw,
+        "pointing_accuracy": M.compute_pointing_accuracy,
+        "selective_accuracy": M.compute_selective_accuracy,
+        "coverage": M.compute_coverage,
+        "ece": lambda r: M.compute_ece(list(r)),
+        "auroc": M.compute_auroc,
+    }
+    nrep = args.replicates
+    report: dict[str, Any] = {"replicates": nrep, "seed": SEED, "single": {}, "paired": {}}
+
+    for model in MODELS:
+        for track in ("B", "C"):
+            for cond in (1, 2, 3):
+                recs = _load_records(args, model, track, cond)
+                if not recs:
+                    continue
+                key = f"{model}/track{track}/cond{cond}"
+                report["single"][key] = {}
+                for name, fn in metric_fns.items():
+                    r = bootstrap_metric(recs, fn, n_replicates=nrep, seed=SEED,
+                                         image_id_fn=image_fn, metric_name=name)
+                    report["single"][key][name] = {
+                        "point": r.point_estimate, "ci95": [r.ci_lower, r.ci_upper],
+                        "n_clusters": r.n_clusters, "n_observations": r.n_observations,
+                    }
+
+    def paired(label, a, b, fn_name):
+        common = {r.sample_id for r in a} & {r.sample_id for r in b}
+        if not common:
+            return
+        a = sorted((r for r in a if r.sample_id in common), key=lambda r: r.sample_id)
+        b = sorted((r for r in b if r.sample_id in common), key=lambda r: r.sample_id)
+        d = bootstrap_paired_difference(a, b, metric_fns[fn_name], n_replicates=nrep,
+                                        seed=SEED, image_id_fn=image_fn, metric_name=fn_name)
+        mc = mcnemar_paired([r.correct for r in a], [r.correct for r in b])
+        report["paired"][label] = {
+            "metric": fn_name, "n_questions": len(a),
+            "diff_a_minus_b": d.diff_point_estimate, "ci95": [d.ci_lower, d.ci_upper],
+            "mcnemar": {"a_only": mc.n_a_only, "b_only": mc.n_b_only,
+                        "p_value": mc.p_value, "note": mc.note},
+        }
+
+    for model in MODELS:
+        c1 = _load_records(args, model, "C", 1)
+        c2 = _load_records(args, model, "C", 2)
+        c3 = _load_records(args, model, "C", 3)
+        paired(f"{model}: Cond2 (grounded) - Cond1 (greedy), track C, accuracy", c2, c1, "accuracy")
+        paired(f"{model}: Cond3 (abstain) - Cond2, track C, accuracy over all questions",
+               c3, c2, "accuracy")
+        b2 = _load_records(args, model, "B", 2)
+        paired(f"{model}: track B - track C, Cond2, accuracy", b2, c2, "accuracy")
+    paired("Cond2 track C, medgemma-4b - qwen2.5-vl-3b, accuracy",
+           _load_records(args, "medgemma-4b", "C", 2),
+           _load_records(args, "qwen2.5-vl-3b", "C", 2), "accuracy")
+
+    out = _out(args) / "evaluation" / "analysis.json"
+    out.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    print(f"Wrote {out}: {len(report['single'])} arms, {len(report['paired'])} paired comparisons")
     return 0
 
 
@@ -525,11 +610,12 @@ def cmd_status(args) -> int:
 
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("stage", choices=["generate", "calibrate", "evaluate", "status"])
+    p.add_argument("stage", choices=["generate", "calibrate", "evaluate", "analyze", "status"])
     p.add_argument("--model", choices=MODELS, default="medgemma-4b")
     p.add_argument("--track", choices=["B", "C"], default="C")
     p.add_argument("--split", choices=SPLITS, default="val_fit")
     p.add_argument("--limit", type=int, default=0, help="Only the first N questions (smoke tests).")
+    p.add_argument("--replicates", type=int, default=1000, help="Bootstrap replicates (analyze).")
     p.add_argument("--mock", action="store_true", help="Use MockVLMClient (testing only).")
     p.add_argument("--out-dir", default="experiments/runs/fs005_phase5_full")
     args = p.parse_args()
@@ -537,6 +623,7 @@ def main() -> int:
         "generate": cmd_generate,
         "calibrate": cmd_calibrate,
         "evaluate": cmd_evaluate,
+        "analyze": cmd_analyze,
         "status": cmd_status,
     }[args.stage](args)
 
