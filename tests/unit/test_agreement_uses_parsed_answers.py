@@ -65,3 +65,29 @@ def test_same_answer_different_findings_is_full_agreement(tmp_path) -> None:
     assert result.normalized_entropy == 0.0
     assert result.majority_answer == "Yes"
     assert result.raw_answers == ["Yes"] * 5
+
+
+class _NotJson(_SameAnswerDifferentFindings):
+    def sample_n(self, marked_image, question, n=3, temperature=0.7, max_tokens=512):
+        return ["Sure! The answer is yes."] * n
+
+
+def test_unparseable_responses_are_recorded_as_failed_not_crash(tmp_path) -> None:
+    """Regression: invalid JSON used to crash the run (failed record had no error)."""
+    runner = GenerationRunner(
+        vlm_client=_NotJson(),
+        model_name="stub",
+        model_revision=None,
+        track="C",
+        output_dir=tmp_path,
+        n_samples=5,
+        temperature=0.7,
+        random_seed=1,
+    )
+    summary = runner.run_batch(
+        [{"question_id": "q1", "image_id": "i1", "question": "Q?", "region_ids": []}],
+        {"i1": None},
+    )
+    assert summary["n_failed"] == 1 and summary["n_completed"] == 0
+    err = summary["progress"]["failures"][0]["error"]
+    assert "samples failed" in err and "Sure! The answer is yes." in err

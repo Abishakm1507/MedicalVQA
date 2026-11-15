@@ -384,6 +384,19 @@ class GenerationRunner:
             GenerationStatus.COMPLETED if error is None and all(s.status == "ok" for s in samples)
             else GenerationStatus.FAILED
         )
+        if status == GenerationStatus.FAILED and error is None:
+            # A failed record must carry a reason. Per-sample failures (e.g. the
+            # model returned text that is not valid JSON) have no top-level
+            # error, so surface the first sample error instead of crashing.
+            failed = [s for s in samples if s.status != "ok"]
+            first = failed[0] if failed else None
+            error = (
+                f"{len(failed)}/{len(samples)} samples failed; first (sample "
+                f"{first.sample_index}): {first.error} | raw="
+                f"{(first.raw_response or '')[:300]!r}"
+                if first is not None
+                else "generation failed without an error message"
+            )
         record = self._build_record(
             question_id=question_id,
             image_id=image_id,
