@@ -103,7 +103,6 @@ def main() -> None:
         return_dict=True,
         return_tensors="pt",
         add_generation_prompt=True,
-        images=[image],
     )
 
     print("\n--- Processor inputs ---")

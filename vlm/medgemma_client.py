@@ -171,6 +171,10 @@ class MedGemmaVLMClient(VLMClient):
             },
         ]
 
+        # NOTE: the PIL image is already inside ``messages`` (type "image").
+        # Do NOT also pass ``images=``: current transformers extracts the image
+        # from the messages itself and raises a TypeError (duplicate ``images``
+        # argument) when it is given twice.
         # Apply chat template and tokenize in a single call. This is the
         # recommended Gemma 3 pattern (see transformers model_doc/gemma3.md).
         # The previous two-step approach (tokenize=False -> processor()) did not
@@ -181,7 +185,6 @@ class MedGemmaVLMClient(VLMClient):
             return_dict=True,
             return_tensors="pt",
             add_generation_prompt=True,
-            images=[marked_image],
         )
         inputs = {k: v.to(self._device) for k, v in inputs.items()}
 
@@ -255,7 +258,6 @@ class MedGemmaVLMClient(VLMClient):
             return_dict=True,
             return_tensors="pt",
             add_generation_prompt=True,
-            images=[marked_image],
         )
         inputs = {k: v.to(self._device) for k, v in inputs.items()}
 

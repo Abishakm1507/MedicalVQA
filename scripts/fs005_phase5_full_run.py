@@ -316,6 +316,17 @@ def cmd_generate(args) -> int:
     samples = _input_samples(entries, track)
     print(f"[generate] {args.model} track={runner.track} split={args.split} n={len(samples)}")
     summary = runner.run_batch(samples, LazyImages(track))
+    failures = (summary.get("progress") or {}).get("failures") or []
+    if failures:
+        print(f"[generate] {len(failures)} failed; first distinct errors:")
+        seen: set[str] = set()
+        for f in failures:
+            msg = str(f.get("error", f))[:400]
+            if msg not in seen:
+                seen.add(msg)
+                print("  -", msg)
+            if len(seen) >= 3:
+                break
     print(
         json.dumps(
             {k: summary[k] for k in summary if k not in ("condition_results", "progress")},

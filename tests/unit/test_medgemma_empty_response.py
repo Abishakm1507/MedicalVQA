@@ -155,7 +155,11 @@ def test_generate_uses_single_call_apply_chat_template(client, env):
     assert act_call.kwargs.get("return_dict") is True
     assert act_call.kwargs.get("return_tensors") == "pt"
     assert act_call.kwargs.get("add_generation_prompt") is True
-    assert "images" in act_call.kwargs
+    # The image travels inside the messages; passing images= as well raises a
+    # TypeError in current transformers (regression: all real generations failed).
+    assert "images" not in act_call.kwargs
+    user_content = act_call.args[0][1]["content"]
+    assert any(part.get("type") == "image" and part.get("image") is img for part in user_content)
 
     env["model"].generate.assert_called_once()
 
@@ -242,4 +246,6 @@ def test_sample_n_uses_single_call_apply_chat_template(client, env):
     act_call = env["processor"].apply_chat_template.call_args
     assert act_call.kwargs.get("tokenize") is True
     assert act_call.kwargs.get("return_dict") is True
-    assert "images" in act_call.kwargs
+    assert "images" not in act_call.kwargs
+    user_content = act_call.args[0][1]["content"]
+    assert any(part.get("type") == "image" and part.get("image") is img for part in user_content)
