@@ -39,7 +39,12 @@ class MedGemmaVLMClient(VLMClient):
         quantization: str | None = None,
         max_memory: dict | None = None,
         revision: str | None = None,
+        dtype: str | None = None,
     ) -> None:
+        # ``dtype`` None keeps the safe default (bfloat16 on CUDA). "float16" is
+        # opt-in: a T4 has no native bf16, but Gemma 3 can overflow in fp16, so
+        # the outputs must be checked before using it for a real run.
+        self._dtype = dtype
         self._model_id = model_id
         self._device = device
         self._quantization = quantization
@@ -72,13 +77,14 @@ class MedGemmaVLMClient(VLMClient):
         )
 
         # Configure quantization for GPU
+        compute_dtype = torch.float16 if self._dtype == "float16" else torch.bfloat16
         quantization_config = None
         if self._device.startswith("cuda") and self._quantization == "4bit":
             from transformers import BitsAndBytesConfig
 
             quantization_config = BitsAndBytesConfig(
                 load_in_4bit=True,
-                bnb_4bit_compute_dtype=torch.bfloat16,
+                bnb_4bit_compute_dtype=compute_dtype,
                 bnb_4bit_quant_type="nf4",
                 bnb_4bit_use_double_quant=True,
             )
@@ -88,7 +94,7 @@ class MedGemmaVLMClient(VLMClient):
         # (see https://github.com/huggingface/transformers/issues/36822).
         # bfloat16 is required for non-empty generation.
         if self._device.startswith("cuda"):
-            torch_dtype = torch.bfloat16
+            torch_dtype = compute_dtype
         else:
             torch_dtype = torch.float32
 

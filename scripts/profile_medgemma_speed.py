@@ -1,11 +1,12 @@
 """Time MedGemma sampling on a real SLAKE image (GPU runtime only).
 
 Usage (Colab, from the repo root):
-    python scripts/profile_medgemma_speed.py [--n 5] [--max-tokens 256]
+    python scripts/profile_medgemma_speed.py --configs fp16,fp16-4bit
 
-Compares 4-bit (bitsandbytes) against unquantized bf16 loading, because a T4
-has no native bfloat16 and bitsandbytes 4-bit decoding can be very slow.
-Reports seconds per sample_n call and the new-token count of every sample.
+Configs: bf16-4bit, bf16, fp16, fp16-4bit. A T4 has no native bfloat16, so
+bf16 maths can be very slow there; fp16 is faster but Gemma 3 may overflow, so
+the printed sample replies must be checked (not empty / valid JSON).
+Reports prefill time (1 new token), full sample_n time and per-step time.
 """
 
 from __future__ import annotations
@@ -29,19 +30,35 @@ QUESTIONS = [
     "Is the spleen present in this image?",
     "Which organ is shown in this image?",
 ]
+CONFIGS = {
+    "bf16-4bit": ("4bit", None),
+    "bf16": (None, None),
+    "fp16": (None, "float16"),
+    "fp16-4bit": ("4bit", "float16"),
+}
 
 
-def profile(quantization: str | None, n: int, max_tokens: int, image: Image.Image) -> None:
+def profile(name: str, n: int, max_tokens: int, image: Image.Image) -> None:
     import torch
 
-    label = quantization or "bf16-unquantized"
+    quantization, dtype = CONFIGS[name]
     t0 = time.perf_counter()
     client = MedGemmaVLMClient(
-        model_id="google/medgemma-4b-it", device="cuda", quantization=quantization
+        model_id="google/medgemma-4b-it",
+        device="cuda",
+        quantization=quantization,
+        dtype=dtype,
     )
     client._load()
-    print(f"[{label}] load: {time.perf_counter() - t0:.1f}s")
+    print(f"[{name}] load: {time.perf_counter() - t0:.1f}s")
     tok = client._processor.tokenizer
+
+    torch.cuda.synchronize()
+    t = time.perf_counter()
+    client.sample_n(image, QUESTIONS[0], n=n, temperature=0.7, max_tokens=1)
+    torch.cuda.synchronize()
+    print(f"[{name}] prefill (1 new token, n={n}): {time.perf_counter() - t:.1f}s")
+
     for i, q in enumerate(QUESTIONS):
         torch.cuda.synchronize()
         t = time.perf_counter()
@@ -50,10 +67,12 @@ def profile(quantization: str | None, n: int, max_tokens: int, image: Image.Imag
         dt = time.perf_counter() - t
         lens = [len(tok(o, add_special_tokens=False)["input_ids"]) for o in out]
         print(
-            f"[{label}] q{i}: {dt:.1f}s  new_tokens per sample={lens}  "
-            f"-> {dt / max(max(lens), 1) * 1000:.0f} ms/step (longest sample)"
+            f"[{name}] q{i}: {dt:.1f}s  new_tokens={lens}  "
+            f"-> {dt / max(max(lens), 1) * 1000:.0f} ms/step"
         )
-    print(f"[{label}] peak GPU memory: {torch.cuda.max_memory_allocated() / 1e9:.1f} GB")
+        if i == 0:
+            print(f"[{name}] sample reply: {out[0]!r}")
+    print(f"[{name}] peak GPU memory: {torch.cuda.max_memory_allocated() / 1e9:.1f} GB")
     del client
     gc.collect()
     torch.cuda.empty_cache()
@@ -64,12 +83,13 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, default=5)
     ap.add_argument("--max-tokens", type=int, default=256)
+    ap.add_argument("--configs", default="fp16,fp16-4bit")
     args = ap.parse_args()
     img_path = sorted(IMG_DIR.glob("xmlab*/source.jpg"))[0]
     image = Image.open(img_path).convert("RGB")
     print("image:", img_path, image.size)
-    profile("4bit", args.n, args.max_tokens, image)
-    profile(None, args.n, args.max_tokens, image)
+    for name in args.configs.split(","):
+        profile(name.strip(), args.n, args.max_tokens, image)
 
 
 if __name__ == "__main__":
