@@ -142,6 +142,25 @@ class GenerationProgress:
         }
 
 
+def extract_json_object(raw: str) -> str:
+    """Return the JSON object inside a model reply.
+
+    Models often wrap the JSON in ```json fences or add a short preamble. This
+    only locates the object text; the result is still validated strictly
+    against ``VLMStructuredOutput`` (no repair, no defaults are invented).
+    """
+    import re
+
+    text = raw.strip()
+    fenced = re.search(r"```(?:json)?\s*(.*?)\s*```", text, re.DOTALL | re.IGNORECASE)
+    if fenced:
+        text = fenced.group(1).strip()
+    start, end = text.find("{"), text.rfind("}")
+    if start != -1 and end > start:
+        text = text[start : end + 1]
+    return text
+
+
 class GenerationRunner:
     """Resumable execution harness for condition-shared generation artifacts."""
 
@@ -232,7 +251,9 @@ class GenerationRunner:
                 try:
                     from core.schemas import VLMStructuredOutput
 
-                    structured = VLMStructuredOutput.model_validate_json(raw)
+                    structured = VLMStructuredOutput.model_validate_json(
+                        extract_json_object(raw)
+                    )
                     parsed_answer = structured.answer
                     claims = [
                         {

@@ -91,3 +91,15 @@ def test_unparseable_responses_are_recorded_as_failed_not_crash(tmp_path) -> Non
     assert summary["n_failed"] == 1 and summary["n_completed"] == 0
     err = summary["progress"]["failures"][0]["error"]
     assert "samples failed" in err and "Sure! The answer is yes." in err
+
+
+def test_extract_json_object_handles_fences_and_preamble() -> None:
+    from scripts.fs005_phase5_generation import extract_json_object
+
+    obj = '{"answer": "Yes", "findings": []}'
+    assert extract_json_object(obj) == obj
+    assert extract_json_object(f"```json\n{obj}\n```") == obj
+    assert extract_json_object(f"```\n{obj}\n```") == obj
+    assert extract_json_object(f"Sure, here it is: {obj} Hope that helps.") == obj
+    # Non-JSON stays non-JSON: it must still fail validation, not be repaired.
+    assert extract_json_object("Sure! The answer is yes.") == "Sure! The answer is yes."
