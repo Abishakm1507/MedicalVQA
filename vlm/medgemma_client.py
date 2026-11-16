@@ -197,8 +197,10 @@ class MedGemmaVLMClient(VLMClient):
                 max_new_tokens=max_tokens,
                 temperature=temperature if temperature > 0 else None,
                 do_sample=temperature > 0,
+                # No eos_token_id override: it would replace the model's
+                # generation_config stop tokens ([<eos>, <end_of_turn>]) and
+                # make every answer run to max_new_tokens.
                 pad_token_id=self._processor.tokenizer.pad_token_id,
-                eos_token_id=self._processor.tokenizer.eos_token_id,
             )
 
         # Decode only the new tokens (exclude input).
@@ -269,8 +271,8 @@ class MedGemmaVLMClient(VLMClient):
                 temperature=temperature,
                 do_sample=True,
                 num_return_sequences=n,
+                # No eos_token_id override (see generate()).
                 pad_token_id=self._processor.tokenizer.pad_token_id,
-                eos_token_id=self._processor.tokenizer.eos_token_id,
             )
 
         input_length = inputs["input_ids"].shape[1]
