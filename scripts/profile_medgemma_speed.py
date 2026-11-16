@@ -38,7 +38,9 @@ CONFIGS = {
 }
 
 
-def profile(name: str, n: int, max_tokens: int, image: Image.Image) -> None:
+def profile(
+    name: str, n: int, max_tokens: int, image: Image.Image, scale_ns: list[int]
+) -> None:
     import torch
 
     quantization, dtype = CONFIGS[name]
@@ -72,6 +74,22 @@ def profile(name: str, n: int, max_tokens: int, image: Image.Image) -> None:
         )
         if i == 0:
             print(f"[{name}] sample reply: {out[0]!r}")
+    # Does step time grow with the number of sequences? If ms/step stays flat
+    # as n grows, decoding is overhead-bound and batching questions will help.
+    import transformers
+
+    print(
+        f"[{name}] torch {torch.__version__}, transformers {transformers.__version__}, "
+        f"attn={getattr(client._model.config, '_attn_implementation', '?')}"
+    )
+    for nn in scale_ns:
+        torch.cuda.synchronize()
+        t = time.perf_counter()
+        out = client.sample_n(image, QUESTIONS[0], n=nn, temperature=0.7, max_tokens=64)
+        torch.cuda.synchronize()
+        dt = time.perf_counter() - t
+        steps = max(max(len(tok(o, add_special_tokens=False)["input_ids"]) for o in out), 1)
+        print(f"[{name}] n={nn}: {dt:.1f}s, longest={steps} tokens -> {dt / steps * 1000:.0f} ms/step")
     print(f"[{name}] peak GPU memory: {torch.cuda.max_memory_allocated() / 1e9:.1f} GB")
     del client
     gc.collect()
@@ -83,13 +101,15 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--n", type=int, default=5)
     ap.add_argument("--max-tokens", type=int, default=256)
-    ap.add_argument("--configs", default="fp16,fp16-4bit")
+    ap.add_argument("--configs", default="bf16-4bit")
+    ap.add_argument("--scale-ns", default="1,5,20,40")
     args = ap.parse_args()
+    scale_ns = [int(x) for x in args.scale_ns.split(",") if x]
     img_path = sorted(IMG_DIR.glob("xmlab*/source.jpg"))[0]
     image = Image.open(img_path).convert("RGB")
     print("image:", img_path, image.size)
     for name in args.configs.split(","):
-        profile(name.strip(), args.n, args.max_tokens, image)
+        profile(name.strip(), args.n, args.max_tokens, image, scale_ns)
 
 
 if __name__ == "__main__":
