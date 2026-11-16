@@ -179,7 +179,13 @@ class GenerationRunner:
         w3: float = DEFAULT_W3,
         tau: float = DEFAULT_TAU,
         similarity_threshold: float = 0.75,
+        max_new_tokens: int = 256,
     ) -> None:
+        # Samples are generated as one batch, so every question waits for its
+        # longest sample. Typical replies are ~70 tokens; 256 bounds the
+        # worst case. Replies cut off at the cap fail the JSON parse and are
+        # recorded as failed samples (never repaired or invented).
+        self.max_new_tokens = max_new_tokens
         self.vlm_client = vlm_client
         self.model_name = model_name
         self.model_revision = model_revision
@@ -231,6 +237,7 @@ class GenerationRunner:
                 question=question,
                 n=self.n_samples,
                 temperature=self.temperature,
+                max_tokens=self.max_new_tokens,
             )
         except Exception as exc:  # noqa: BLE001 - capture and persist failure
             error = f"{type(exc).__name__}: {exc}"
