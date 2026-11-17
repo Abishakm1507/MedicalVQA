@@ -32,6 +32,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import random
 import re
 import sys
 from collections import OrderedDict
@@ -72,8 +73,14 @@ SPLITS = ("val_fit", "val_assess", "test", "test_c1")
 # --------------------------------------------------------------------------
 
 
-def _cohort(split: str, track: str) -> list[dict]:
-    """Return raw SLAKE entries for a split/track (never overlaps pilot)."""
+# Per-split question budgets for the compute-limited ("paper") run. ``None`` means
+# the full cohorts. Set from ``--subset`` in ``main``.
+SUBSET_SIZES: dict[str, int] | None = None
+PAPER_SUBSET = {"val_fit": 200, "val_assess": 80, "test": 250}
+
+
+def _cohort_full(split: str, track: str) -> list[dict]:
+    """Full cohort (never overlaps pilot) for a split/track, sorted by qid."""
     if split in ("test", "test_c1"):
         entries = split_mod._excluded_by_pilot(split_mod._english_samples("test"))
     else:
@@ -89,6 +96,22 @@ def _cohort(split: str, track: str) -> list[dict]:
     if track == "B":
         entries = [e for e in entries if split_mod._has_gt_regions(e["img_id"])]
     return sorted(entries, key=lambda e: e["qid"])
+
+
+def _cohort(split: str, track: str) -> list[dict]:
+    """Cohort for a split/track; a seeded random subset when ``--subset paper``.
+
+    The subset is drawn once from the Track-B pool (questions that have oracle
+    boxes) with a fixed seed, and Track C reuses exactly those questions, so the
+    Track B vs C paired comparison stays valid. ``test_c1`` shares ``test``.
+    """
+    if SUBSET_SIZES is None:
+        return _cohort_full(split, track)
+    key = "test" if split == "test_c1" else split
+    size = SUBSET_SIZES[key]
+    pool = _cohort_full(split, "B")
+    chosen = {e["qid"] for e in random.Random(f"{SEED}-{key}").sample(pool, min(size, len(pool)))}
+    return [e for e in _cohort_full(split, track) if e["qid"] in chosen]
 
 
 def _detections(img_id: int) -> list[dict]:
@@ -629,7 +652,16 @@ def main() -> int:
     p.add_argument("--replicates", type=int, default=1000, help="Bootstrap replicates (analyze).")
     p.add_argument("--mock", action="store_true", help="Use MockVLMClient (testing only).")
     p.add_argument("--out-dir", default="experiments/runs/fs005_phase5_full")
+    p.add_argument(
+        "--subset",
+        choices=["full", "paper"],
+        default="full",
+        help="'paper' = seeded random subset (200 fit / 80 assess / 250 test) sized to "
+        "the free-GPU budget; use the same value for every stage.",
+    )
     args = p.parse_args()
+    global SUBSET_SIZES
+    SUBSET_SIZES = PAPER_SUBSET if args.subset == "paper" else None
     return {
         "generate": cmd_generate,
         "calibrate": cmd_calibrate,

@@ -88,3 +88,20 @@ def test_claim_statistics_flow_through_evaluation(tmp_path, monkeypatch) -> None
     assert m["usr_raw"] == pytest.approx(0.5)
     assert m["pointing_accuracy"] == pytest.approx(1.0)
     assert m["sampling_agreement"] == pytest.approx(1.0)
+
+
+def test_paper_subset_is_seeded_paired_and_subset_of_full(monkeypatch) -> None:
+    monkeypatch.setattr(drv, "SUBSET_SIZES", drv.PAPER_SUBSET)
+    for split, size in drv.PAPER_SUBSET.items():
+        b = drv._cohort(split, "B")
+        c = drv._cohort(split, "C")
+        assert len(b) == size
+        # Track C reuses exactly the Track-B questions (paired comparison).
+        assert {e["qid"] for e in b} == {e["qid"] for e in c}
+        # Deterministic and drawn from the full cohort.
+        assert [e["qid"] for e in b] == [e["qid"] for e in drv._cohort(split, "B")]
+        assert {e["qid"] for e in b} <= {e["qid"] for e in drv._cohort_full(split, "B")}
+    # Condition-1 greedy run covers the same test questions.
+    assert [e["qid"] for e in drv._cohort("test_c1", "C")] == [
+        e["qid"] for e in drv._cohort("test", "C")
+    ]
