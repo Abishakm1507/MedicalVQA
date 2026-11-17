@@ -51,6 +51,7 @@ from evaluation.metrics import SampleRecord  # noqa: E402
 from evaluation.runner import EvaluationRunner  # noqa: E402
 from scripts import fs005_phase5_calibration_split as split_mod  # noqa: E402
 from scripts.fs005_phase5_generation import GenerationRunner  # noqa: E402
+from scripts.fs005_phase5_salvage import SALVAGE_STATS, salvage_record  # noqa: E402
 from verification.claim_associator import associate_claims  # noqa: E402
 from verification.claim_extractor import extract_claims  # noqa: E402
 from verification.claim_filter import filter_claims  # noqa: E402
@@ -199,7 +200,13 @@ def _runner(args, client, *, split: str, tau=0.5, w=(1 / 3, 1 / 3, 1 / 3)) -> Ge
     )
 
 
-def _load_record(runner: GenerationRunner, qid, iid):
+def _region_ids(img_id: int, track: str) -> set[str]:
+    """Candidate region ids shown to the model (Track B oracle boxes; Track C none)."""
+    ids = [f"R{i + 1}" for i in range(len(_detections(img_id)))] if track == "B" else []
+    return {*ids, "NONE"}
+
+
+def _load_record(runner: GenerationRunner, qid, iid, valid_region_ids: set[str] | None = None):
     gid = compute_generation_id(
         model_name=runner.model_name,
         model_revision=runner.model_revision,
@@ -210,9 +217,17 @@ def _load_record(runner: GenerationRunner, qid, iid):
         temperature=runner.temperature,
         random_seed=runner.random_seed,
     )
-    if not runner.store.is_completed_valid(runner.model_name, runner.track, gid):
+    if runner.store.is_completed_valid(runner.model_name, runner.track, gid):
+        return runner.store.load(runner.model_name, runner.track, gid)
+    # A question with failed samples is salvaged offline with one fixed rule
+    # (see scripts/fs005_phase5_salvage.py) instead of being silently dropped.
+    try:
+        record = runner.store.load(runner.model_name, runner.track, gid)
+    except ValueError:
         return None
-    return runner.store.load(runner.model_name, runner.track, gid)
+    if record is None:
+        return None
+    return salvage_record(record, valid_region_ids)
 
 
 def _make_client(args):
@@ -368,7 +383,7 @@ def _collect(args, split: str, w=(1 / 3, 1 / 3, 1 / 3), tau=0.5):
     runner = _runner(args, None, split=split, w=w, tau=tau)
     rows = []
     for e in _cohort(split, args.track):
-        rec = _load_record(runner, e["qid"], e["img_id"])
+        rec = _load_record(runner, e["qid"], e["img_id"], _region_ids(e["img_id"], args.track))
         if rec is None:
             continue
         rho = 1.0 if args.track == "B" else None
@@ -400,6 +415,9 @@ def cmd_calibrate(args) -> int:
         "fitted_on": "val_fit",
         "n_fit": len(fit),
         "n_assess": len(assess),
+        "n_fit_cohort": len(_cohort("val_fit", args.track)),
+        "n_assess_cohort": len(_cohort("val_assess", args.track)),
+        "salvage": dict(SALVAGE_STATS),
         "w1": cal.w1,
         "w2": cal.w2,
         "w3": cal.w3,
@@ -455,6 +473,13 @@ def cmd_evaluate(args) -> int:
         "was shown (oracle regions); it is not a localization-quality measure.",
         "Condition 1 is a greedy single sample with the same prompt contract.",
     ]
+    n_cohort = len(_cohort("test", args.track))
+    notes.append(
+        f"Test questions with a usable generation: {len(rows)} of {n_cohort}. "
+        "Questions with unparseable samples were salvaged offline with one fixed rule "
+        "(answer kept if present; only complete schema-valid findings kept; question "
+        f"kept if >=3 of 5 samples usable): {dict(SALVAGE_STATS)} so far in this run."
+    )
     for e, rec, res2, rho in rows:
         stats = _claim_stats(rec, e, args.track)
         res3 = runner.evaluate_condition_3(rec, localizer_score=rho)
@@ -494,7 +519,7 @@ def cmd_evaluate(args) -> int:
             )
         )
         if args.track == "C":
-            r1 = _load_record(c1_runner, e["qid"], e["img_id"])
+            r1 = _load_record(c1_runner, e["qid"], e["img_id"], {"NONE"})
             if r1 is not None and r1.samples and r1.samples[0].parsed_answer is not None:
                 ans = r1.samples[0].parsed_answer
                 records[1].append(
