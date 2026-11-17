@@ -210,6 +210,14 @@ class QwenVLMClient(VLMClient):
         max_tokens: int = 512,
     ) -> list[str]:
         """Generate N sampled responses for self-consistency."""
+        if temperature <= 0:
+            # Greedy decoding is deterministic: transformers rejects
+            # do_sample=True with temperature 0, and every sample would be
+            # identical anyway, so decode once with generate().
+            response = self.generate(
+                marked_image, question, temperature=0.0, max_tokens=max_tokens
+            )
+            return [response] * n
         self._load()
         assert self._model is not None
         assert self._processor is not None

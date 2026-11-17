@@ -249,3 +249,25 @@ def test_sample_n_uses_single_call_apply_chat_template(client, env):
     assert "images" not in act_call.kwargs
     user_content = act_call.args[0][1]["content"]
     assert any(part.get("type") == "image" and part.get("image") is img for part in user_content)
+
+
+def test_sample_n_with_zero_temperature_decodes_greedily(client, env):
+    """Regression: the greedy Condition-1 run called sample_n(temperature=0.0), which
+    set do_sample=True with temperature 0 and made every call raise ValueError."""
+    from PIL import Image
+
+    img = Image.new("RGB", (336, 336), color=(128, 128, 128))
+    env["processor"].apply_chat_template.return_value = {
+        "input_ids": MagicMock(shape=(1, 20)),
+        "attention_mask": MagicMock(shape=(1, 20)),
+    }
+    env["model"].generate.return_value = [list(range(25))]
+    env["processor"].tokenizer.decode.return_value = "greedy"
+
+    out = client.sample_n(img, "Q?", n=1, temperature=0.0, max_tokens=64)
+
+    assert out == ["greedy"]
+    kwargs = env["model"].generate.call_args.kwargs
+    assert kwargs["do_sample"] is False
+    assert kwargs["temperature"] is None
+    assert "num_return_sequences" not in kwargs
