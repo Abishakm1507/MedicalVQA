@@ -1,0 +1,251 @@
+sample_id,dataset_name,split,track,condition,ground_truth_answer,model_answer,correct,question_type,has_gt_regions,pointing_correct,n_claims,n_positive_claims,n_supported,n_unsupported,n_unverifiable,n_absence,n_uncertain,agreement,normalized_entropy,confidence,threshold,is_abstaining,in_coverage
+11935,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11936,SLAKE,test,track_c_answer_only,1,"Lung, Spinal Cord",lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11941,SLAKE,test,track_c_answer_only,1,Lung Cancer,None,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11947,SLAKE,test,track_c_answer_only,1,Lung,liver,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11948,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11951,SLAKE,test,track_c_answer_only,1,Lung Cancer,None,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11953,SLAKE,test,track_c_answer_only,1,"Left Lung, Right",The abnormality is located in the mediastinum.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11954,SLAKE,test,track_c_answer_only,1,Lung,heart,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11961,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11964,SLAKE,test,track_c_answer_only,1,"Right Lung, Left",The abnormality is located in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11968,SLAKE,test,track_c_answer_only,1,Cardiomegaly,Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11973,SLAKE,test,track_c_answer_only,1,Abdomen,abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11974,SLAKE,test,track_c_answer_only,1,T2,T2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11975,SLAKE,test,track_c_answer_only,1,No,The spleen appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11991,SLAKE,test,track_c_answer_only,1,Cardiomegaly,Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11993,SLAKE,test,track_c_answer_only,1,Heart,The lung is abnormal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11995,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12004,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12005,SLAKE,test,track_c_answer_only,1,"Atelectasis, Mass",Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12014,SLAKE,test,track_c_answer_only,1,Center,right lung,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12019,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12021,SLAKE,test,track_c_answer_only,1,Center,thorax,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12022,SLAKE,test,track_c_answer_only,1,Heart,The lung is abnormal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12025,SLAKE,test,track_c_answer_only,1,No,The image appears to be normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12029,SLAKE,test,track_c_answer_only,1,No,The lung appears to be healthy.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12033,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12039,SLAKE,test,track_c_answer_only,1,X-Ray,X-ray,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12043,SLAKE,test,track_c_answer_only,1,Atelectasis,Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12046,SLAKE,test,track_c_answer_only,1,Lung,The lung is abnormal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12051,SLAKE,test,track_c_answer_only,1,"Left Lung, Right",right lung,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12060,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12065,SLAKE,test,track_c_answer_only,1,No,The spleen appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12076,SLAKE,test,track_c_answer_only,1,Abdomen,abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12084,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12085,SLAKE,test,track_c_answer_only,1,Yes,The liver appears to be healthy.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12093,SLAKE,test,track_c_answer_only,1,4,4,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12095,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12099,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12105,SLAKE,test,track_c_answer_only,1,Transverse  Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12146,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12147,SLAKE,test,track_c_answer_only,1,No,The image appears to be a CT scan of the abdomen.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12148,SLAKE,test,track_c_answer_only,1,Yes,no,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12149,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12160,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12170,SLAKE,test,track_c_answer_only,1,CT,CT Scan,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12176,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12181,SLAKE,test,track_c_answer_only,1,Liver,The abnormality is located in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12188,SLAKE,test,track_c_answer_only,1,Pulmonary bronchus,bone,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12198,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12209,SLAKE,test,track_c_answer_only,1,Yes,"The image appears to be a CT scan of the chest, which typically shows the lungs, heart, and other thoracic structures.",False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12211,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12212,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12214,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12217,SLAKE,test,track_c_answer_only,1,Liver,liver,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12219,SLAKE,test,track_c_answer_only,1,Transverse  Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12220,SLAKE,test,track_c_answer_only,1,Pulmonary bronchus,bone,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12235,SLAKE,test,track_c_answer_only,1,CT,CT Scan,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12237,SLAKE,test,track_c_answer_only,1,Liver,liver,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12238,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12242,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12248,SLAKE,test,track_c_answer_only,1,Large Bowel,liver,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12250,SLAKE,test,track_c_answer_only,1,Abdomen,abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12253,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12259,SLAKE,test,track_c_answer_only,1,Large Bowel,Kidney,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12261,SLAKE,test,track_c_answer_only,1,Right Lung,liver,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12263,SLAKE,test,track_c_answer_only,1,Large Bowel,liver,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12265,SLAKE,test,track_c_answer_only,1,Coronal Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12271,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12273,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12283,SLAKE,test,track_c_answer_only,1,Lower Right Lung,right lung,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12286,SLAKE,test,track_c_answer_only,1,Atelectasis,Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12287,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12288,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12292,SLAKE,test,track_c_answer_only,1,Bronchial obstruction,Pneumonia,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12297,SLAKE,test,track_c_answer_only,1,Left,left,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12300,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12302,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12304,SLAKE,test,track_c_answer_only,1,Black,black,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12307,SLAKE,test,track_c_answer_only,1,Keep healthy,Avoid smoking,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12325,SLAKE,test,track_c_answer_only,1,Coronal Plane,AP,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12326,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12327,SLAKE,test,track_c_answer_only,1,Right,left,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12328,SLAKE,test,track_c_answer_only,1,Right Lung,right,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12333,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12335,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12357,SLAKE,test,track_c_answer_only,1,Left,right,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12358,SLAKE,test,track_c_answer_only,1,Lower Left Lung,right lung,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12363,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12366,SLAKE,test,track_c_answer_only,1,Breathe,breathing,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12368,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12369,SLAKE,test,track_c_answer_only,1,X-Ray,X-ray,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12370,SLAKE,test,track_c_answer_only,1,Coronal Plane,coronal,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12371,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12378,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12379,SLAKE,test,track_c_answer_only,1,Black,black,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12381,SLAKE,test,track_c_answer_only,1,Breathe,Respiratory,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12383,SLAKE,test,track_c_answer_only,1,Heart,heart,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12401,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12402,SLAKE,test,track_c_answer_only,1,Upper Left Lung,The abnormality is in the lungs.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12406,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12408,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12413,SLAKE,test,track_c_answer_only,1,Heart,heart,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12417,SLAKE,test,track_c_answer_only,1,Lower Left Lung,The abnormality is in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12418,SLAKE,test,track_c_answer_only,1,Lower Left Lung,right,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12419,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12425,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12432,SLAKE,test,track_c_answer_only,1,Left Lung,The abnormality is in the lungs.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12434,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12436,SLAKE,test,track_c_answer_only,1,No,The lung appears to be healthy.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12438,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12439,SLAKE,test,track_c_answer_only,1,Black,black,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12445,SLAKE,test,track_c_answer_only,1,Coronal Plane,Axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12452,SLAKE,test,track_c_answer_only,1,No,The lung appears to be healthy.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12453,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12456,SLAKE,test,track_c_answer_only,1,Promote blood flow,The center organ appears to be the heart.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12463,SLAKE,test,track_c_answer_only,1,Upper Right Lung,right lower lobe,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12468,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12470,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12473,SLAKE,test,track_c_answer_only,1,Lung,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12474,SLAKE,test,track_c_answer_only,1,X-Ray,X-ray,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12482,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12486,SLAKE,test,track_c_answer_only,1,Promote blood flow,The center organ appears to be the heart.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12488,SLAKE,test,track_c_answer_only,1,Heart,heart,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12489,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12496,SLAKE,test,track_c_answer_only,1,Yes,The left lung appears to be normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12498,SLAKE,test,track_c_answer_only,1,Yes,no,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12506,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12508,SLAKE,test,track_c_answer_only,1,Lower Left Lung,right lung,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12509,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12515,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12521,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12522,SLAKE,test,track_c_answer_only,1,Center,center,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12523,SLAKE,test,track_c_answer_only,1,Lower Left Lung,right,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12525,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12527,SLAKE,test,track_c_answer_only,1,No,The image appears to be normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12532,SLAKE,test,track_c_answer_only,1,"Chest tightness, dyspnea, chest pain","Cough, chest pain, shortness of breath",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12540,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12541,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12548,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12550,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12552,SLAKE,test,track_c_answer_only,1,Center,The brain stem is located centrally within the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12554,SLAKE,test,track_c_answer_only,1,Head,head,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12556,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12559,SLAKE,test,track_c_answer_only,1,0,2,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12560,SLAKE,test,track_c_answer_only,1,Control heartbeat and breathing,The function of the tissue on the center of this image is to protect the brain from external injuries.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12561,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12567,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12571,SLAKE,test,track_c_answer_only,1,Gray,black,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12573,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12577,SLAKE,test,track_c_answer_only,1,No,The organs in the picture do not belong to the circulatory system.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12581,SLAKE,test,track_c_answer_only,1,Neck,thorax,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12586,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12590,SLAKE,test,track_c_answer_only,1,Neck,neck,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12593,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12594,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12595,SLAKE,test,track_c_answer_only,1,Black,white,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12596,SLAKE,test,track_c_answer_only,1,Irregular,round,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12598,SLAKE,test,track_c_answer_only,1,Trachea,lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12600,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12602,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12605,SLAKE,test,track_c_answer_only,1,Neck,Chest,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12606,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12610,SLAKE,test,track_c_answer_only,1,Esophagus,stomach,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12611,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12613,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12614,SLAKE,test,track_c_answer_only,1,T2,t1,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12615,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12620,SLAKE,test,track_c_answer_only,1,2,1,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12630,SLAKE,test,track_c_answer_only,1,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",Cerebral Edema,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12632,SLAKE,test,track_c_answer_only,1,T2,t1,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12635,SLAKE,test,track_c_answer_only,1,Left,left,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12636,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12643,SLAKE,test,track_c_answer_only,1,Transverse Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12646,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12647,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12648,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12653,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12654,SLAKE,test,track_c_answer_only,1,Upper Left Lobe,The image shows an MRI scan of a human brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12656,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12661,SLAKE,test,track_c_answer_only,1,T2,T1 weighted,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12668,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12669,SLAKE,test,track_c_answer_only,1,T2,t1,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12674,SLAKE,test,track_c_answer_only,1,"Brain Edema, Brain Non-enhancing Tumor",Cerebral Edema,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12675,SLAKE,test,track_c_answer_only,1,Hyperdense,hypo dense,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12676,SLAKE,test,track_c_answer_only,1,"Visual impairment, vomiting, tinnitus, increased intracranial pressure","The disease on the upper right lobe of brain in the picture could potentially cause symptoms such as headaches, seizures, vision problems, or changes in personality or behavior.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12685,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12686,SLAKE,test,track_c_answer_only,1,T1,T2,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12687,SLAKE,test,track_c_answer_only,1,Transverse Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12690,SLAKE,test,track_c_answer_only,1,Yes,No,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12694,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12697,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12700,SLAKE,test,track_c_answer_only,1,Yes,The brain appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12705,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12708,SLAKE,test,track_c_answer_only,1,No,The left brain lobe appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12715,SLAKE,test,track_c_answer_only,1,Left Lobe,The image shows an abnormality in the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12717,SLAKE,test,track_c_answer_only,1,"Brain Edema, Brain Enhancing Tumor, Brain Non-enhancing Tumor",Cerebral Hemorrhage,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12720,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12722,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12727,SLAKE,test,track_c_answer_only,1,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",Cerebral Edema,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12728,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12729,SLAKE,test,track_c_answer_only,1,T1,T2-weighted,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12733,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12735,SLAKE,test,track_c_answer_only,1,Hyperdense,heterogeneous,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12738,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12747,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12755,SLAKE,test,track_c_answer_only,1,None,The image appears to be a brain MRI scan.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12761,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12773,SLAKE,test,track_c_answer_only,1,T2,t1,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12775,SLAKE,test,track_c_answer_only,1,Head,Cerebellum,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12778,SLAKE,test,track_c_answer_only,1,Brain Edema,Cerebral Edema,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12782,SLAKE,test,track_c_answer_only,1,Liver,stomach,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12787,SLAKE,test,track_c_answer_only,1,6,3,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12789,SLAKE,test,track_c_answer_only,1,Spleen,The lymph nodes are part of the lymphatic system.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12794,SLAKE,test,track_c_answer_only,1,Upper Right,The colon is located in the lower right quadrant of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12795,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12796,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12800,SLAKE,test,track_c_answer_only,1,"Biotransformation, detoxification",The liver.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12807,SLAKE,test,track_c_answer_only,1,Colon,The liver is larger than the colon.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12810,SLAKE,test,track_c_answer_only,1,"Stomach, Colon",stomach,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12814,SLAKE,test,track_c_answer_only,1,Small Bowel,Kidney,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12815,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12825,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12827,SLAKE,test,track_c_answer_only,1,Liver,right kidney,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12829,SLAKE,test,track_c_answer_only,1,Circular,round,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12846,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12847,SLAKE,test,track_c_answer_only,1,Upper Right,The stomach is located in the upper left quadrant of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12849,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12857,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12864,SLAKE,test,track_c_answer_only,1,Liver,The liver is the biggest organ in this image.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12868,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12869,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12871,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12877,SLAKE,test,track_c_answer_only,1,Abdomen,abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12879,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12881,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12883,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12888,SLAKE,test,track_c_answer_only,1,Transverse Plane,Transverse,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12894,SLAKE,test,track_c_answer_only,1,4,2,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12895,SLAKE,test,track_c_answer_only,1,Promote blood flow,"The function of the organ on the top of this image is to produce hormones that regulate metabolism, growth, and development.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12897,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12905,SLAKE,test,track_c_answer_only,1,0,2,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12922,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12926,SLAKE,test,track_c_answer_only,1,CT,CT Scan,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12932,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12933,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12938,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12939,SLAKE,test,track_c_answer_only,1,Upper Left,The colon is located in the lower right quadrant of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12940,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12943,SLAKE,test,track_c_answer_only,1,"Colon, Small Bowel",stomach,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12944,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True

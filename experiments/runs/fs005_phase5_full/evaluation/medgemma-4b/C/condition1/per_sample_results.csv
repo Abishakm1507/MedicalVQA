@@ -1,0 +1,251 @@
+sample_id,dataset_name,split,track,condition,ground_truth_answer,model_answer,correct,question_type,has_gt_regions,pointing_correct,n_claims,n_positive_claims,n_supported,n_unsupported,n_unverifiable,n_absence,n_uncertain,agreement,normalized_entropy,confidence,threshold,is_abstaining,in_coverage
+11935,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11936,SLAKE,test,track_c_answer_only,1,"Lung, Spinal Cord",lungs,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11941,SLAKE,test,track_c_answer_only,1,Lung Cancer,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11947,SLAKE,test,track_c_answer_only,1,Lung,heart,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11948,SLAKE,test,track_c_answer_only,1,Lung,lung,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11951,SLAKE,test,track_c_answer_only,1,Lung Cancer,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11953,SLAKE,test,track_c_answer_only,1,"Left Lung, Right",The heart is located in the center of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11954,SLAKE,test,track_c_answer_only,1,Lung,heart,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11961,SLAKE,test,track_c_answer_only,1,No,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11964,SLAKE,test,track_c_answer_only,1,"Right Lung, Left",There is a mass in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11968,SLAKE,test,track_c_answer_only,1,Cardiomegaly,"The image shows a chest X-ray. There are signs of cardiomegaly, likely due to the enlarged heart silhouette. There are also signs of possible fluid in the lungs, likely due to the increased opacity in the lower lung fields. The patient has a sternal wire, which is likely from a previous surgery.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11973,SLAKE,test,track_c_answer_only,1,Abdomen,abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11974,SLAKE,test,track_c_answer_only,1,T2,T2-weighted,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11975,SLAKE,test,track_c_answer_only,1,No,There is a lesion in the spleen.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11991,SLAKE,test,track_c_answer_only,1,Cardiomegaly,The image shows a possible cardiomegaly and a possible pleural effusion.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11993,SLAKE,test,track_c_answer_only,1,Heart,heart,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+11995,SLAKE,test,track_c_answer_only,1,Chest,Chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12004,SLAKE,test,track_c_answer_only,1,Lung,The lungs are the largest organ in the picture.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12005,SLAKE,test,track_c_answer_only,1,"Atelectasis, Mass",The image shows signs of diffuse pulmonary edema and/or pulmonary fibrosis.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12014,SLAKE,test,track_c_answer_only,1,Center,The heart appears enlarged.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12019,SLAKE,test,track_c_answer_only,1,Lung,The lungs are the largest organ in the picture.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12021,SLAKE,test,track_c_answer_only,1,Center,The heart appears enlarged.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12022,SLAKE,test,track_c_answer_only,1,Heart,heart,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12025,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12029,SLAKE,test,track_c_answer_only,1,No,The lung appears to have some abnormalities.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12033,SLAKE,test,track_c_answer_only,1,Lung,The lungs are the largest organ in the picture.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12039,SLAKE,test,track_c_answer_only,1,X-Ray,X-ray,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12043,SLAKE,test,track_c_answer_only,1,Atelectasis,The image shows signs of pulmonary edema and possible pneumonia.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12046,SLAKE,test,track_c_answer_only,1,Lung,heart,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12051,SLAKE,test,track_c_answer_only,1,"Left Lung, Right",There is a large opacity in the left lung field.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12060,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12065,SLAKE,test,track_c_answer_only,1,No,The spleen appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12076,SLAKE,test,track_c_answer_only,1,Abdomen,Abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12084,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12085,SLAKE,test,track_c_answer_only,1,Yes,The liver appears to be normal in size and shape.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12093,SLAKE,test,track_c_answer_only,1,4,5,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12095,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12099,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12105,SLAKE,test,track_c_answer_only,1,Transverse  Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12146,SLAKE,test,track_c_answer_only,1,2,0,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12147,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12148,SLAKE,test,track_c_answer_only,1,Yes,no,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12149,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12160,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12170,SLAKE,test,track_c_answer_only,1,CT,CT,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12176,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12181,SLAKE,test,track_c_answer_only,1,Liver,The liver is enlarged.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12188,SLAKE,test,track_c_answer_only,1,Pulmonary bronchus,The white points in the black part of the body are likely pulmonary vessels.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12198,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12209,SLAKE,test,track_c_answer_only,1,Yes,The image appears to show a cross-sectional view of the upper abdomen. There are some bowel loops visible in the left upper quadrant. The liver and spleen appear to be present. The spine is also visible.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12211,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12212,SLAKE,test,track_c_answer_only,1,No,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12214,SLAKE,test,track_c_answer_only,1,Yes,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12217,SLAKE,test,track_c_answer_only,1,Liver,liver,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12219,SLAKE,test,track_c_answer_only,1,Transverse  Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12220,SLAKE,test,track_c_answer_only,1,Pulmonary bronchus,The white spots in the black part of the lower part of the body are likely to be bowel loops.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12235,SLAKE,test,track_c_answer_only,1,CT,CT,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12237,SLAKE,test,track_c_answer_only,1,Liver,liver,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12238,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12242,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12248,SLAKE,test,track_c_answer_only,1,Large Bowel,Esophagus,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12250,SLAKE,test,track_c_answer_only,1,Abdomen,Abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12253,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12259,SLAKE,test,track_c_answer_only,1,Large Bowel,spleen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12261,SLAKE,test,track_c_answer_only,1,Right Lung,The black part on the left of the image is likely a gallstone.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12263,SLAKE,test,track_c_answer_only,1,Large Bowel,The black hole in the upper right corner is likely a gallstone.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12265,SLAKE,test,track_c_answer_only,1,Coronal Plane,PA chest X-ray,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12271,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12273,SLAKE,test,track_c_answer_only,1,No,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12283,SLAKE,test,track_c_answer_only,1,Lower Right Lung,Right lower lobe atelectasis is present.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12286,SLAKE,test,track_c_answer_only,1,Atelectasis,Right pleural effusion,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12287,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12288,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12292,SLAKE,test,track_c_answer_only,1,Bronchial obstruction,"The main cause of the disease on the lower right of the lung in the picture is likely a pleural effusion, possibly due to infection or malignancy.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12297,SLAKE,test,track_c_answer_only,1,Left,left,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12300,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12302,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12304,SLAKE,test,track_c_answer_only,1,Black,The lungs appear black in the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12307,SLAKE,test,track_c_answer_only,1,Keep healthy,I am an AI and cannot provide medical advice. A qualified healthcare professional should be consulted for any health concerns or before making any decisions related to your health or treatment.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12325,SLAKE,test,track_c_answer_only,1,Coronal Plane,AP,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12326,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12327,SLAKE,test,track_c_answer_only,1,Right,right,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12328,SLAKE,test,track_c_answer_only,1,Right Lung,The pneumonia is in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12333,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12335,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12357,SLAKE,test,track_c_answer_only,1,Left,The left lower lobe is abnormal.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12358,SLAKE,test,track_c_answer_only,1,Lower Left Lung,The pulmonary infiltration is located in the left lower lung field.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12363,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12366,SLAKE,test,track_c_answer_only,1,Breathe,The main organ in this picture is the lung. The lung is the organ responsible for breathing and gas exchange.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12368,SLAKE,test,track_c_answer_only,1,Lung,The lungs are part of the respiratory system in this image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12369,SLAKE,test,track_c_answer_only,1,X-Ray,X-ray,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12370,SLAKE,test,track_c_answer_only,1,Coronal Plane,coronal plane,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12371,SLAKE,test,track_c_answer_only,1,Chest,The organs in this image are located in the chest.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12378,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12379,SLAKE,test,track_c_answer_only,1,Black,The right lung appears black.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12381,SLAKE,test,track_c_answer_only,1,Breathe,"The main organ in this picture is the lung. The lungs are responsible for gas exchange, taking in oxygen and expelling carbon dioxide.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12383,SLAKE,test,track_c_answer_only,1,Heart,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12401,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12402,SLAKE,test,track_c_answer_only,1,Upper Left Lung,There is a left-sided chest tube.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12406,SLAKE,test,track_c_answer_only,1,No,The lung appears to be normal appearing.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12408,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12413,SLAKE,test,track_c_answer_only,1,Heart,The heart is visible in the chest. The great vessels (aorta and pulmonary artery) are also visible.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12417,SLAKE,test,track_c_answer_only,1,Lower Left Lung,There is a large pneumothorax in the left hemithorax.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12418,SLAKE,test,track_c_answer_only,1,Lower Left Lung,The pneumothorax is located in the left hemithorax.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12419,SLAKE,test,track_c_answer_only,1,Chest,Thorax,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12425,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12432,SLAKE,test,track_c_answer_only,1,Left Lung,There is a possible abnormality in the left lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12434,SLAKE,test,track_c_answer_only,1,Lung,The main organ in the image is the lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12436,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12438,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12439,SLAKE,test,track_c_answer_only,1,Black,The lung appears dark.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12445,SLAKE,test,track_c_answer_only,1,Coronal Plane,Chest X-ray,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12452,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12453,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12456,SLAKE,test,track_c_answer_only,1,Promote blood flow,"The center organ in this picture is a port, which is likely a central venous catheter.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12463,SLAKE,test,track_c_answer_only,1,Upper Right Lung,The pneumonia is located in the right lung.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12468,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12470,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12473,SLAKE,test,track_c_answer_only,1,Lung,The lungs are part of the respiratory system in this image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12474,SLAKE,test,track_c_answer_only,1,X-Ray,The image is a chest X-ray.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12482,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12486,SLAKE,test,track_c_answer_only,1,Promote blood flow,"The center organ appears to be the heart, which is located in the midline of the chest. The heart size and shape appear normal on this image.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12488,SLAKE,test,track_c_answer_only,1,Heart,The heart is part of the circulatory system in this image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12489,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12496,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12498,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12506,SLAKE,test,track_c_answer_only,1,Chest,chest,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12508,SLAKE,test,track_c_answer_only,1,Lower Left Lung,The effusion is located in the left lower hemithorax.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12509,SLAKE,test,track_c_answer_only,1,Chest,The image shows the chest X-ray of the chest.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12515,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12521,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12522,SLAKE,test,track_c_answer_only,1,Center,The heart is located in the center of the chest.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12523,SLAKE,test,track_c_answer_only,1,Lower Left Lung,The pleural effusion is present in the left hemithorax.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12525,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12527,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12532,SLAKE,test,track_c_answer_only,1,"Chest tightness, dyspnea, chest pain","The disease on the lower left of the lung could cause symptoms such as shortness of breath, cough, and chest pain.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12540,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12541,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12548,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12550,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12552,SLAKE,test,track_c_answer_only,1,Center,The brain stem is present in the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12554,SLAKE,test,track_c_answer_only,1,Head,Head,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12556,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12559,SLAKE,test,track_c_answer_only,1,0,The image shows the temporal lobes.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12560,SLAKE,test,track_c_answer_only,1,Control heartbeat and breathing,The tissue in the center of the image is likely the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12561,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12567,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12571,SLAKE,test,track_c_answer_only,1,Gray,The brain stem appears gray in the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12573,SLAKE,test,track_c_answer_only,1,2,1,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12577,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12581,SLAKE,test,track_c_answer_only,1,Neck,Neck,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12586,SLAKE,test,track_c_answer_only,1,Yes,No,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12590,SLAKE,test,track_c_answer_only,1,Neck,Neck,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12593,SLAKE,test,track_c_answer_only,1,No,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12594,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12595,SLAKE,test,track_c_answer_only,1,Black,The trachea appears black.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12596,SLAKE,test,track_c_answer_only,1,Irregular,The trachea appears to be normal in shape.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12598,SLAKE,test,track_c_answer_only,1,Trachea,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12600,SLAKE,test,track_c_answer_only,1,No,"The image shows a cross-sectional view of the neck, including the trachea and cervical vertebrae. The liver is not visible in this image.",False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12602,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12605,SLAKE,test,track_c_answer_only,1,Neck,Neck,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12606,SLAKE,test,track_c_answer_only,1,Yes,yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12610,SLAKE,test,track_c_answer_only,1,Esophagus,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12611,SLAKE,test,track_c_answer_only,1,No,NONE,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12613,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12614,SLAKE,test,track_c_answer_only,1,T2,T2,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12615,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12620,SLAKE,test,track_c_answer_only,1,2,1,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12630,SLAKE,test,track_c_answer_only,1,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",The main cause of the disease on the upper left lobe of the brain in this picture is likely a brain tumor.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12632,SLAKE,test,track_c_answer_only,1,T2,T2,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12635,SLAKE,test,track_c_answer_only,1,Left,left,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12636,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12643,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12646,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12647,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12648,SLAKE,test,track_c_answer_only,1,1,1,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12653,SLAKE,test,track_c_answer_only,1,No,No,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12654,SLAKE,test,track_c_answer_only,1,Upper Left Lobe,There is an abnormality in the right hemisphere of the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12656,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12661,SLAKE,test,track_c_answer_only,1,T2,T2 weighted,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12668,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12669,SLAKE,test,track_c_answer_only,1,T2,T1,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12674,SLAKE,test,track_c_answer_only,1,"Brain Edema, Brain Non-enhancing Tumor",There is a lesion in the upper right of the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12675,SLAKE,test,track_c_answer_only,1,Hyperdense,hyperdense,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12676,SLAKE,test,track_c_answer_only,1,"Visual impairment, vomiting, tinnitus, increased intracranial pressure","The disease on the upper right lobe of the brain in the picture is likely a brain tumor. Symptoms of a brain tumor can vary depending on its size, location, and growth rate, but common symptoms include headaches, seizures, weakness or numbness in the limbs, vision changes, speech difficulties, and changes in personality or behavior.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12685,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12686,SLAKE,test,track_c_answer_only,1,T1,T1-weighted,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12687,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12690,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12694,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12697,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12700,SLAKE,test,track_c_answer_only,1,Yes,The brain appears normal.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12705,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12708,SLAKE,test,track_c_answer_only,1,No,There is a lesion in the left brain lobe.,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12715,SLAKE,test,track_c_answer_only,1,Left Lobe,There is a lesion in the right hemisphere.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12717,SLAKE,test,track_c_answer_only,1,"Brain Edema, Brain Enhancing Tumor, Brain Non-enhancing Tumor",Brain tumor,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12720,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12722,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12727,SLAKE,test,track_c_answer_only,1,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",The main cause of the disease on the left lobe of the brain in this picture is likely a brain tumor.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12728,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12729,SLAKE,test,track_c_answer_only,1,T1,T1-weighted MRI,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12733,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12735,SLAKE,test,track_c_answer_only,1,Hyperdense,The brain enhancing tumor appears to be hyperdense.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12738,SLAKE,test,track_c_answer_only,1,No,Yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12747,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12755,SLAKE,test,track_c_answer_only,1,None,"The image shows a possible brain tumor. The damage caused by the tumor will depend on its size, location, and growth rate. The damage can be life-threatening if the tumor is in a critical location or if it grows rapidly.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12761,SLAKE,test,track_c_answer_only,1,Head,brain,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12773,SLAKE,test,track_c_answer_only,1,T2,T2,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12775,SLAKE,test,track_c_answer_only,1,Head,The image shows a cross-sectional view of the brain.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12778,SLAKE,test,track_c_answer_only,1,Brain Edema,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12782,SLAKE,test,track_c_answer_only,1,Liver,Liver,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12787,SLAKE,test,track_c_answer_only,1,6,5,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12789,SLAKE,test,track_c_answer_only,1,Spleen,NONE,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12794,SLAKE,test,track_c_answer_only,1,Upper Right,The colon is present in the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12795,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12796,SLAKE,test,track_c_answer_only,1,No,absent,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12800,SLAKE,test,track_c_answer_only,1,"Biotransformation, detoxification",The stomach is located in the upper left of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12807,SLAKE,test,track_c_answer_only,1,Colon,Liver,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12810,SLAKE,test,track_c_answer_only,1,"Stomach, Colon",The stomach is part of the digestive system.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12814,SLAKE,test,track_c_answer_only,1,Small Bowel,The gray part on the right of the image is likely the spleen.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12815,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12825,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12827,SLAKE,test,track_c_answer_only,1,Liver,right kidney,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12829,SLAKE,test,track_c_answer_only,1,Circular,The spinal cord appears to be circular.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12846,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12847,SLAKE,test,track_c_answer_only,1,Upper Right,The stomach is in the upper left quadrant of the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12849,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12857,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12864,SLAKE,test,track_c_answer_only,1,Liver,liver,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12868,SLAKE,test,track_c_answer_only,1,MRI,MRI,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12869,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12871,SLAKE,test,track_c_answer_only,1,Brain,brain,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12877,SLAKE,test,track_c_answer_only,1,Abdomen,Abdomen,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12879,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12881,SLAKE,test,track_c_answer_only,1,No,yes,False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12883,SLAKE,test,track_c_answer_only,1,2,2,True,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12888,SLAKE,test,track_c_answer_only,1,Transverse Plane,axial,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12894,SLAKE,test,track_c_answer_only,1,4,5,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12895,SLAKE,test,track_c_answer_only,1,Promote blood flow,The organ on the top of the image is the heart.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12897,SLAKE,test,track_c_answer_only,1,No,no,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12905,SLAKE,test,track_c_answer_only,1,0,2,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12922,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12926,SLAKE,test,track_c_answer_only,1,CT,This image is a CT scan of the abdomen.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12932,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,Abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12933,SLAKE,test,track_c_answer_only,1,Yes,Yes,True,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12938,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,Abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12939,SLAKE,test,track_c_answer_only,1,Upper Left,Colon is present in the image.,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12940,SLAKE,test,track_c_answer_only,1,Pelvic Cavity,Abdomen,False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12943,SLAKE,test,track_c_answer_only,1,"Colon, Small Bowel","The image shows the small bowel and colon, which are part of the digestive system.",False,OPEN,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True
+12944,SLAKE,test,track_c_answer_only,1,No,"The image shows abdominal organs, including the intestines and possibly the kidneys, which are involved in blood flow.",False,CLOSED,True,False,0,0,0,0,0,0,0,0.0,0.0,0.0,0.0,False,True

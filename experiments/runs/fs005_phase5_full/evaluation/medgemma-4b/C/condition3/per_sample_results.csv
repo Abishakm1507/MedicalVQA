@@ -1,0 +1,251 @@
+sample_id,dataset_name,split,track,condition,ground_truth_answer,model_answer,correct,question_type,has_gt_regions,pointing_correct,n_claims,n_positive_claims,n_supported,n_unsupported,n_unverifiable,n_absence,n_uncertain,agreement,normalized_entropy,confidence,threshold,is_abstaining,in_coverage
+11935,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+11936,SLAKE,test,track_c_answer_only,3,"Lung, Spinal Cord",,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+11941,SLAKE,test,track_c_answer_only,3,Lung Cancer,,False,OPEN,True,False,19,18,0,18,0,1,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+11947,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+11948,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+11951,SLAKE,test,track_c_answer_only,3,Lung Cancer,,False,OPEN,True,False,17,17,0,17,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+11953,SLAKE,test,track_c_answer_only,3,"Left Lung, Right",,False,OPEN,True,False,7,7,0,7,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+11954,SLAKE,test,track_c_answer_only,3,Lung,heart,False,CLOSED,True,False,13,9,0,9,0,4,0,1.0,0.0,0.05,0.04,False,True
+11961,SLAKE,test,track_c_answer_only,3,No,absent,False,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+11964,SLAKE,test,track_c_answer_only,3,"Right Lung, Left",,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+11968,SLAKE,test,track_c_answer_only,3,Cardiomegaly,,False,OPEN,True,False,9,8,0,8,0,0,1,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+11973,SLAKE,test,track_c_answer_only,3,Abdomen,,False,OPEN,True,False,7,7,0,7,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+11974,SLAKE,test,track_c_answer_only,3,T2,T2-weighted,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+11975,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+11991,SLAKE,test,track_c_answer_only,3,Cardiomegaly,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+11993,SLAKE,test,track_c_answer_only,3,Heart,heart,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+11995,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,18,18,0,18,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12004,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12005,SLAKE,test,track_c_answer_only,3,"Atelectasis, Mass",,False,OPEN,True,False,13,13,0,13,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12014,SLAKE,test,track_c_answer_only,3,Center,,False,OPEN,True,False,6,5,0,5,0,1,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12019,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12021,SLAKE,test,track_c_answer_only,3,Center,,False,OPEN,True,False,9,9,0,9,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12022,SLAKE,test,track_c_answer_only,3,Heart,heart,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12025,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,7,7,0,7,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12029,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,6,6,0,6,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12033,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12039,SLAKE,test,track_c_answer_only,3,X-Ray,X-ray,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12043,SLAKE,test,track_c_answer_only,3,Atelectasis,,False,OPEN,True,False,13,12,0,12,0,1,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12046,SLAKE,test,track_c_answer_only,3,Lung,,False,CLOSED,True,False,6,6,0,6,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12051,SLAKE,test,track_c_answer_only,3,"Left Lung, Right",,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12060,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12065,SLAKE,test,track_c_answer_only,3,No,The spleen appears normal.,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12076,SLAKE,test,track_c_answer_only,3,Abdomen,Abdomen,True,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12084,SLAKE,test,track_c_answer_only,3,2,2,True,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12085,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12093,SLAKE,test,track_c_answer_only,3,4,,False,OPEN,True,False,25,25,0,25,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12095,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12099,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12105,SLAKE,test,track_c_answer_only,3,Transverse  Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12146,SLAKE,test,track_c_answer_only,3,2,0,False,OPEN,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12147,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12148,SLAKE,test,track_c_answer_only,3,Yes,no,False,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12149,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,4,0,0,0,0,4,0,1.0,0.0,0.05,0.04,False,True
+12160,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12170,SLAKE,test,track_c_answer_only,3,CT,CT,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12176,SLAKE,test,track_c_answer_only,3,No,Yes,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12181,SLAKE,test,track_c_answer_only,3,Liver,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12188,SLAKE,test,track_c_answer_only,3,Pulmonary bronchus,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12198,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12209,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,12,12,0,12,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12211,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12212,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,0,0,0,0,5,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12214,SLAKE,test,track_c_answer_only,3,Yes,absent,False,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12217,SLAKE,test,track_c_answer_only,3,Liver,Liver,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12219,SLAKE,test,track_c_answer_only,3,Transverse  Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12220,SLAKE,test,track_c_answer_only,3,Pulmonary bronchus,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12235,SLAKE,test,track_c_answer_only,3,CT,CT,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12237,SLAKE,test,track_c_answer_only,3,Liver,Liver,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12238,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12242,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12248,SLAKE,test,track_c_answer_only,3,Large Bowel,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12250,SLAKE,test,track_c_answer_only,3,Abdomen,abdomen,True,OPEN,True,False,12,12,0,12,0,0,0,1.0,0.0,0.05,0.04,False,True
+12253,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12259,SLAKE,test,track_c_answer_only,3,Large Bowel,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12261,SLAKE,test,track_c_answer_only,3,Right Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12263,SLAKE,test,track_c_answer_only,3,Large Bowel,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12265,SLAKE,test,track_c_answer_only,3,Coronal Plane,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12271,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12273,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,1,0,1,0,4,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12283,SLAKE,test,track_c_answer_only,3,Lower Right Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12286,SLAKE,test,track_c_answer_only,3,Atelectasis,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12287,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12288,SLAKE,test,track_c_answer_only,3,No,Yes,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12292,SLAKE,test,track_c_answer_only,3,Bronchial obstruction,,False,OPEN,True,False,6,6,0,6,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12297,SLAKE,test,track_c_answer_only,3,Left,left,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12300,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,6,2,0,2,0,4,0,1.0,0.0,0.05,0.04,False,True
+12302,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,7,7,0,7,0,0,0,1.0,0.0,0.05,0.04,False,True
+12304,SLAKE,test,track_c_answer_only,3,Black,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12307,SLAKE,test,track_c_answer_only,3,Keep healthy,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12325,SLAKE,test,track_c_answer_only,3,Coronal Plane,AP,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12326,SLAKE,test,track_c_answer_only,3,Chest,chest,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12327,SLAKE,test,track_c_answer_only,3,Right,right,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12328,SLAKE,test,track_c_answer_only,3,Right Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12333,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12335,SLAKE,test,track_c_answer_only,3,2,2,True,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12357,SLAKE,test,track_c_answer_only,3,Left,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12358,SLAKE,test,track_c_answer_only,3,Lower Left Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12363,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12366,SLAKE,test,track_c_answer_only,3,Breathe,,False,OPEN,True,False,7,7,0,7,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12368,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12369,SLAKE,test,track_c_answer_only,3,X-Ray,X-ray,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12370,SLAKE,test,track_c_answer_only,3,Coronal Plane,coronal plane,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12371,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,8,8,0,8,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12378,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12379,SLAKE,test,track_c_answer_only,3,Black,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12381,SLAKE,test,track_c_answer_only,3,Breathe,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12383,SLAKE,test,track_c_answer_only,3,Heart,,False,OPEN,True,False,8,8,0,8,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12401,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,16,16,0,16,0,0,0,1.0,0.0,0.05,0.04,False,True
+12402,SLAKE,test,track_c_answer_only,3,Upper Left Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12406,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,8,8,0,8,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12408,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,7,2,0,2,0,5,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12413,SLAKE,test,track_c_answer_only,3,Heart,,False,OPEN,True,False,10,10,0,10,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12417,SLAKE,test,track_c_answer_only,3,Lower Left Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12418,SLAKE,test,track_c_answer_only,3,Lower Left Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12419,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,11,11,0,11,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12425,SLAKE,test,track_c_answer_only,3,1,1,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12432,SLAKE,test,track_c_answer_only,3,Left Lung,,False,OPEN,True,False,7,7,0,7,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12434,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,14,14,0,14,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12436,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,8,8,0,8,0,0,0,1.0,0.0,0.05,0.04,False,True
+12438,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12439,SLAKE,test,track_c_answer_only,3,Black,,False,OPEN,True,False,8,8,0,8,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12445,SLAKE,test,track_c_answer_only,3,Coronal Plane,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12452,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12453,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,4,0,4,0,1,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12456,SLAKE,test,track_c_answer_only,3,Promote blood flow,,False,OPEN,True,False,6,6,0,6,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12463,SLAKE,test,track_c_answer_only,3,Upper Right Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12468,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12470,SLAKE,test,track_c_answer_only,3,1,1,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12473,SLAKE,test,track_c_answer_only,3,Lung,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12474,SLAKE,test,track_c_answer_only,3,X-Ray,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12482,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,9,9,0,9,0,0,0,1.0,0.0,0.05,0.04,False,True
+12486,SLAKE,test,track_c_answer_only,3,Promote blood flow,,False,OPEN,True,False,8,8,0,8,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12488,SLAKE,test,track_c_answer_only,3,Heart,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12489,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,4,0,4,0,1,0,1.0,0.0,0.05,0.04,False,True
+12496,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12498,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12506,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12508,SLAKE,test,track_c_answer_only,3,Lower Left Lung,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12509,SLAKE,test,track_c_answer_only,3,Chest,,False,OPEN,True,False,14,14,0,14,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12515,SLAKE,test,track_c_answer_only,3,2,2,True,OPEN,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12521,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,14,14,0,14,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12522,SLAKE,test,track_c_answer_only,3,Center,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12523,SLAKE,test,track_c_answer_only,3,Lower Left Lung,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12525,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,8,6,0,6,0,2,0,1.0,0.0,0.05,0.04,False,True
+12527,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,8,8,0,8,0,0,0,1.0,0.0,0.05,0.04,False,True
+12532,SLAKE,test,track_c_answer_only,3,"Chest tightness, dyspnea, chest pain",,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12540,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12541,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12548,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,6,1,0,1,0,5,0,1.0,0.0,0.05,0.04,False,True
+12550,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,3,0,3,0,2,0,1.0,0.0,0.05,0.04,False,True
+12552,SLAKE,test,track_c_answer_only,3,Center,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12554,SLAKE,test,track_c_answer_only,3,Head,Head,True,OPEN,True,False,18,18,0,18,0,0,0,1.0,0.0,0.05,0.04,False,True
+12556,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12559,SLAKE,test,track_c_answer_only,3,0,,False,OPEN,True,False,7,7,0,7,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12560,SLAKE,test,track_c_answer_only,3,Control heartbeat and breathing,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12561,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,6,1,0,1,0,5,0,1.0,0.0,0.05,0.04,False,True
+12567,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12571,SLAKE,test,track_c_answer_only,3,Gray,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12573,SLAKE,test,track_c_answer_only,3,2,1,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12577,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,6,1,0,1,0,5,0,1.0,0.0,0.05,0.04,False,True
+12581,SLAKE,test,track_c_answer_only,3,Neck,Neck,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12586,SLAKE,test,track_c_answer_only,3,Yes,no,False,CLOSED,True,False,15,0,0,0,0,15,0,1.0,0.0,0.05,0.04,False,True
+12590,SLAKE,test,track_c_answer_only,3,Neck,Neck,True,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12593,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,0,0,0,0,5,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12594,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12595,SLAKE,test,track_c_answer_only,3,Black,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12596,SLAKE,test,track_c_answer_only,3,Irregular,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12598,SLAKE,test,track_c_answer_only,3,Trachea,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12600,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,10,3,0,3,0,7,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12602,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12605,SLAKE,test,track_c_answer_only,3,Neck,Neck,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12606,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12610,SLAKE,test,track_c_answer_only,3,Esophagus,,False,OPEN,True,False,9,5,0,5,0,4,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12611,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,7,2,0,2,0,5,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12613,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12614,SLAKE,test,track_c_answer_only,3,T2,T2,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12615,SLAKE,test,track_c_answer_only,3,Transverse Plane,Axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12620,SLAKE,test,track_c_answer_only,3,2,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12630,SLAKE,test,track_c_answer_only,3,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12632,SLAKE,test,track_c_answer_only,3,T2,T2,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12635,SLAKE,test,track_c_answer_only,3,Left,left,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12636,SLAKE,test,track_c_answer_only,3,Head,Brain,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12643,SLAKE,test,track_c_answer_only,3,Transverse Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12646,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12647,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,6,6,0,6,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12648,SLAKE,test,track_c_answer_only,3,1,1,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12653,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,10,5,0,5,0,5,0,1.0,0.0,0.05,0.04,False,True
+12654,SLAKE,test,track_c_answer_only,3,Upper Left Lobe,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12656,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12661,SLAKE,test,track_c_answer_only,3,T2,T2 weighted,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12668,SLAKE,test,track_c_answer_only,3,MRI,MRI,True,OPEN,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12669,SLAKE,test,track_c_answer_only,3,T2,T1,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12674,SLAKE,test,track_c_answer_only,3,"Brain Edema, Brain Non-enhancing Tumor",,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12675,SLAKE,test,track_c_answer_only,3,Hyperdense,hyperdense,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12676,SLAKE,test,track_c_answer_only,3,"Visual impairment, vomiting, tinnitus, increased intracranial pressure",,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12685,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12686,SLAKE,test,track_c_answer_only,3,T1,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12687,SLAKE,test,track_c_answer_only,3,Transverse Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12690,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12694,SLAKE,test,track_c_answer_only,3,Brain,brain,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12697,SLAKE,test,track_c_answer_only,3,Brain,,False,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12700,SLAKE,test,track_c_answer_only,3,Yes,,False,CLOSED,True,False,6,3,0,3,0,3,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12705,SLAKE,test,track_c_answer_only,3,Head,Brain,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12708,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12715,SLAKE,test,track_c_answer_only,3,Left Lobe,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12717,SLAKE,test,track_c_answer_only,3,"Brain Edema, Brain Enhancing Tumor, Brain Non-enhancing Tumor",,False,OPEN,True,False,7,7,0,7,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12720,SLAKE,test,track_c_answer_only,3,No,Yes,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12722,SLAKE,test,track_c_answer_only,3,Transverse Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12727,SLAKE,test,track_c_answer_only,3,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12728,SLAKE,test,track_c_answer_only,3,MRI,MRI,True,OPEN,True,False,7,7,0,7,0,0,0,1.0,0.0,0.05,0.04,False,True
+12729,SLAKE,test,track_c_answer_only,3,T1,T1-weighted MRI,False,OPEN,True,False,8,8,0,8,0,0,0,1.0,0.0,0.05,0.04,False,True
+12733,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12735,SLAKE,test,track_c_answer_only,3,Hyperdense,The brain enhancing tumor appears to be hyperdense.,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12738,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,8,8,0,8,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12747,SLAKE,test,track_c_answer_only,3,MRI,MRI,True,OPEN,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12755,SLAKE,test,track_c_answer_only,3,None,,False,OPEN,True,False,6,6,0,6,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12761,SLAKE,test,track_c_answer_only,3,Head,brain,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12773,SLAKE,test,track_c_answer_only,3,T2,T2,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12775,SLAKE,test,track_c_answer_only,3,Head,,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12778,SLAKE,test,track_c_answer_only,3,Brain Edema,,False,OPEN,True,False,5,3,0,3,0,2,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12782,SLAKE,test,track_c_answer_only,3,Liver,Liver,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12787,SLAKE,test,track_c_answer_only,3,6,,False,OPEN,True,False,25,25,0,25,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12789,SLAKE,test,track_c_answer_only,3,Spleen,NONE,False,OPEN,True,False,16,14,0,14,0,2,0,1.0,0.0,0.05,0.04,False,True
+12794,SLAKE,test,track_c_answer_only,3,Upper Right,The colon is present in the image.,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12795,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12796,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,5,0,0,0,0,5,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12800,SLAKE,test,track_c_answer_only,3,"Biotransformation, detoxification",,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12807,SLAKE,test,track_c_answer_only,3,Colon,,False,CLOSED,True,False,10,8,0,8,0,2,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12810,SLAKE,test,track_c_answer_only,3,"Stomach, Colon",,False,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12814,SLAKE,test,track_c_answer_only,3,Small Bowel,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12815,SLAKE,test,track_c_answer_only,3,No,yes,False,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12825,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,4,0,0,0,0,4,0,1.0,0.0,0.05,0.04,False,True
+12827,SLAKE,test,track_c_answer_only,3,Liver,,False,CLOSED,True,False,9,9,0,9,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12829,SLAKE,test,track_c_answer_only,3,Circular,,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12846,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12847,SLAKE,test,track_c_answer_only,3,Upper Right,,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12849,SLAKE,test,track_c_answer_only,3,No,No,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12857,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,10,10,0,10,0,0,0,0.4,0.6554587535412857,0.017227062322935718,0.04,True,False
+12864,SLAKE,test,track_c_answer_only,3,Liver,liver,True,CLOSED,True,False,11,5,0,5,0,6,0,1.0,0.0,0.05,0.04,False,True
+12868,SLAKE,test,track_c_answer_only,3,MRI,MRI,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12869,SLAKE,test,track_c_answer_only,3,Brain,brain,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12871,SLAKE,test,track_c_answer_only,3,Brain,Brain,True,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12877,SLAKE,test,track_c_answer_only,3,Abdomen,,False,OPEN,True,False,7,7,0,7,0,0,0,0.8,0.31091750708257115,0.03445412464587144,0.04,True,False
+12879,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12881,SLAKE,test,track_c_answer_only,3,No,Yes,False,CLOSED,True,False,8,7,0,7,0,1,0,1.0,0.0,0.05,0.04,False,True
+12883,SLAKE,test,track_c_answer_only,3,2,2,True,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12888,SLAKE,test,track_c_answer_only,3,Transverse Plane,axial,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12894,SLAKE,test,track_c_answer_only,3,4,,False,OPEN,True,False,23,16,0,16,0,7,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12895,SLAKE,test,track_c_answer_only,3,Promote blood flow,,False,OPEN,True,False,6,6,0,6,0,0,0,0.2,1.0000000000000002,-1.1102230246251566e-17,0.04,True,False
+12897,SLAKE,test,track_c_answer_only,3,No,no,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,0.05,0.04,False,True
+12905,SLAKE,test,track_c_answer_only,3,0,2,False,OPEN,True,False,10,10,0,10,0,0,0,1.0,0.0,0.05,0.04,False,True
+12922,SLAKE,test,track_c_answer_only,3,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12926,SLAKE,test,track_c_answer_only,3,CT,,False,OPEN,True,False,6,6,0,6,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False
+12932,SLAKE,test,track_c_answer_only,3,Pelvic Cavity,Abdomen,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12933,SLAKE,test,track_c_answer_only,3,Yes,yes,True,CLOSED,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12938,SLAKE,test,track_c_answer_only,3,Pelvic Cavity,Abdomen,False,OPEN,True,False,5,5,0,5,0,0,0,1.0,0.0,0.05,0.04,False,True
+12939,SLAKE,test,track_c_answer_only,3,Upper Left,,False,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.4181656600790517,0.029091716996047415,0.04,True,False
+12940,SLAKE,test,track_c_answer_only,3,Pelvic Cavity,Abdomen,False,OPEN,True,False,6,6,0,6,0,0,0,1.0,0.0,0.05,0.04,False,True
+12943,SLAKE,test,track_c_answer_only,3,"Colon, Small Bowel",,False,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.020478185834579554,0.04,True,False
+12944,SLAKE,test,track_c_answer_only,3,No,,False,CLOSED,True,False,12,12,0,12,0,0,0,0.4,0.8277293767706428,0.008613531161467859,0.04,True,False

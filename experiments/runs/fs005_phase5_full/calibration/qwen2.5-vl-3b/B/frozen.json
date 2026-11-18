@@ -1,0 +1,30 @@
+{
+  "model": "qwen2.5-vl-3b",
+  "track": "B",
+  "fitted_on": "val_fit",
+  "n_fit": 200,
+  "n_assess": 80,
+  "n_fit_cohort": 200,
+  "n_assess_cohort": 80,
+  "salvage": {
+    "records_with_failures": 96,
+    "records_salvaged": 96,
+    "samples_salvaged": 128,
+    "samples_dropped": 1
+  },
+  "w1": 0.0,
+  "w2": 0.05,
+  "w3": 0.95,
+  "tau": 0.99,
+  "fit": {
+    "ece": 0.567643303885105,
+    "auroc": 0.8113393505550368,
+    "selective_risk": 0.15,
+    "coverage": 0.2
+  },
+  "assessment": {
+    "coverage": 0.25,
+    "selective_accuracy": 0.95,
+    "accuracy_all": 0.5625
+  }
+}

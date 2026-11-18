@@ -1,0 +1,15 @@
+metric,value
+n_samples,250
+n_positive_claims_total,1819
+accuracy,0.332
+open_accuracy,0.1836734693877551
+closed_accuracy,0.5436893203883495
+usr_raw,0.08960967564595931
+usr_filtered,0.08960967564595931
+pointing_accuracy,0.88
+sampling_agreement,0.7304000000000002
+normalized_entropy,0.3493794247730148
+ece,0.3252032520325203
+selective_accuracy,0.6747967479674797
+coverage,0.492
+auroc,0.8802395209580839

@@ -1,0 +1,763 @@
+{
+  "replicates": 2000,
+  "seed": 42,
+  "single": {
+    "medgemma-4b/trackB/cond2": {
+      "accuracy": {
+        "point": 0.392,
+        "ci95": [
+          0.3319327731092437,
+          0.4517374517374517
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 0.08960967564595931,
+        "ci95": [
+          0.057928708180467796,
+          0.12534732351748945
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.88,
+        "ci95": [
+          0.8377299528301887,
+          0.9230769230769231
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.392,
+        "ci95": [
+          0.3319327731092437,
+          0.4517374517374517
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.5905310287613477,
+        "ci95": [
+          0.5318192274056023,
+          0.648990052457431
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.827671858216971,
+        "ci95": [
+          0.7806087683154797,
+          0.8718782693001442
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "medgemma-4b/trackB/cond3": {
+      "accuracy": {
+        "point": 0.332,
+        "ci95": [
+          0.2748926425445758,
+          0.3889069264069263
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 0.08960967564595931,
+        "ci95": [
+          0.057928708180467796,
+          0.12534732351748945
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.88,
+        "ci95": [
+          0.8377299528301887,
+          0.9230769230769231
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.6747967479674797,
+        "ci95": [
+          0.5864529487781955,
+          0.7656285191441441
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 0.492,
+        "ci95": [
+          0.42259130420680485,
+          0.5577731990492962
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.3252032520325203,
+        "ci95": [
+          0.23437148085585585,
+          0.41354705122180446
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.8802395209580839,
+        "ci95": [
+          0.8419220430107527,
+          0.9186765813253012
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "medgemma-4b/trackC/cond1": {
+      "accuracy": {
+        "point": 0.412,
+        "ci95": [
+          0.35714285714285715,
+          0.4680021276595745
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": null,
+        "ci95": [
+          null,
+          null
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.412,
+        "ci95": [
+          0.35714285714285715,
+          0.4680021276595745
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.412,
+        "ci95": [
+          0.35714285714285715,
+          0.4680021276595745
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": null,
+        "ci95": [
+          null,
+          null
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "medgemma-4b/trackC/cond2": {
+      "accuracy": {
+        "point": 0.424,
+        "ci95": [
+          0.3676973945620708,
+          0.48034934497816595
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.424,
+        "ci95": [
+          0.3676973945620708,
+          0.48034934497816595
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.39071247230838796,
+        "ci95": [
+          0.3357142573322891,
+          0.4455556907866657
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.8297955974842768,
+        "ci95": [
+          0.7825869597610525,
+          0.8694620958540328
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "medgemma-4b/trackC/cond3": {
+      "accuracy": {
+        "point": 0.356,
+        "ci95": [
+          0.2981093569503273,
+          0.4148471615720524
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.717741935483871,
+        "ci95": [
+          0.6384574468085106,
+          0.7928830425299889
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 0.496,
+        "ci95": [
+          0.43362745436946903,
+          0.5577755940523619
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.6677419354838711,
+        "ci95": [
+          0.5884574468085106,
+          0.742883042529989
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.8913043478260869,
+        "ci95": [
+          0.8566948629045114,
+          0.9226561051577736
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "qwen2.5-vl-3b/trackB/cond2": {
+      "accuracy": {
+        "point": 0.404,
+        "ci95": [
+          0.33755274261603374,
+          0.4721244957684094
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 0.4333565945568737,
+        "ci95": [
+          0.34348164613126725,
+          0.5309502651217595
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.7,
+        "ci95": [
+          0.5930198088059565,
+          0.7966101694915254
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.404,
+        "ci95": [
+          0.33755274261603374,
+          0.4721244957684094
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.570738232710264,
+        "ci95": [
+          0.5037603598503925,
+          0.6353852229645089
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.8011495780450528,
+        "ci95": [
+          0.7489862140747627,
+          0.8500372969655057
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "qwen2.5-vl-3b/trackB/cond3": {
+      "accuracy": {
+        "point": 0.164,
+        "ci95": [
+          0.12133574236084697,
+          0.2088085827216261
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 0.4333565945568737,
+        "ci95": [
+          0.34348164613126725,
+          0.5309502651217595
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.7,
+        "ci95": [
+          0.5930198088059565,
+          0.7966101694915254
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.7454545454545455,
+        "ci95": [
+          0.6458333333333334,
+          0.8405879446640315
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 0.22,
+        "ci95": [
+          0.1686746987951807,
+          0.2727272727272727
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.2545454545454545,
+        "ci95": [
+          0.15941205533596844,
+          0.35416666666666663
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.9665071770334929,
+        "ci95": [
+          0.9507772020725389,
+          0.9811837422383766
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond1": {
+      "accuracy": {
+        "point": 0.384,
+        "ci95": [
+          0.3132530120481928,
+          0.4502079593713059
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": null,
+        "ci95": [
+          null,
+          null
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.384,
+        "ci95": [
+          0.3132530120481928,
+          0.4502079593713059
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.384,
+        "ci95": [
+          0.3132530120481928,
+          0.4502079593713059
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": null,
+        "ci95": [
+          null,
+          null
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond2": {
+      "accuracy": {
+        "point": 0.38,
+        "ci95": [
+          0.31092436974789917,
+          0.45107415387377675
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.38,
+        "ci95": [
+          0.31092436974789917,
+          0.45107415387377675
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.35579263046371107,
+        "ci95": [
+          0.287427049784899,
+          0.4259107596904978
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.793106960950764,
+        "ci95": [
+          0.7353768577494693,
+          0.8456402199270128
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond3": {
+      "accuracy": {
+        "point": 0.172,
+        "ci95": [
+          0.1282,
+          0.216237167399958
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "usr_raw": {
+        "point": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "pointing_accuracy": {
+        "point": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "selective_accuracy": {
+        "point": 0.7962962962962963,
+        "ci95": [
+          0.6739019520851819,
+          0.9000409836065573
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "coverage": {
+        "point": 0.216,
+        "ci95": [
+          0.1699006228246932,
+          0.2631578947368421
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "ece": {
+        "point": 0.7462962962962963,
+        "ci95": [
+          0.6239019520851818,
+          0.8500409836065572
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      },
+      "auroc": {
+        "point": 0.9734299516908212,
+        "ci95": [
+          0.9564082969432315,
+          0.9875
+        ],
+        "n_clusters": 77,
+        "n_observations": 250
+      }
+    }
+  },
+  "paired": {
+    "medgemma-4b: Cond2 (grounded) - Cond1 (greedy), track C, accuracy": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": 0.01200000000000001,
+      "ci95": [
+        -0.0041335281302950005,
+        0.02966101694915252
+      ],
+      "mcnemar": {
+        "a_only": 4,
+        "b_only": 1,
+        "p_value": 0.37109336952269767,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "medgemma-4b: Cond3 (abstain) - Cond2, track C, accuracy over all questions": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": -0.068,
+      "ci95": [
+        -0.09843370273160297,
+        -0.040908668469077376
+      ],
+      "mcnemar": {
+        "a_only": 0,
+        "b_only": 17,
+        "p_value": 0.00010421194515808925,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "medgemma-4b: track B - track C, Cond2, accuracy": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": -0.03199999999999997,
+      "ci95": [
+        -0.0714285714285714,
+        0.0040987822977804796
+      ],
+      "mcnemar": {
+        "a_only": 5,
+        "b_only": 13,
+        "p_value": 0.09896015401940585,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "qwen2.5-vl-3b: Cond2 (grounded) - Cond1 (greedy), track C, accuracy": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": -0.0040000000000000036,
+      "ci95": [
+        -0.043299495264560776,
+        0.03831417624521072
+      ],
+      "mcnemar": {
+        "a_only": 15,
+        "b_only": 16,
+        "p_value": 1.0,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "qwen2.5-vl-3b: Cond3 (abstain) - Cond2, track C, accuracy over all questions": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": -0.20800000000000002,
+      "ci95": [
+        -0.2723584819803422,
+        -0.15020922746781118
+      ],
+      "mcnemar": {
+        "a_only": 0,
+        "b_only": 52,
+        "p_value": 1.5224653042149162e-12,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "qwen2.5-vl-3b: track B - track C, Cond2, accuracy": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": 0.02400000000000002,
+      "ci95": [
+        -0.019533164828431367,
+        0.06513840018766125
+      ],
+      "mcnemar": {
+        "a_only": 21,
+        "b_only": 15,
+        "p_value": 0.40465676192728606,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    },
+    "Cond2 track C, medgemma-4b - qwen2.5-vl-3b, accuracy": {
+      "metric": "accuracy",
+      "n_questions": 250,
+      "diff_a_minus_b": 0.043999999999999984,
+      "ci95": [
+        -0.01172222393774703,
+        0.10358565737051789
+      ],
+      "mcnemar": {
+        "a_only": 29,
+        "b_only": 18,
+        "p_value": 0.14466148777280916,
+        "note": "Ordinary McNemar is sample-level and NOT image-cluster-adjusted. Do not interpret as cluster-robust inference."
+      }
+    }
+  }
+}

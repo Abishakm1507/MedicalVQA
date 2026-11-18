@@ -1,0 +1,251 @@
+sample_id,dataset_name,split,track,condition,ground_truth_answer,model_answer,correct,question_type,has_gt_regions,pointing_correct,n_claims,n_positive_claims,n_supported,n_unsupported,n_unverifiable,n_absence,n_uncertain,agreement,normalized_entropy,confidence,threshold,is_abstaining,in_coverage
+11935,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,False,7,5,0,5,0,2,0,1.0,0.0,1.0,0.99,False,True
+11936,SLAKE,test,track_b_oracle_slake,2,"Lung, Spinal Cord",The lungs,False,OPEN,True,False,7,6,0,6,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11941,SLAKE,test,track_b_oracle_slake,2,Lung Cancer,none,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+11947,SLAKE,test,track_b_oracle_slake,2,Lung,n/a,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11948,SLAKE,test,track_b_oracle_slake,2,Lung,Lungs,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+11951,SLAKE,test,track_b_oracle_slake,2,Lung Cancer,None of the provided answers relate to the information given in the image.,False,OPEN,True,False,4,4,0,4,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11953,SLAKE,test,track_b_oracle_slake,2,"Left Lung, Right",Right-sided,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11954,SLAKE,test,track_b_oracle_slake,2,Lung,heart,False,CLOSED,True,False,6,4,0,4,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+11961,SLAKE,test,track_b_oracle_slake,2,No,NO,True,CLOSED,True,True,5,3,2,1,0,2,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+11964,SLAKE,test,track_b_oracle_slake,2,"Right Lung, Left",Right Lung,False,OPEN,True,True,5,4,3,1,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11968,SLAKE,test,track_b_oracle_slake,2,Cardiomegaly,Pneumonia,False,OPEN,True,False,6,5,0,5,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+11973,SLAKE,test,track_b_oracle_slake,2,Abdomen,liver,False,OPEN,True,True,8,6,6,0,0,0,2,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+11974,SLAKE,test,track_b_oracle_slake,2,T2,T2 Weighted,False,OPEN,True,True,7,6,5,1,0,1,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+11975,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,True,7,5,5,0,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+11991,SLAKE,test,track_b_oracle_slake,2,Cardiomegaly,Pneumonia,False,OPEN,True,True,3,3,3,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+11993,SLAKE,test,track_b_oracle_slake,2,Heart,lung,False,CLOSED,True,True,5,5,5,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+11995,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,False,7,6,0,6,0,1,0,1.0,0.0,1.0,0.99,False,True
+12004,SLAKE,test,track_b_oracle_slake,2,Lung,lungs,False,OPEN,True,True,6,6,2,4,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12005,SLAKE,test,track_b_oracle_slake,2,"Atelectasis, Mass",Pneumonia,False,OPEN,True,True,10,9,3,6,0,1,0,1.0,0.0,1.0,0.99,False,True
+12014,SLAKE,test,track_b_oracle_slake,2,Center,the abnormality is located in the lung,False,OPEN,True,True,5,5,2,3,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12019,SLAKE,test,track_b_oracle_slake,2,Lung,Lungs,False,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12021,SLAKE,test,track_b_oracle_slake,2,Center,right Lung,False,OPEN,True,True,5,5,2,3,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12022,SLAKE,test,track_b_oracle_slake,2,Heart,The lung is abnormal.,False,CLOSED,True,False,7,5,0,5,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12025,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,7,7,4,3,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12029,SLAKE,test,track_b_oracle_slake,2,No,The lung appears to be normal.,False,CLOSED,True,True,2,2,1,1,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12033,SLAKE,test,track_b_oracle_slake,2,Lung,lungs,False,OPEN,True,True,5,5,5,0,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12039,SLAKE,test,track_b_oracle_slake,2,X-Ray,X-ray,True,OPEN,True,True,5,4,4,0,0,1,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12043,SLAKE,test,track_b_oracle_slake,2,Atelectasis,Pneumonia,False,OPEN,True,True,6,4,4,0,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12046,SLAKE,test,track_b_oracle_slake,2,Lung,lung,True,CLOSED,True,True,5,4,4,0,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12051,SLAKE,test,track_b_oracle_slake,2,"Left Lung, Right",Right lung,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12060,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,6,6,5,1,0,0,0,1.0,0.0,1.0,0.99,False,True
+12065,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,8,5,5,0,0,3,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12076,SLAKE,test,track_b_oracle_slake,2,Abdomen,abdomen,True,OPEN,True,False,7,5,0,5,0,2,0,1.0,0.0,1.0,0.99,False,True
+12084,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,False,7,7,0,7,0,0,0,1.0,0.0,1.0,0.99,False,True
+12085,SLAKE,test,track_b_oracle_slake,2,Yes,The liver appears to be healthy.,False,CLOSED,True,False,2,1,0,1,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12093,SLAKE,test,track_b_oracle_slake,2,4,4,True,OPEN,True,True,14,11,11,0,0,1,2,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12095,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,5,4,4,0,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12099,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,6,6,6,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12105,SLAKE,test,track_b_oracle_slake,2,Transverse  Plane,Transverse,False,OPEN,True,True,10,10,10,0,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12146,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,True,8,8,6,2,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12147,SLAKE,test,track_b_oracle_slake,2,No,"The input image is an abdominal CT scan, which typically shows the structures of the abdominal cavity including the liver, spleen, stomach, and intestines.",False,CLOSED,True,True,16,13,13,0,0,3,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12148,SLAKE,test,track_b_oracle_slake,2,Yes,no,False,CLOSED,True,True,13,1,1,0,0,12,0,1.0,0.0,1.0,0.99,False,True
+12149,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,9,1,1,0,0,8,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12160,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,7,6,5,1,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12170,SLAKE,test,track_b_oracle_slake,2,CT,CT Scan,False,OPEN,True,True,7,6,6,0,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12176,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,6,3,3,0,0,3,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12181,SLAKE,test,track_b_oracle_slake,2,Liver,The abnormality is located at R2.,False,OPEN,True,True,7,6,5,1,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12188,SLAKE,test,track_b_oracle_slake,2,Pulmonary bronchus,N/A,False,OPEN,True,True,7,7,5,2,0,0,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12198,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,5,1,1,0,0,4,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12209,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,False,9,6,0,6,0,3,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12211,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,6,6,1,5,0,0,0,1.0,0.0,1.0,0.99,False,True
+12212,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,False,5,3,0,3,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12214,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,False,7,7,0,7,0,0,0,1.0,0.0,1.0,0.99,False,True
+12217,SLAKE,test,track_b_oracle_slake,2,Liver,liver,True,OPEN,True,False,5,5,0,5,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12219,SLAKE,test,track_b_oracle_slake,2,Transverse  Plane,Transverse,False,OPEN,True,False,8,8,0,8,0,0,0,1.0,0.0,1.0,0.99,False,True
+12220,SLAKE,test,track_b_oracle_slake,2,Pulmonary bronchus,bone,False,OPEN,True,False,5,3,0,3,0,2,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12235,SLAKE,test,track_b_oracle_slake,2,CT,CT,True,OPEN,True,True,10,8,8,0,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12237,SLAKE,test,track_b_oracle_slake,2,Liver,Liver,True,OPEN,True,True,7,6,5,1,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12238,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,5,4,4,0,0,1,0,1.0,0.0,1.0,0.99,False,True
+12242,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,6,5,3,2,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12248,SLAKE,test,track_b_oracle_slake,2,Large Bowel,liver,False,OPEN,True,True,7,5,5,0,0,2,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12250,SLAKE,test,track_b_oracle_slake,2,Abdomen,abdomen,True,OPEN,True,False,4,4,0,4,0,0,0,1.0,0.0,1.0,0.99,False,True
+12253,SLAKE,test,track_b_oracle_slake,2,No,YES,False,CLOSED,True,False,4,2,0,2,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12259,SLAKE,test,track_b_oracle_slake,2,Large Bowel,spleen,False,OPEN,True,False,5,4,0,4,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12261,SLAKE,test,track_b_oracle_slake,2,Right Lung,liver,False,OPEN,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12263,SLAKE,test,track_b_oracle_slake,2,Large Bowel,Liver,False,OPEN,True,False,3,3,0,3,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12265,SLAKE,test,track_b_oracle_slake,2,Coronal Plane,cranial-pelvic,False,OPEN,True,True,7,5,5,0,0,2,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12271,SLAKE,test,track_b_oracle_slake,2,Yes,no,False,CLOSED,True,True,5,3,3,0,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12273,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,5,1,1,0,0,4,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12283,SLAKE,test,track_b_oracle_slake,2,Lower Right Lung,Left Lung,False,OPEN,True,True,5,5,5,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12286,SLAKE,test,track_b_oracle_slake,2,Atelectasis,Bronchitis,False,OPEN,True,True,5,5,4,1,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12287,SLAKE,test,track_b_oracle_slake,2,Yes,None,False,CLOSED,True,True,7,4,4,0,0,3,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12288,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,5,4,4,0,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12292,SLAKE,test,track_b_oracle_slake,2,Bronchial obstruction,Lung infection,False,OPEN,True,True,4,3,3,0,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12297,SLAKE,test,track_b_oracle_slake,2,Left,left,True,CLOSED,True,True,5,4,3,1,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12300,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,5,1,1,0,0,4,0,1.0,0.0,1.0,0.99,False,True
+12302,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,5,5,5,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12304,SLAKE,test,track_b_oracle_slake,2,Black,black,True,OPEN,True,True,4,4,3,1,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12307,SLAKE,test,track_b_oracle_slake,2,Keep healthy,Avoid smoking,False,OPEN,True,False,4,4,0,4,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12325,SLAKE,test,track_b_oracle_slake,2,Coronal Plane,AP,False,OPEN,True,False,11,6,0,6,0,5,0,1.0,0.0,1.0,0.99,False,True
+12326,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,False,7,6,0,6,0,1,0,1.0,0.0,1.0,0.99,False,True
+12327,SLAKE,test,track_b_oracle_slake,2,Right,left,False,CLOSED,True,False,5,5,0,5,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12328,SLAKE,test,track_b_oracle_slake,2,Right Lung,The left upper lobe.,False,OPEN,True,False,6,6,0,6,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12333,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,False,5,5,0,5,0,0,0,1.0,0.0,1.0,0.99,False,True
+12335,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,False,7,7,0,7,0,0,0,1.0,0.0,1.0,0.99,False,True
+12357,SLAKE,test,track_b_oracle_slake,2,Left,right,False,OPEN,True,True,5,4,4,0,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12358,SLAKE,test,track_b_oracle_slake,2,Lower Left Lung,right lung,False,OPEN,True,True,5,5,4,1,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12363,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,True,5,4,3,1,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12366,SLAKE,test,track_b_oracle_slake,2,Breathe,The heart,False,OPEN,True,True,5,5,1,4,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12368,SLAKE,test,track_b_oracle_slake,2,Lung,lungs,False,OPEN,True,True,6,6,1,5,0,0,0,1.0,0.0,1.0,0.99,False,True
+12369,SLAKE,test,track_b_oracle_slake,2,X-Ray,X-ray,True,OPEN,True,True,7,7,4,3,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12370,SLAKE,test,track_b_oracle_slake,2,Coronal Plane,coronal,False,CLOSED,True,True,6,4,3,1,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12371,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,True,5,5,4,1,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12378,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,4,4,3,1,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12379,SLAKE,test,track_b_oracle_slake,2,Black,black,True,OPEN,True,True,5,4,3,1,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12381,SLAKE,test,track_b_oracle_slake,2,Breathe,respiratory system,False,OPEN,True,True,6,5,3,2,0,1,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12383,SLAKE,test,track_b_oracle_slake,2,Heart,heart,True,OPEN,True,True,3,3,3,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12401,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,False,7,7,0,7,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12402,SLAKE,test,track_b_oracle_slake,2,Upper Left Lung,the abnormality appears as an irregular density.,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12406,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,False,5,4,0,4,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12408,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,False,5,2,0,2,0,2,1,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12413,SLAKE,test,track_b_oracle_slake,2,Heart,heart,True,OPEN,True,True,6,6,1,5,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12417,SLAKE,test,track_b_oracle_slake,2,Lower Left Lung,The abnormality is located in the right lung field.,False,OPEN,True,True,5,5,5,0,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12418,SLAKE,test,track_b_oracle_slake,2,Lower Left Lung,right lung,False,OPEN,True,True,5,5,5,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12419,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,True,5,5,2,3,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12425,SLAKE,test,track_b_oracle_slake,2,1,1,True,OPEN,True,True,5,5,5,0,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12432,SLAKE,test,track_b_oracle_slake,2,Left Lung,I see an abnormality on the right lung field.,False,OPEN,True,False,7,7,0,7,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12434,SLAKE,test,track_b_oracle_slake,2,Lung,lungs,False,OPEN,True,False,8,7,0,7,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12436,SLAKE,test,track_b_oracle_slake,2,No,The lung is healthy.,False,CLOSED,True,False,10,6,0,6,0,4,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12438,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,False,5,3,0,3,0,2,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12439,SLAKE,test,track_b_oracle_slake,2,Black,black,True,OPEN,True,False,6,4,0,4,0,2,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12445,SLAKE,test,track_b_oracle_slake,2,Coronal Plane,anteroposterior,False,OPEN,True,True,7,6,3,3,0,0,1,0.2,1.0000000000000002,0.95,0.99,False,True
+12452,SLAKE,test,track_b_oracle_slake,2,No,The lung appears to be healthy.,False,CLOSED,True,True,6,5,1,4,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12453,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,False,4,3,0,3,0,1,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12456,SLAKE,test,track_b_oracle_slake,2,Promote blood flow,The heart occupies an approximate size of the right atrium.,False,OPEN,True,False,6,4,0,4,0,2,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12463,SLAKE,test,track_b_oracle_slake,2,Upper Right Lung,R1,False,OPEN,True,True,4,4,4,0,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12468,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,5,4,4,0,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12470,SLAKE,test,track_b_oracle_slake,2,1,1,True,OPEN,True,True,5,4,3,1,0,1,0,1.0,0.0,1.0,0.99,False,True
+12473,SLAKE,test,track_b_oracle_slake,2,Lung,lungs,False,OPEN,True,True,5,5,4,1,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12474,SLAKE,test,track_b_oracle_slake,2,X-Ray,X-Ray,True,OPEN,True,True,5,5,5,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12482,SLAKE,test,track_b_oracle_slake,2,No,The lung is abnormal.,False,CLOSED,True,True,5,5,4,1,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12486,SLAKE,test,track_b_oracle_slake,2,Promote blood flow,"The center organ appears to be enlarged, potentially indicating an effusion or a mass.",False,OPEN,True,True,3,3,3,0,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12488,SLAKE,test,track_b_oracle_slake,2,Heart,heart,True,OPEN,True,True,4,4,4,0,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12489,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,5,3,2,1,0,2,0,1.0,0.0,1.0,0.99,False,True
+12496,SLAKE,test,track_b_oracle_slake,2,Yes,The left lung shows signs of atelectasis.,False,CLOSED,True,False,6,5,0,5,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12498,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,5,4,1,3,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12506,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,False,9,6,0,6,0,3,0,1.0,0.0,1.0,0.99,False,True
+12508,SLAKE,test,track_b_oracle_slake,2,Lower Left Lung,Right Lung,False,OPEN,True,False,6,5,0,5,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12509,SLAKE,test,track_b_oracle_slake,2,Chest,chest,True,OPEN,True,False,7,4,0,4,0,2,1,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12515,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,False,6,6,0,6,0,0,0,1.0,0.0,1.0,0.99,False,True
+12521,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,False,6,6,0,6,0,0,0,1.0,0.0,1.0,0.99,False,True
+12522,SLAKE,test,track_b_oracle_slake,2,Center,in the center,False,OPEN,True,False,5,5,0,5,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12523,SLAKE,test,track_b_oracle_slake,2,Lower Left Lung,Right lung,False,OPEN,True,True,5,5,2,3,0,0,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12525,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,False,5,2,0,2,0,3,0,1.0,0.0,1.0,0.99,False,True
+12527,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,5,4,1,3,0,1,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12532,SLAKE,test,track_b_oracle_slake,2,"Chest tightness, dyspnea, chest pain",Cough,False,OPEN,True,False,11,9,0,9,0,1,1,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12540,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,False,8,0,0,0,0,8,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12541,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,11,11,7,4,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12548,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,14,3,3,0,0,11,0,1.0,0.0,1.0,0.99,False,True
+12550,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,False,9,0,0,0,0,9,0,1.0,0.0,1.0,0.99,False,True
+12552,SLAKE,test,track_b_oracle_slake,2,Center,The brain stem is located at the base of the brain.,False,OPEN,True,True,5,5,1,4,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12554,SLAKE,test,track_b_oracle_slake,2,Head,head,True,OPEN,True,True,12,10,8,2,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12556,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,5,2,2,0,0,3,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12559,SLAKE,test,track_b_oracle_slake,2,0,2,False,OPEN,True,True,7,7,4,3,0,0,0,1.0,0.0,1.0,0.99,False,True
+12560,SLAKE,test,track_b_oracle_slake,2,Control heartbeat and breathing,The brain,False,OPEN,True,True,17,17,12,5,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12561,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,8,2,2,0,0,6,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12567,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,18,14,14,0,0,4,0,1.0,0.0,1.0,0.99,False,True
+12571,SLAKE,test,track_b_oracle_slake,2,Gray,gray,True,OPEN,True,True,8,8,8,0,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12573,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,True,8,8,5,3,0,0,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12577,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,19,5,5,0,0,14,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12581,SLAKE,test,track_b_oracle_slake,2,Neck,abdomen,False,OPEN,True,True,8,5,5,0,0,3,0,1.0,0.0,1.0,0.99,False,True
+12586,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,7,6,6,0,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12590,SLAKE,test,track_b_oracle_slake,2,Neck,neck,True,OPEN,True,True,8,7,5,2,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12593,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,False,6,0,0,0,0,6,0,1.0,0.0,1.0,0.99,False,True
+12594,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,10,3,2,1,0,6,1,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12595,SLAKE,test,track_b_oracle_slake,2,Black,white,False,OPEN,True,True,7,6,5,1,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12596,SLAKE,test,track_b_oracle_slake,2,Irregular,oblong,False,OPEN,True,True,5,4,4,0,0,1,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12598,SLAKE,test,track_b_oracle_slake,2,Trachea,The lungs.,False,OPEN,True,True,11,9,7,2,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12600,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,6,5,3,2,0,1,0,1.0,0.0,1.0,0.99,False,True
+12602,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,9,9,9,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12605,SLAKE,test,track_b_oracle_slake,2,Neck,abdomen,False,OPEN,True,True,12,8,7,1,0,4,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12606,SLAKE,test,track_b_oracle_slake,2,Yes,no,False,CLOSED,True,True,8,2,2,0,0,6,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12610,SLAKE,test,track_b_oracle_slake,2,Esophagus,"The organs indicated as R1, R2, and R3 belong to the digestive system.",False,OPEN,True,True,9,9,8,1,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12611,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,True,8,4,4,0,0,4,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12613,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12614,SLAKE,test,track_b_oracle_slake,2,T2,t1,False,CLOSED,True,False,4,4,0,4,0,0,0,1.0,0.0,1.0,0.99,False,True
+12615,SLAKE,test,track_b_oracle_slake,2,Transverse Plane,Transverse,False,OPEN,True,False,4,4,0,4,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12620,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,False,11,10,0,10,0,1,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12630,SLAKE,test,track_b_oracle_slake,2,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",main cause of the disease on the upper left lobe of brain is tumor.,False,OPEN,True,False,8,6,0,6,0,2,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12632,SLAKE,test,track_b_oracle_slake,2,T2,t1,False,CLOSED,True,False,8,6,0,6,0,2,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12635,SLAKE,test,track_b_oracle_slake,2,Left,left,True,CLOSED,True,False,7,5,0,5,0,2,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12636,SLAKE,test,track_b_oracle_slake,2,Head,CNS,False,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12643,SLAKE,test,track_b_oracle_slake,2,Transverse Plane,axial,False,OPEN,True,True,5,3,2,1,0,2,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12646,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,5,5,4,1,0,0,0,1.0,0.0,1.0,0.99,False,True
+12647,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,5,5,5,0,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12648,SLAKE,test,track_b_oracle_slake,2,1,1,True,OPEN,True,True,7,7,2,5,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12653,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,False,5,0,0,0,0,5,0,1.0,0.0,1.0,0.99,False,True
+12654,SLAKE,test,track_b_oracle_slake,2,Upper Left Lobe,The abnormalities are in red.,False,OPEN,True,True,5,5,4,1,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12656,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,5,5,5,0,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12661,SLAKE,test,track_b_oracle_slake,2,T2,T1 weighted,False,CLOSED,True,True,9,8,8,0,0,1,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12668,SLAKE,test,track_b_oracle_slake,2,MRI,MRI,True,OPEN,True,True,9,8,2,6,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12669,SLAKE,test,track_b_oracle_slake,2,T2,t1,False,CLOSED,True,True,9,7,3,4,0,2,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12674,SLAKE,test,track_b_oracle_slake,2,"Brain Edema, Brain Non-enhancing Tumor",stroke,False,OPEN,True,True,7,6,2,4,0,1,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12675,SLAKE,test,track_b_oracle_slake,2,Hyperdense,hypo dense,False,CLOSED,True,True,6,6,3,3,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12676,SLAKE,test,track_b_oracle_slake,2,"Visual impairment, vomiting, tinnitus, increased intracranial pressure",headache,False,OPEN,True,True,9,8,5,3,0,0,1,0.2,1.0000000000000002,0.95,0.99,False,True
+12685,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,10,9,2,7,0,1,0,1.0,0.0,1.0,0.99,False,True
+12686,SLAKE,test,track_b_oracle_slake,2,T1,T2-weighted,False,OPEN,True,True,11,9,4,5,0,2,0,0.25,1.0,0.95,0.99,False,True
+12687,SLAKE,test,track_b_oracle_slake,2,Transverse Plane,coronal,False,OPEN,True,True,10,7,2,5,0,3,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12690,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,12,11,5,6,0,1,0,1.0,0.0,1.0,0.99,False,True
+12694,SLAKE,test,track_b_oracle_slake,2,Brain,Brain,True,OPEN,True,True,7,7,6,1,0,0,0,1.0,0.0,1.0,0.99,False,True
+12697,SLAKE,test,track_b_oracle_slake,2,Brain,brain,True,OPEN,True,True,9,9,9,0,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12700,SLAKE,test,track_b_oracle_slake,2,Yes,No,False,CLOSED,True,True,9,5,5,0,0,4,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12705,SLAKE,test,track_b_oracle_slake,2,Head,Brain,False,OPEN,True,True,14,9,2,7,0,5,0,1.0,0.0,1.0,0.99,False,True
+12708,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,False,8,7,0,7,0,0,1,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12715,SLAKE,test,track_b_oracle_slake,2,Left Lobe,The abnormalities are located within the red highlighted region.,False,OPEN,True,False,5,4,0,4,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12717,SLAKE,test,track_b_oracle_slake,2,"Brain Edema, Brain Enhancing Tumor, Brain Non-enhancing Tumor",Alzheimer's disease,False,OPEN,True,False,5,5,0,5,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12720,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,11,7,6,1,0,4,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12722,SLAKE,test,track_b_oracle_slake,2,Transverse Plane,sagittal,False,OPEN,True,True,11,11,9,2,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12727,SLAKE,test,track_b_oracle_slake,2,"Brain embryonic tissue dysplasia, genetic factors, chemical factors",Cerebrovascular Accident,False,OPEN,True,True,8,4,3,1,0,1,3,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12728,SLAKE,test,track_b_oracle_slake,2,MRI,X-ray,False,OPEN,True,True,12,12,4,8,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12729,SLAKE,test,track_b_oracle_slake,2,T1,T2-weighted,False,OPEN,True,True,11,11,10,1,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12733,SLAKE,test,track_b_oracle_slake,2,No,No,True,CLOSED,True,True,12,4,4,0,0,8,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12735,SLAKE,test,track_b_oracle_slake,2,Hyperdense,hypoechoic,False,OPEN,True,True,10,9,9,0,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12738,SLAKE,test,track_b_oracle_slake,2,No,Yes,False,CLOSED,True,True,9,8,5,3,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12747,SLAKE,test,track_b_oracle_slake,2,MRI,MRI,True,OPEN,True,True,8,5,5,0,0,3,0,1.0,0.0,1.0,0.99,False,True
+12755,SLAKE,test,track_b_oracle_slake,2,None,minimal,False,OPEN,True,False,5,1,0,1,0,3,1,0.2,1.0000000000000002,0.95,0.99,False,True
+12761,SLAKE,test,track_b_oracle_slake,2,Head,brain,False,OPEN,True,True,12,12,9,3,0,0,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12773,SLAKE,test,track_b_oracle_slake,2,T2,t1,False,CLOSED,True,False,7,6,0,6,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12775,SLAKE,test,track_b_oracle_slake,2,Head,cerebellum,False,OPEN,True,False,4,4,0,4,0,0,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12778,SLAKE,test,track_b_oracle_slake,2,Brain Edema,Lymphoma,False,OPEN,True,True,5,5,1,4,0,0,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12782,SLAKE,test,track_b_oracle_slake,2,Liver,Kidney,False,OPEN,True,True,5,5,5,0,0,0,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12787,SLAKE,test,track_b_oracle_slake,2,6,7,False,OPEN,True,True,20,20,15,5,0,0,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12789,SLAKE,test,track_b_oracle_slake,2,Spleen,The lymph nodes.,False,OPEN,True,True,18,17,10,7,0,1,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12794,SLAKE,test,track_b_oracle_slake,2,Upper Right,not present,False,OPEN,True,True,7,4,4,0,0,3,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12795,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,14,14,10,4,0,0,0,1.0,0.0,1.0,0.99,False,True
+12796,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,5,5,5,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12800,SLAKE,test,track_b_oracle_slake,2,"Biotransformation, detoxification",breathing,False,OPEN,True,True,9,7,7,0,0,1,1,0.2,1.0000000000000002,0.95,0.99,False,True
+12807,SLAKE,test,track_b_oracle_slake,2,Colon,Colon,True,CLOSED,True,True,8,5,5,0,0,3,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12810,SLAKE,test,track_b_oracle_slake,2,"Stomach, Colon",Stomach,False,OPEN,True,True,7,5,5,0,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12814,SLAKE,test,track_b_oracle_slake,2,Small Bowel,spleen,False,OPEN,True,True,8,8,8,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12815,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,8,4,3,1,0,4,0,1.0,0.0,1.0,0.99,False,True
+12825,SLAKE,test,track_b_oracle_slake,2,No,NO,True,CLOSED,True,True,5,3,2,1,0,2,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12827,SLAKE,test,track_b_oracle_slake,2,Liver,right kidney,False,CLOSED,True,True,9,6,5,1,0,3,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12829,SLAKE,test,track_b_oracle_slake,2,Circular,oval,False,OPEN,True,True,4,4,3,1,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12846,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,7,7,4,3,0,0,0,1.0,0.0,1.0,0.99,False,True
+12847,SLAKE,test,track_b_oracle_slake,2,Upper Right,R1,False,OPEN,True,True,7,5,5,0,0,2,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12849,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,5,1,1,0,0,4,0,1.0,0.0,1.0,0.99,False,True
+12857,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,8,8,8,0,0,0,0,1.0,0.0,1.0,0.99,False,True
+12864,SLAKE,test,track_b_oracle_slake,2,Liver,spleen,False,CLOSED,True,True,10,7,6,1,0,3,0,0.4,0.6554587535412857,0.9672270623229356,0.99,False,True
+12868,SLAKE,test,track_b_oracle_slake,2,MRI,MRI,True,OPEN,True,False,6,6,0,6,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12869,SLAKE,test,track_b_oracle_slake,2,Brain,Brain,True,OPEN,True,True,9,7,2,5,0,2,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12871,SLAKE,test,track_b_oracle_slake,2,Brain,brain,True,OPEN,True,False,8,8,0,8,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12877,SLAKE,test,track_b_oracle_slake,2,Abdomen,stomach,False,OPEN,True,True,5,4,3,1,0,0,1,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12879,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,9,9,7,2,0,0,0,1.0,0.0,1.0,0.99,False,True
+12881,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,6,4,4,0,0,2,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12883,SLAKE,test,track_b_oracle_slake,2,2,2,True,OPEN,True,True,7,6,3,3,0,1,0,1.0,0.0,1.0,0.99,False,True
+12888,SLAKE,test,track_b_oracle_slake,2,Transverse Plane,Transverse,False,OPEN,True,True,6,6,5,1,0,0,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12894,SLAKE,test,track_b_oracle_slake,2,4,3,False,OPEN,True,True,10,8,7,1,0,2,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True
+12895,SLAKE,test,track_b_oracle_slake,2,Promote blood flow,breathing,False,OPEN,True,True,3,3,3,0,0,0,0,0.4,0.8277293767706428,0.9586135311614679,0.99,False,True
+12897,SLAKE,test,track_b_oracle_slake,2,No,no,True,CLOSED,True,True,6,1,1,0,0,5,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12905,SLAKE,test,track_b_oracle_slake,2,0,2,False,OPEN,True,False,9,8,0,8,0,1,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12922,SLAKE,test,track_b_oracle_slake,2,Yes,Yes,True,CLOSED,True,True,18,18,16,2,0,0,0,1.0,0.0,1.0,0.99,False,True
+12926,SLAKE,test,track_b_oracle_slake,2,CT,CT scan,False,OPEN,True,True,7,7,1,6,0,0,0,1.0,0.0,1.0,0.99,False,True
+12932,SLAKE,test,track_b_oracle_slake,2,Pelvic Cavity,abdomen,False,OPEN,True,True,14,14,6,8,0,0,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12933,SLAKE,test,track_b_oracle_slake,2,Yes,yes,True,CLOSED,True,True,12,11,11,0,0,1,0,1.0,0.0,1.0,0.99,False,True
+12938,SLAKE,test,track_b_oracle_slake,2,Pelvic Cavity,abdomen,False,OPEN,True,True,16,11,10,1,0,5,0,0.6,0.5904362833084089,0.9704781858345795,0.99,False,True
+12939,SLAKE,test,track_b_oracle_slake,2,Upper Left,Stomach,False,OPEN,True,True,14,2,2,0,0,12,0,0.2,1.0000000000000002,0.95,0.99,False,True
+12940,SLAKE,test,track_b_oracle_slake,2,Pelvic Cavity,abdomen,False,OPEN,True,True,20,12,12,0,0,8,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12943,SLAKE,test,track_b_oracle_slake,2,"Colon, Small Bowel",stomach,False,OPEN,True,True,8,6,6,0,0,2,0,0.8,0.31091750708257115,0.9844541246458713,0.99,False,True
+12944,SLAKE,test,track_b_oracle_slake,2,No,yes,False,CLOSED,True,True,17,11,10,1,0,6,0,0.6,0.4181656600790517,0.9790917169960474,0.99,False,True

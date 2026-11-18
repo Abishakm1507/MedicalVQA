@@ -1,0 +1,30 @@
+{
+  "model": "medgemma-4b",
+  "track": "C",
+  "fitted_on": "val_fit",
+  "n_fit": 200,
+  "n_assess": 80,
+  "n_fit_cohort": 200,
+  "n_assess_cohort": 80,
+  "salvage": {
+    "records_with_failures": 26,
+    "records_salvaged": 26,
+    "samples_salvaged": 39,
+    "samples_dropped": 0
+  },
+  "w1": 0.0,
+  "w2": 0.05,
+  "w3": 0.95,
+  "tau": 0.04,
+  "fit": {
+    "ece": 0.42839234885424493,
+    "auroc": 0.8014291465378421,
+    "selective_risk": 0.27956989247311825,
+    "coverage": 0.465
+  },
+  "assessment": {
+    "coverage": 0.475,
+    "selective_accuracy": 0.868421052631579,
+    "accuracy_all": 0.525
+  }
+}

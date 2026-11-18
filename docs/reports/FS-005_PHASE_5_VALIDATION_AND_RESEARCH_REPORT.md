@@ -563,3 +563,10 @@ FS-005 Phase 5 has implemented the grounding and uncertainty-aware answering sys
 **Phase 5 software tooling and exploratory analysis are implemented. Genuine experimental validation of the integrated pipeline remains outstanding.**
 
 **FS-005 Phase 5 is complete as software implementation and exploratory analysis. Genuine experimental validation remains outstanding.**
+
+
+---
+
+## Addendum (2026-11-18): real Phase 5 results now exist
+
+The statements above that the integrated pipeline had not been evaluated, and the "not computable" metric tables, describe the state at the time of the 10-question pilot. A seeded-subset run of both models on Tracks B and C (Conditions 1/2/3) has since been completed with real inference, calibration and bootstrap analysis. See `docs/reports/FS-005_PHASE_5_REAL_RESULTS.md` for the measured numbers and caveats. The full 945-question cohort and Track A remain outstanding; clinical validation was not performed.
