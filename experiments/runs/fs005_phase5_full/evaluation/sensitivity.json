@@ -1,0 +1,262 @@
+{
+  "strict": {
+    "medgemma-4b/trackB/cond2": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.392,
+        "coverage": 1.0,
+        "selective_accuracy": 0.392
+      },
+      "strict_only": {
+        "n": 231,
+        "accuracy": 0.4025974025974026,
+        "coverage": 1.0,
+        "selective_accuracy": 0.4025974025974026
+      }
+    },
+    "medgemma-4b/trackB/cond3": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.332,
+        "coverage": 0.492,
+        "selective_accuracy": 0.6747967479674797
+      },
+      "strict_only": {
+        "n": 231,
+        "accuracy": 0.33766233766233766,
+        "coverage": 0.49783549783549785,
+        "selective_accuracy": 0.6782608695652174
+      }
+    },
+    "medgemma-4b/trackC/cond2": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.424,
+        "coverage": 1.0,
+        "selective_accuracy": 0.424
+      },
+      "strict_only": {
+        "n": 235,
+        "accuracy": 0.44680851063829785,
+        "coverage": 1.0,
+        "selective_accuracy": 0.44680851063829785
+      }
+    },
+    "medgemma-4b/trackC/cond3": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.356,
+        "coverage": 0.496,
+        "selective_accuracy": 0.717741935483871
+      },
+      "strict_only": {
+        "n": 235,
+        "accuracy": 0.37446808510638296,
+        "coverage": 0.5148936170212766,
+        "selective_accuracy": 0.7272727272727273
+      }
+    },
+    "medgemma-4b/trackC/cond1": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.412,
+        "coverage": 1.0,
+        "selective_accuracy": 0.412
+      },
+      "strict_only": {
+        "n": 246,
+        "accuracy": 0.4146341463414634,
+        "coverage": 1.0,
+        "selective_accuracy": 0.4146341463414634
+      }
+    },
+    "qwen2.5-vl-3b/trackB/cond2": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.404,
+        "coverage": 1.0,
+        "selective_accuracy": 0.404
+      },
+      "strict_only": {
+        "n": 164,
+        "accuracy": 0.45121951219512196,
+        "coverage": 1.0,
+        "selective_accuracy": 0.45121951219512196
+      }
+    },
+    "qwen2.5-vl-3b/trackB/cond3": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.164,
+        "coverage": 0.22,
+        "selective_accuracy": 0.7454545454545455
+      },
+      "strict_only": {
+        "n": 164,
+        "accuracy": 0.18902439024390244,
+        "coverage": 0.22560975609756098,
+        "selective_accuracy": 0.8378378378378378
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond2": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.38,
+        "coverage": 1.0,
+        "selective_accuracy": 0.38
+      },
+      "strict_only": {
+        "n": 158,
+        "accuracy": 0.43037974683544306,
+        "coverage": 1.0,
+        "selective_accuracy": 0.43037974683544306
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond3": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.172,
+        "coverage": 0.216,
+        "selective_accuracy": 0.7962962962962963
+      },
+      "strict_only": {
+        "n": 158,
+        "accuracy": 0.189873417721519,
+        "coverage": 0.25316455696202533,
+        "selective_accuracy": 0.75
+      }
+    },
+    "qwen2.5-vl-3b/trackC/cond1": {
+      "all_salvaged": {
+        "n": 250,
+        "accuracy": 0.384,
+        "coverage": 1.0,
+        "selective_accuracy": 0.384
+      },
+      "strict_only": {
+        "n": 247,
+        "accuracy": 0.38866396761133604,
+        "coverage": 1.0,
+        "selective_accuracy": 0.38866396761133604
+      }
+    }
+  },
+  "ablation": {
+    "medgemma-4b/trackB": {
+      "gate_coverage": 0.492,
+      "signals": {
+        "agreement_only": {
+          "auroc": 0.8271348012889366,
+          "ci95": [
+            0.7799800102699531,
+            0.8712123898941178
+          ],
+          "acc_at_gate_coverage": 0.6747967479674797
+        },
+        "entropy_only": {
+          "auroc": 0.827671858216971,
+          "ci95": [
+            0.7806087683154797,
+            0.8718782693001442
+          ],
+          "acc_at_gate_coverage": 0.6747967479674797
+        },
+        "fused_frozen_gate": {
+          "auroc": 0.827671858216971,
+          "ci95": [
+            0.7806087683154797,
+            0.8718782693001442
+          ],
+          "acc_at_gate_coverage": 0.6747967479674797
+        }
+      }
+    },
+    "medgemma-4b/trackC": {
+      "gate_coverage": 0.496,
+      "signals": {
+        "agreement_only": {
+          "auroc": 0.8297955974842768,
+          "ci95": [
+            0.7824661165406601,
+            0.8697152859907538
+          ],
+          "acc_at_gate_coverage": 0.717741935483871
+        },
+        "entropy_only": {
+          "auroc": 0.8297955974842768,
+          "ci95": [
+            0.7825869597610525,
+            0.8694620958540328
+          ],
+          "acc_at_gate_coverage": 0.717741935483871
+        },
+        "fused_frozen_gate": {
+          "auroc": 0.8297955974842768,
+          "ci95": [
+            0.7825869597610525,
+            0.8694620958540328
+          ],
+          "acc_at_gate_coverage": 0.717741935483871
+        }
+      }
+    },
+    "qwen2.5-vl-3b/trackB": {
+      "gate_coverage": 0.22,
+      "signals": {
+        "agreement_only": {
+          "auroc": 0.7947039670409994,
+          "ci95": [
+            0.7392733502533095,
+            0.846006042859398
+          ],
+          "acc_at_gate_coverage": 0.7454545454545455
+        },
+        "entropy_only": {
+          "auroc": 0.8011495780450528,
+          "ci95": [
+            0.7489862140747627,
+            0.8500372969655057
+          ],
+          "acc_at_gate_coverage": 0.7454545454545455
+        },
+        "fused_frozen_gate": {
+          "auroc": 0.8011495780450528,
+          "ci95": [
+            0.7489862140747627,
+            0.8500372969655057
+          ],
+          "acc_at_gate_coverage": 0.7454545454545455
+        }
+      }
+    },
+    "qwen2.5-vl-3b/trackC": {
+      "gate_coverage": 0.216,
+      "signals": {
+        "agreement_only": {
+          "auroc": 0.7988794567062818,
+          "ci95": [
+            0.7423125183026044,
+            0.8500906157025846
+          ],
+          "acc_at_gate_coverage": 0.7962962962962963
+        },
+        "entropy_only": {
+          "auroc": 0.793106960950764,
+          "ci95": [
+            0.7353768577494693,
+            0.8456402199270128
+          ],
+          "acc_at_gate_coverage": 0.7962962962962963
+        },
+        "fused_frozen_gate": {
+          "auroc": 0.793106960950764,
+          "ci95": [
+            0.7353768577494693,
+            0.8456402199270128
+          ],
+          "acc_at_gate_coverage": 0.7962962962962963
+        }
+      }
+    }
+  }
+}

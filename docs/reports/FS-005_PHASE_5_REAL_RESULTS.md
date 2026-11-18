@@ -23,15 +23,15 @@ produced by `scripts/fs005_phase5_full_run.py` (`generate` on a Kaggle T4; `cali
 | Arm / condition | Accuracy | Coverage | Selective acc. | AUROC | ECE |
 |---|---|---|---|---|---|
 | MedGemma B, Cond 2 | 0.392 (0.332-0.452) | 1.00 | 0.392 | 0.828 | 0.591 |
-| MedGemma B, Cond 3 | 0.332 (0.275-0.389) | 0.492 | 0.675 (0.586-0.766) | 0.880 | 0.325 |
+| MedGemma B, Cond 3 | 0.332 (0.275-0.389) | 0.492 | 0.675 (0.586-0.766) | n/a (see note) | 0.325 |
 | MedGemma C, Cond 1 | 0.412 (0.357-0.468) | 1.00 | 0.412 | n/a | 0.412 |
 | MedGemma C, Cond 2 | 0.424 (0.368-0.480) | 1.00 | 0.424 | 0.830 | 0.391 |
-| MedGemma C, Cond 3 | 0.356 (0.298-0.415) | 0.496 | 0.718 (0.638-0.793) | 0.891 | 0.668 |
+| MedGemma C, Cond 3 | 0.356 (0.298-0.415) | 0.496 | 0.718 (0.638-0.793) | n/a (see note) | 0.668 |
 | Qwen B, Cond 2 | 0.404 (0.338-0.472) | 1.00 | 0.404 | 0.801 | 0.571 |
-| Qwen B, Cond 3 | 0.164 (0.121-0.209) | 0.220 | 0.745 (0.646-0.841) | 0.967 | 0.255 |
+| Qwen B, Cond 3 | 0.164 (0.121-0.209) | 0.220 | 0.745 (0.646-0.841) | n/a (see note) | 0.255 |
 | Qwen C, Cond 1 | 0.384 (0.313-0.450) | 1.00 | 0.384 | n/a | 0.384 |
 | Qwen C, Cond 2 | 0.380 (0.311-0.451) | 1.00 | 0.380 | 0.793 | 0.356 |
-| Qwen C, Cond 3 | 0.172 (0.128-0.216) | 0.216 | 0.796 (0.674-0.900) | 0.973 | 0.746 |
+| Qwen C, Cond 3 | 0.172 (0.128-0.216) | 0.216 | 0.796 (0.674-0.900) | n/a (see note) | 0.746 |
 
 Grounding (Track B, Cond 2): USR_raw 0.090 (MedGemma) vs 0.433 (Qwen); pointing accuracy 0.88 vs 0.70;
 sampling agreement 0.73 vs 0.62.
@@ -65,7 +65,29 @@ McNemar is question-level and not adjusted for image clusters.
 - In Track B the localizer score rho is constant, and in Track C it is absent, so the fitted gate acts as an
   entropy threshold; the localizer term is untested. No separate signal ablation was run.
 - `usr_filtered` equals `usr_raw` in the evaluator output; the cause was not investigated, so only `usr_raw` is reported.
-- The Condition 3 AUROC and ECE come from the evaluator on that condition and are not comparable with Condition 2.
+- Condition 3 AUROC is NOT valid: the Condition 3 records label abstained questions as wrong, so that AUROC is circular and inflated (0.88-0.97). Use the Condition 2 AUROC (0.79-0.83). Condition 3 ECE is computed over answered questions only.
 - Strict exact match understates correct free-text answers; a looser measure and a strict-only (no-salvage) sensitivity analysis are future work.
 - Qwen2.5-VL-3B's much higher salvage rate (34-37% vs 6-8%) confounds the model comparison.
 - Track A (detector on real CXR) is ineligible on SLAKE. No clinical validation was performed.
+
+## Gate details verified from the code (added 2026-11-18)
+
+- Semantic clustering in the runs: canonical fallback (lower-case + whitespace normalization, exact match); the embedding clusterer was not used (`force_fallback=True`). Paraphrases are therefore different clusters.
+- rho: Track B assigns every oracle box score 1.0 (constant). Track C claims are `present_ungrounded`, so rho contributes 0 with no rescaling (rescaling applies only to absent/uncertain claims).
+- Calibration: weights on a 0.05 simplex grid, tau 0.00-1.00 step 0.01, objective = minimize selective risk on val_fit subject to coverage >= 0.10; AUROC and ECE are diagnostics. ECE: 10 equal-width bins over answered questions.
+- Pointing accuracy: at least one cited present-claim box with IoU >= 0.5 against an annotated box. USR/pointing are evaluation-only; the verifier is structural (checks that the cited id exists) and does not test semantic support.
+
+## Sensitivity analyses (`scripts/fs005_phase5_sensitivity.py`, CPU only)
+
+Strict-only (questions whose generation passed the JSON contract with no salvage; same frozen gate):
+
+| Arm | Strict n | Cond 2 acc (all / strict) | Cond 3 sel. acc (all / strict) | Cond 3 coverage (all / strict) |
+|---|---|---|---|---|
+| MedGemma B | 231 | 0.392 / 0.403 | 0.675 / 0.678 | 0.492 / 0.498 |
+| MedGemma C | 235 | 0.424 / 0.447 | 0.718 / 0.727 | 0.496 / 0.515 |
+| Qwen B | 164 | 0.404 / 0.451 | 0.745 / 0.838 | 0.220 / 0.226 |
+| Qwen C | 158 | 0.380 / 0.430 | 0.796 / 0.750 | 0.216 / 0.253 |
+
+Condition 1 (Track C) strict n: MedGemma 246 (0.415 vs 0.412), Qwen 247 (0.389 vs 0.384).
+
+Signal ablation (AUROC with Condition 2 correctness): agreement-only 0.827/0.830/0.795/0.799, entropy-only 0.828/0.830/0.801/0.793, fused 0.828/0.830/0.801/0.793 (MG B, MG C, Q B, Q C). Accuracy at the gate's coverage is identical for all three. The fused gate adds nothing over a single signal; the localizer term is constant, so it contributes nothing.
