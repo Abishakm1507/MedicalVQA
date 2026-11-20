@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EVAL = ROOT / "experiments/runs/fs005_phase5_full/evaluation"
 OUT = Path(__file__).resolve().parent / "figs"
 OUT.mkdir(exist_ok=True)
-plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "DejaVu Serif"], "font.size": 8})
+plt.rcParams.update({"mathtext.fontset": "stix", "font.family": "serif", "font.serif": ["Times New Roman", "DejaVu Serif"], "font.size": 8})
 analysis = json.load(open(EVAL / "analysis.json"))["single"]
 
 ARMS = [("medgemma-4b", "B", "MedGemma B"), ("medgemma-4b", "C", "MedGemma C"),
@@ -28,26 +28,13 @@ def box(ax, x, y, w, h, text, fc="#ebebeb"):
     ax.text(x + w / 2, y + h / 2, text, ha="center", va="center", fontsize=7.5)
 
 
-# ---- Fig 1: architecture
-fig, ax = plt.subplots(figsize=(3.4, 4.1))
-ax.set_xlim(0, 10); ax.set_ylim(0, 12.4); ax.axis("off")
-steps = ["Medical image + question", "Region localizer\n(detector boxes + MedSAM masks)",
-         "Set-of-Mark overlay (R1 ... Rk)", "VLM with JSON contract\n(Qwen2.5-VL-3B / MedGemma-4B, N = 5)",
-         "Claim verifier\n(drop findings without a valid region)", "Confidence gate\nc = w1 a + w2 (1 - Hn) + w3 rho"]
-y = 11.4
-for i, s in enumerate(steps):
-    box(ax, 1.2, y - 1.0, 7.6, 1.0, s)
-    if i < len(steps) - 1:
-        ax.annotate("", xy=(5, y - 1.45), xytext=(5, y - 1.0), arrowprops=dict(arrowstyle="-|>", lw=0.8))
-    y -= 1.45
-ax.annotate("", xy=(2.7, y - 0.25), xytext=(4.2, y + 0.45), arrowprops=dict(arrowstyle="-|>", lw=0.8))
-ax.annotate("", xy=(7.3, y - 0.25), xytext=(5.8, y + 0.45), arrowprops=dict(arrowstyle="-|>", lw=0.8))
-box(ax, 0.4, y - 1.4, 4.4, 1.1, "c >= tau:\nanswer + regions")
-box(ax, 5.2, y - 1.4, 4.4, 1.1, "c < tau:\nabstain (uncertain)")
-fig.savefig(OUT / "fig1_architecture.png", dpi=300, bbox_inches="tight"); plt.close(fig)
+# ---- Fig 1: pipeline schematic (see fig_pipeline.py)
+from fig_pipeline import draw_pipeline
+
+draw_pipeline(None, OUT / "fig1_architecture.png")
 
 # ---- Fig 2: cohorts
-fig, ax = plt.subplots(figsize=(3.4, 3.9))
+fig, ax = plt.subplots(figsize=(3.4, 3.6))
 ax.set_xlim(0, 10); ax.set_ylim(0, 13); ax.axis("off")
 ax.text(5, 12.6, "Test (evaluation)", ha="center", fontweight="bold")
 box(ax, 1, 11.3, 8, 0.9, "English test questions: 1,061")
@@ -64,7 +51,7 @@ ax.text(5, 1.0, "No image in both fit and assess; test never used to fit.", ha="
 fig.savefig(OUT / "fig2_cohorts.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 
 # ---- Fig 3: accuracy by arm (Cond 1/2 with CI; Cond 3 selective accuracy)
-fig, ax = plt.subplots(figsize=(3.4, 2.6))
+fig, ax = plt.subplots(figsize=(3.4, 2.2))
 w = 0.2
 conds = [("cond1", "Cond 1 (greedy)", "#cfcfcf", "accuracy"), ("cond2", "Cond 2 (grounded)", "#8c8c8c", "accuracy"),
          ("cond3", "Cond 3 (answered only)", "#2f2f2f", "selective_accuracy")]
@@ -85,7 +72,7 @@ ax.spines[["top", "right"]].set_visible(False)
 fig.savefig(OUT / "fig3_accuracy.png", dpi=300, bbox_inches="tight"); plt.close(fig)
 
 # ---- Fig 4: accuracy-coverage curves (Condition 3 sweep of tau)
-fig, ax = plt.subplots(figsize=(3.4, 2.6))
+fig, ax = plt.subplots(figsize=(3.4, 2.2))
 styles = ["-", "--", "-.", ":"]
 for (m, t, lab), ls in zip(ARMS, styles):
     d = json.load(open(EVAL / m / t / "condition3" / "experiment_metrics.json"))["accuracy_vs_coverage"]
